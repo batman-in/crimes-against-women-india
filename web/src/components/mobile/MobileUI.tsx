@@ -2,7 +2,7 @@
 // - the main filters stay visible (crime chips, measure, year); rarer ones sit behind "Filters"
 // - the answer comes first (summary card), the year control sits in the thumb zone (bottom dock)
 // - purple marks everything you can act on; the red scale is reserved for the data itself
-import { ArrowDownRight, ArrowUpRight, ChevronDown, ChevronLeft, ChevronRight, Pause, Play, SlidersHorizontal, X } from 'lucide-react'
+import { ArrowDownRight, ArrowLeft, ArrowUpRight, ChevronDown, ChevronLeft, ChevronRight, Maximize2, Pause, Play, SlidersHorizontal, X } from 'lucide-react'
 import { useEffect, useRef } from 'react'
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from '@/components/ui/sheet'
 import { Slider } from '@/components/ui/slider'
@@ -148,7 +148,7 @@ export function SummaryCard(props: {
           <span key={c.label} className="flex items-center gap-1">
             {i > 0 && <ChevronRight className="size-3.5 text-[var(--m-ink-soft)]" />}
             {c.onClick ? (
-              <button type="button" onClick={c.onClick} className="min-h-8 font-medium text-[var(--brand-ink)] underline-offset-2 active:underline">
+              <button type="button" onClick={c.onClick} className="min-h-8 font-medium text-[var(--brand-ink)] underline decoration-[var(--brand)]/40 underline-offset-4">
                 {c.label}
               </button>
             ) : (
@@ -328,5 +328,33 @@ export function MapControls(props: {
         Districts
       </button>
     </div>
+  )
+}
+
+/** Shown on the map while a state or district is open: one tap back to the whole country. */
+export function BackToIndia(props: { onClick: () => void }) {
+  return (
+    <button
+      type="button"
+      onClick={props.onClick}
+      className="inline-flex h-9 items-center gap-1.5 rounded-full bg-[var(--brand)] pr-3.5 pl-3 text-sm font-semibold text-[var(--brand-fg)] shadow-md active:opacity-90"
+    >
+      <ArrowLeft className="size-4" /> India
+    </button>
+  )
+}
+
+/** Sits under the zoom buttons: re-centres the map on all of India from wherever it was dragged. */
+export function FitIndiaButton(props: { onClick: () => void }) {
+  return (
+    <button
+      type="button"
+      onClick={props.onClick}
+      aria-label="Show all of India"
+      title="Show all of India"
+      className="grid size-[29px] place-items-center rounded-[4px] bg-white text-[#333] shadow-[0_0_0_2px_rgb(0_0_0/0.1)] active:bg-[#f2f2f2]"
+    >
+      <Maximize2 className="size-4" />
+    </button>
   )
 }

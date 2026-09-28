@@ -20,7 +20,8 @@ interface Props {
   stateLabels: FeatureCollection // Point features with property name
   theme: 'light' | 'dark'
   mode: MapMode
-  cooperative?: boolean // phones: one finger scrolls the page, two fingers move the map
+  touch?: boolean // phone/tablet layout: no hover labels (the summary card shows the value)
+  fitToken?: number // bump to re-fit the view (e.g. a 'show all of India' button)
   showDistricts: boolean // districts drawn for the whole country or the selected state
   selectedState: string | null
   selectedDistrict: string | null
@@ -81,7 +82,9 @@ export function MapView(props: Props) {
       maxZoom: 11,
       attributionControl: { compact: true },
       dragRotate: false,
-      cooperativeGestures: !!latest.current.cooperative,
+      dragPan: true,
+      touchZoomRotate: true,
+      doubleClickZoom: true,
       pitchWithRotate: false,
     })
     map.touchZoomRotate.disableRotation()
@@ -99,7 +102,7 @@ export function MapView(props: Props) {
 
     const hover = (layer: 'state-fill' | 'district-fill') => (e: maplibregl.MapLayerMouseEvent) => {
       const f = e.features?.[0] as MapGeoJSONFeature | undefined
-      if (!f || latest.current.cooperative) return // touch layouts show a summary card instead
+      if (!f || latest.current.touch) return // touch layouts show a summary card instead
       map.getCanvas().style.cursor = 'pointer'
       const p = latest.current
       const isState = layer === 'state-fill'
@@ -141,13 +144,6 @@ export function MapView(props: Props) {
     }
   }, [])
 
-  useEffect(() => {
-    const map = mapRef.current
-    if (!map) return
-    if (props.cooperative) map.cooperativeGestures.enable()
-    else map.cooperativeGestures.disable()
-  }, [props.cooperative])
-
   // Basemap theme
   useEffect(() => {
     const map = mapRef.current
@@ -163,7 +159,7 @@ export function MapView(props: Props) {
   })
 
   // Zoom to the selected state / district, or back out to India
-  const { selectedState, selectedDistrict, states, districts } = props
+  const { selectedState, selectedDistrict, states, districts, fitToken } = props
   useEffect(() => {
     const map = mapRef.current
     if (!map) return
@@ -174,7 +170,7 @@ export function MapView(props: Props) {
         : null
     const bounds = feat ? bboxOf(feat.geometry) : INDIA
     map.fitBounds(bounds, { padding: 40, duration: 700, maxZoom: selectedDistrict ? 8 : 7.5 })
-  }, [selectedState, selectedDistrict, states, districts])
+  }, [selectedState, selectedDistrict, states, districts, fitToken])
 
   // maplibre sets position:relative on its container, so the absolute box is a wrapper
   return (

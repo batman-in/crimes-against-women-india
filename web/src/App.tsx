@@ -7,7 +7,7 @@ import { Filters } from '@/components/Filters'
 import { Legend } from '@/components/Legend'
 import { MapView, type AreaStyle, type MapMode } from '@/components/MapView'
 import { SidePanel } from '@/components/SidePanel'
-import { CrimeChips, FiltersSheet, MapControls, MobileFilterBar, SummaryCard, YearDock } from '@/components/mobile/MobileUI'
+import { BackToIndia, CrimeChips, FiltersSheet, FitIndiaButton, MapControls, MobileFilterBar, SummaryCard, YearDock } from '@/components/mobile/MobileUI'
 import { Sources } from '@/components/Sources'
 import { Button } from '@/components/ui/button'
 import { TooltipProvider } from '@/components/ui/tooltip'
@@ -82,6 +82,8 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
   const setFilters = useCallback((f: Partial<F>) => setFiltersState((old) => ({ ...old, ...f })), [])
   const isMobile = useIsMobile()
   const selectState = useCallback((s: string | null) => { setState(s); setDistrict(null) }, [])
+  const [fitToken, setFitToken] = useState(0)
+  const showIndia = useCallback(() => { setState(null); setDistrict(null); setFitToken((t) => t + 1) }, [])
 
   const offenders = useMemo(() => {
     const opts = offenderOptions(data)
@@ -224,7 +226,8 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
       stateLabels={stateLabels}
       theme={theme}
       mode={mode}
-      cooperative={isMobile}
+      touch={isMobile}
+      fitToken={fitToken}
       showDistricts={showDistricts && hasDistrictData}
       selectedState={state}
       selectedDistrict={district}
@@ -309,7 +312,7 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
     const adrTotal = legislators ? (adrReports(data).find((r) => r.year === adrYear)?.houses ?? []).reduce((t, h) => t + h.count, 0) : 0
     const what = effective.offender === 'all' ? data.cats[effective.cat]?.label : `Rape by ${OFFENDER_LABELS[effective.offender]?.toLowerCase() ?? effective.offender}`
     const crumbs = [
-      { label: 'India', onClick: state ? () => selectState(null) : undefined },
+      { label: 'India', onClick: state ? showIndia : undefined },
       ...(state ? [{ label: state, onClick: district ? () => setDistrict(null) : undefined }] : []),
       ...(district ? [{ label: districtName(district).split(',')[0] }] : []),
     ]
@@ -379,6 +382,7 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
             <main className="relative h-[52svh] min-h-[320px] border-y border-[var(--m-border)]">
               {mapView}
               <div className="absolute top-2 left-2 flex flex-col items-start gap-1.5">
+                {state && <BackToIndia onClick={showIndia} />}
                 <MapControls
                   mode={mode}
                   setMode={setMode}
@@ -391,6 +395,9 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
                     Tap a state to see its districts
                   </p>
                 )}
+              </div>
+              <div className="absolute top-[78px] right-[10px]">
+                <FitIndiaButton onClick={showIndia} />
               </div>
               {legend}
             </main>
