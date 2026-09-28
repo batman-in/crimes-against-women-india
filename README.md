@@ -80,3 +80,11 @@ See `data/interim/README_*.md` for details on each collected dataset.
 - **ADR.** These are self-declared pending cases in affidavits, not convictions. Only aggregates
   (by state, party, house and charge) are stored.
 - **No pincode level.** No public source publishes crime data below the district.
+
+## Licence
+
+The code (`scripts/`, `web/`) is under the MIT licence; see `LICENSE`. The data comes from the
+sources listed above and stays under their own terms. Please cite the original sources (NCRB,
+Census of India, MoHFW, ADR) when reusing figures.
+
+Live dashboard: https://crimesagainstwomeninindia.netlify.app
