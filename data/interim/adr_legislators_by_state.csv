@@ -1,0 +1,89 @@
+report_year,report_date,state_ut,house,legislators_with_cases,rape_cases_legislators,method
+2017,2017-08-30,Andhra Pradesh,State Assembly,5,1.0,published state total; house split derived from per-member details
+2017,2017-08-30,Bihar,State Assembly,2,1.0,published state total; house split derived from per-member details
+2017,2017-08-30,Gujarat,State Assembly,2,1.0,published state total; house split derived from per-member details
+2017,2017-08-30,Jharkhand,State Assembly,3,0.0,published state total; house split derived from per-member details
+2017,2017-08-30,Karnataka,State Assembly,1,0.0,published state total; house split derived from per-member details
+2017,2017-08-30,Kerala,Lok Sabha,1,0.0,published state total; house split derived from per-member details
+2017,2017-08-30,Madhya Pradesh,State Assembly,2,0.0,published state total; house split derived from per-member details
+2017,2017-08-30,Maharashtra,Rajya Sabha,1,0.0,published state total; house split derived from per-member details
+2017,2017-08-30,Maharashtra,State Assembly,11,0.0,published state total; house split derived from per-member details
+2017,2017-08-30,Odisha,State Assembly,6,1.0,published state total; house split derived from per-member details
+2017,2017-08-30,Tamil Nadu,State Assembly,2,0.0,published state total; house split derived from per-member details
+2017,2017-08-30,Uttar Pradesh,State Assembly,1,0.0,published state total; house split derived from per-member details
+2017,2017-08-30,Uttarakhand,State Assembly,3,0.0,published state total; house split derived from per-member details
+2017,2017-08-30,West Bengal,Lok Sabha,1,0.0,published state total; house split derived from per-member details
+2017,2017-08-30,West Bengal,State Assembly,10,0.0,published state total; house split derived from per-member details
+2018,2018-04-19,Andhra Pradesh,State Assembly,5,1.0,published state total; house split derived from per-member details
+2018,2018-04-19,Bihar,State Assembly,2,1.0,published state total; house split derived from per-member details
+2018,2018-04-19,Gujarat,State Assembly,1,1.0,published state total; house split derived from per-member details
+2018,2018-04-19,Jharkhand,State Assembly,3,0.0,published state total; house split derived from per-member details
+2018,2018-04-19,Karnataka,State Assembly,1,0.0,published state total; house split derived from per-member details
+2018,2018-04-19,Kerala,Lok Sabha,1,0.0,published state total; house split derived from per-member details
+2018,2018-04-19,Madhya Pradesh,State Assembly,1,0.0,published state total; house split derived from per-member details
+2018,2018-04-19,Maharashtra,Rajya Sabha,1,0.0,published state total; house split derived from per-member details
+2018,2018-04-19,Maharashtra,State Assembly,11,0.0,published state total; house split derived from per-member details
+2018,2018-04-19,Odisha,State Assembly,5,0.0,published state total; house split derived from per-member details
+2018,2018-04-19,Tamil Nadu,State Assembly,2,0.0,published state total; house split derived from per-member details
+2018,2018-04-19,Uttar Pradesh,State Assembly,1,0.0,published state total; house split derived from per-member details
+2018,2018-04-19,Uttarakhand,State Assembly,3,0.0,published state total; house split derived from per-member details
+2018,2018-04-19,West Bengal,Lok Sabha,1,0.0,published state total; house split derived from per-member details
+2018,2018-04-19,West Bengal,State Assembly,10,0.0,published state total; house split derived from per-member details
+2023,2023-08-10,Maharashtra,All houses (split not published),14,,press_headline_only (top 3 states only)
+2023,2023-08-10,Odisha,All houses (split not published),14,,press_headline_only (top 3 states only)
+2023,2023-08-10,West Bengal,All houses (split not published),26,,press_headline_only (top 3 states only)
+2024,2024-08-21,Andhra Pradesh,State Assembly,21,1.0,published
+2024,2024-08-21,Assam,State Assembly,2,1.0,published
+2024,2024-08-21,Bihar,Lok Sabha,1,0.0,published MP count; LS/RS split derived from per-member details
+2024,2024-08-21,Bihar,State Assembly,8,0.0,published
+2024,2024-08-21,Dadra & Nagar Haveli and Daman & Diu,Lok Sabha,1,0.0,published MP count; LS/RS split derived from per-member details
+2024,2024-08-21,Delhi,State Assembly,13,1.0,published
+2024,2024-08-21,Goa,State Assembly,2,1.0,published
+2024,2024-08-21,Gujarat,State Assembly,4,1.0,published
+2024,2024-08-21,Himachal Pradesh,State Assembly,1,0.0,published
+2024,2024-08-21,Jharkhand,Lok Sabha,1,0.0,published MP count; LS/RS split derived from per-member details
+2024,2024-08-21,Jharkhand,State Assembly,2,1.0,published
+2024,2024-08-21,Karnataka,State Assembly,7,1.0,published
+2024,2024-08-21,Kerala,Lok Sabha,2,0.0,published MP count; LS/RS split derived from per-member details
+2024,2024-08-21,Kerala,State Assembly,3,1.0,published
+2024,2024-08-21,Madhya Pradesh,State Assembly,5,2.0,published
+2024,2024-08-21,Maharashtra,Rajya Sabha,1,0.0,published MP count; LS/RS split derived from per-member details
+2024,2024-08-21,Maharashtra,State Assembly,12,1.0,published
+2024,2024-08-21,Manipur,State Assembly,1,0.0,published
+2024,2024-08-21,Odisha,Lok Sabha,1,0.0,published MP count; LS/RS split derived from per-member details
+2024,2024-08-21,Odisha,State Assembly,16,1.0,published
+2024,2024-08-21,Punjab,State Assembly,3,0.0,published
+2024,2024-08-21,Rajasthan,State Assembly,6,0.0,published
+2024,2024-08-21,Tamil Nadu,Lok Sabha,1,0.0,published MP count; LS/RS split derived from per-member details
+2024,2024-08-21,Tamil Nadu,State Assembly,3,1.0,published
+2024,2024-08-21,Telangana,Lok Sabha,3,1.0,published MP count; LS/RS split derived from per-member details
+2024,2024-08-21,Telangana,State Assembly,2,0.0,published
+2024,2024-08-21,Uttar Pradesh,Lok Sabha,1,0.0,published MP count; LS/RS split derived from per-member details
+2024,2024-08-21,Uttar Pradesh,State Assembly,3,0.0,published
+2024,2024-08-21,West Bengal,Lok Sabha,4,1.0,published MP count; LS/RS split derived from per-member details
+2024,2024-08-21,West Bengal,State Assembly,21,1.0,published
+2025,2025,Andhra Pradesh,State Assembly,21,1.0,"published: ADR All-India Sitting MLAs 2025 report, state table (MLAs only)"
+2025,2025,Assam,State Assembly,2,1.0,"published: ADR All-India Sitting MLAs 2025 report, state table (MLAs only)"
+2025,2025,Bihar,State Assembly,8,0.0,"published: ADR All-India Sitting MLAs 2025 report, state table (MLAs only)"
+2025,2025,Delhi,State Assembly,2,0.0,"published: ADR All-India Sitting MLAs 2025 report, state table (MLAs only)"
+2025,2025,Goa,State Assembly,2,1.0,"published: ADR All-India Sitting MLAs 2025 report, state table (MLAs only)"
+2025,2025,Gujarat,State Assembly,3,0.0,"published: ADR All-India Sitting MLAs 2025 report, state table (MLAs only)"
+2025,2025,Haryana,State Assembly,0,0.0,"published: ADR All-India Sitting MLAs 2025 report, state table (MLAs only)"
+2025,2025,Himachal Pradesh,State Assembly,1,0.0,"published: ADR All-India Sitting MLAs 2025 report, state table (MLAs only)"
+2025,2025,Jammu & Kashmir,State Assembly,1,0.0,"published: ADR All-India Sitting MLAs 2025 report, state table (MLAs only)"
+2025,2025,Jharkhand,State Assembly,5,1.0,"published: ADR All-India Sitting MLAs 2025 report, state table (MLAs only)"
+2025,2025,Karnataka,State Assembly,7,1.0,"published: ADR All-India Sitting MLAs 2025 report, state table (MLAs only)"
+2025,2025,Kerala,State Assembly,3,1.0,"published: ADR All-India Sitting MLAs 2025 report, state table (MLAs only)"
+2025,2025,Madhya Pradesh,State Assembly,5,2.0,"published: ADR All-India Sitting MLAs 2025 report, state table (MLAs only)"
+2025,2025,Maharashtra,State Assembly,10,1.0,"published: ADR All-India Sitting MLAs 2025 report, state table (MLAs only)"
+2025,2025,Manipur,State Assembly,1,0.0,"published: ADR All-India Sitting MLAs 2025 report, state table (MLAs only)"
+2025,2025,Meghalaya,State Assembly,1,1.0,"published: ADR All-India Sitting MLAs 2025 report, state table (MLAs only)"
+2025,2025,Odisha,State Assembly,16,1.0,"published: ADR All-India Sitting MLAs 2025 report, state table (MLAs only)"
+2025,2025,Puducherry,State Assembly,0,0.0,"published: ADR All-India Sitting MLAs 2025 report, state table (MLAs only)"
+2025,2025,Punjab,State Assembly,3,0.0,"published: ADR All-India Sitting MLAs 2025 report, state table (MLAs only)"
+2025,2025,Rajasthan,State Assembly,5,0.0,"published: ADR All-India Sitting MLAs 2025 report, state table (MLAs only)"
+2025,2025,Tamil Nadu,State Assembly,3,1.0,"published: ADR All-India Sitting MLAs 2025 report, state table (MLAs only)"
+2025,2025,Telangana,State Assembly,2,0.0,"published: ADR All-India Sitting MLAs 2025 report, state table (MLAs only)"
+2025,2025,Tripura,State Assembly,0,0.0,"published: ADR All-India Sitting MLAs 2025 report, state table (MLAs only)"
+2025,2025,Uttar Pradesh,State Assembly,3,0.0,"published: ADR All-India Sitting MLAs 2025 report, state table (MLAs only)"
+2025,2025,West Bengal,State Assembly,23,1.0,"published: ADR All-India Sitting MLAs 2025 report, state table (MLAs only)"

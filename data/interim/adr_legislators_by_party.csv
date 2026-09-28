@@ -1,0 +1,55 @@
+report_year,report_date,party,party_full,house,legislators_with_cases,rape_cases_legislators,method
+2017,2017-08-30,BJP,Bharatiya Janata Party,All houses (split not published),14,1,published total; rape count aggregated from report's list
+2017,2017-08-30,SHS,Shiv Sena,All houses (split not published),7,0,published total; rape count aggregated from report's list
+2017,2017-08-30,AITC,All India Trinamool Congress,All houses (split not published),6,0,published total; rape count aggregated from report's list
+2017,2017-08-30,INC,Indian National Congress,All houses (split not published),5,1,published total; rape count aggregated from report's list
+2017,2017-08-30,TDP,Telugu Desam Party,All houses (split not published),5,1,published total; rape count aggregated from report's list
+2017,2017-08-30,BJD,Biju Janata Dal,All houses (split not published),4,0,published total; rape count aggregated from report's list
+2017,2017-08-30,Independent,Independent,All houses (split not published),3,0,published total; rape count aggregated from report's list
+2017,2017-08-30,JMM,Jharkhand Mukti Morcha,All houses (split not published),2,0,published total; rape count aggregated from report's list
+2017,2017-08-30,RJD,Rashtriya Janata Dal,All houses (split not published),2,1,published total; rape count aggregated from report's list
+2017,2017-08-30,DMK,Dravida Munnetra Kazhagam,All houses (split not published),2,0,published total; rape count aggregated from report's list
+2017,2017-08-30,CPI(M),Communist Party of India (Marxist),All houses (split not published),1,0,published total; rape count aggregated from report's list
+2018,2018-04-19,BJP,Bharatiya Janata Party,All houses (split not published),12,1,published total; rape count aggregated from report's list
+2018,2018-04-19,SHS,Shiv Sena,All houses (split not published),7,0,published total; rape count aggregated from report's list
+2018,2018-04-19,AITC,All India Trinamool Congress,All houses (split not published),6,0,published total; rape count aggregated from report's list
+2018,2018-04-19,TDP,Telugu Desam Party,All houses (split not published),5,1,published total; rape count aggregated from report's list
+2018,2018-04-19,INC,Indian National Congress,All houses (split not published),4,0,published total; rape count aggregated from report's list
+2018,2018-04-19,BJD,Biju Janata Dal,All houses (split not published),4,0,published total; rape count aggregated from report's list
+2018,2018-04-19,Independent,Independent,All houses (split not published),3,0,published total; rape count aggregated from report's list
+2018,2018-04-19,JMM,Jharkhand Mukti Morcha,All houses (split not published),2,0,published total; rape count aggregated from report's list
+2018,2018-04-19,RJD,Rashtriya Janata Dal,All houses (split not published),2,1,published total; rape count aggregated from report's list
+2018,2018-04-19,DMK,Dravida Munnetra Kazhagam,All houses (split not published),2,0,published total; rape count aggregated from report's list
+2018,2018-04-19,CPI(M),Communist Party of India (Marxist),All houses (split not published),1,0,published total; rape count aggregated from report's list
+2023,2023-08-10,BJP,Bharatiya Janata Party,All houses (split not published),44,7,press_headline_only (top parties only)
+2023,2023-08-10,INC,Indian National Congress,All houses (split not published),25,6,press_headline_only (top parties only)
+2023,2023-08-10,AAP,Aam Aadmi Party,All houses (split not published),13,,press_headline_only (top parties only)
+2024,2024-08-21,BJP,Bharatiya Janata Party,State Assembly,44,3,published
+2024,2024-08-21,INC,Indian National Congress,State Assembly,22,5,published
+2024,2024-08-21,TDP,Telugu Desam Party,State Assembly,17,1,published
+2024,2024-08-21,AAP,Aam Aadmi Party,State Assembly,13,1,published
+2024,2024-08-21,BJP,Bharatiya Janata Party,Parliament (LS+RS),10,2,published
+2024,2024-08-21,AITC,All India Trinamool Congress,State Assembly,10,1,published
+2024,2024-08-21,Independent,Independent,State Assembly,5,0,published
+2024,2024-08-21,RJD,Rashtriya Janata Dal,State Assembly,4,0,published
+2024,2024-08-21,SHS,Shiv Sena,State Assembly,2,0,published
+2024,2024-08-21,BJD,Biju Janata Dal,State Assembly,2,1,published
+2024,2024-08-21,DMK,Dravida Munnetra Kazhagam,State Assembly,2,0,published
+2024,2024-08-21,Janasena Party,Janasena Party,State Assembly,2,0,published
+2024,2024-08-21,YSRCP,Yuvajana Sramika Rythu Congress Party,State Assembly,2,0,published
+2024,2024-08-21,INC,Indian National Congress,Parliament (LS+RS),1,0,published
+2024,2024-08-21,Independent,Independent,Parliament (LS+RS),1,0,published
+2024,2024-08-21,RJD,Rashtriya Janata Dal,Parliament (LS+RS),1,0,published
+2024,2024-08-21,SHS,Shiv Sena,Parliament (LS+RS),1,0,published
+2024,2024-08-21,SP,Samajwadi Party,State Assembly,1,0,published
+2024,2024-08-21,SP,Samajwadi Party,Parliament (LS+RS),1,0,published
+2024,2024-08-21,AIUDF,All India United Democratic Front,State Assembly,1,1,published
+2024,2024-08-21,Bharat Adivasi Party,Bharat Adivasi Party,State Assembly,1,1,published
+2024,2024-08-21,CPI(M),Communist Party of India (Marxist),State Assembly,1,0,published
+2024,2024-08-21,CPI(ML)(L),Communist Party of India (Marxist-Leninist) Liberation,State Assembly,1,0,published
+2024,2024-08-21,Hindustani Awam Morcha (Secular),Hindustani Awam Morcha (Secular),State Assembly,1,0,published
+2024,2024-08-21,JD(U),Janata Dal (United),State Assembly,1,0,published
+2024,2024-08-21,NCP,Nationalist Congress Party,State Assembly,1,0,published
+2024,2024-08-21,Prahar Janshakti Party,Prahar Janshakti Party,State Assembly,1,0,published
+2024,2024-08-21,Rashtriya Samaj Paksha,Rashtriya Samaj Paksha,State Assembly,1,0,published
+2024,2024-08-21,Viduthalai Chiruthaigal Katchi,Viduthalai Chiruthaigal Katchi,Parliament (LS+RS),1,0,published

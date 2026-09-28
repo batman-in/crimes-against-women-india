@@ -1,0 +1,445 @@
+year,state_ut,relation,relation_std,count
+2023,Andhra Pradesh,Cases Offender known to Victim (Total),known_total,433
+2023,Andhra Pradesh,Family Members,family,42
+2023,Andhra Pradesh,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,201
+2023,Andhra Pradesh,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,190
+2023,Andhra Pradesh,Cases Offenders Unknown or Not Identified,unknown,5
+2023,Andhra Pradesh,Total Rape Cases (Known+ Unknown Offenders),total_cases,438
+2023,Arunachal Pradesh,Cases Offender known to Victim (Total),known_total,67
+2023,Arunachal Pradesh,Family Members,family,8
+2023,Arunachal Pradesh,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,33
+2023,Arunachal Pradesh,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,26
+2023,Arunachal Pradesh,Cases Offenders Unknown or Not Identified,unknown,4
+2023,Arunachal Pradesh,Total Rape Cases (Known+ Unknown Offenders),total_cases,71
+2023,Assam,Cases Offender known to Victim (Total),known_total,989
+2023,Assam,Family Members,family,29
+2023,Assam,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,262
+2023,Assam,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,698
+2023,Assam,Cases Offenders Unknown or Not Identified,unknown,0
+2023,Assam,Total Rape Cases (Known+ Unknown Offenders),total_cases,989
+2023,Bihar,Cases Offender known to Victim (Total),known_total,801
+2023,Bihar,Family Members,family,18
+2023,Bihar,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,481
+2023,Bihar,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,302
+2023,Bihar,Cases Offenders Unknown or Not Identified,unknown,101
+2023,Bihar,Total Rape Cases (Known+ Unknown Offenders),total_cases,902
+2023,Chhattisgarh,Cases Offender known to Victim (Total),known_total,1169
+2023,Chhattisgarh,Family Members,family,93
+2023,Chhattisgarh,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,750
+2023,Chhattisgarh,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,326
+2023,Chhattisgarh,Cases Offenders Unknown or Not Identified,unknown,2
+2023,Chhattisgarh,Total Rape Cases (Known+ Unknown Offenders),total_cases,1171
+2023,Goa,Cases Offender known to Victim (Total),known_total,91
+2023,Goa,Family Members,family,17
+2023,Goa,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,45
+2023,Goa,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,29
+2023,Goa,Cases Offenders Unknown or Not Identified,unknown,6
+2023,Goa,Total Rape Cases (Known+ Unknown Offenders),total_cases,97
+2023,Gujarat,Cases Offender known to Victim (Total),known_total,630
+2023,Gujarat,Family Members,family,38
+2023,Gujarat,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,357
+2023,Gujarat,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,235
+2023,Gujarat,Cases Offenders Unknown or Not Identified,unknown,4
+2023,Gujarat,Total Rape Cases (Known+ Unknown Offenders),total_cases,634
+2023,Haryana,Cases Offender known to Victim (Total),known_total,1659
+2023,Haryana,Family Members,family,113
+2023,Haryana,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,724
+2023,Haryana,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,822
+2023,Haryana,Cases Offenders Unknown or Not Identified,unknown,113
+2023,Haryana,Total Rape Cases (Known+ Unknown Offenders),total_cases,1772
+2023,Himachal Pradesh,Cases Offender known to Victim (Total),known_total,341
+2023,Himachal Pradesh,Family Members,family,40
+2023,Himachal Pradesh,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,177
+2023,Himachal Pradesh,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,124
+2023,Himachal Pradesh,Cases Offenders Unknown or Not Identified,unknown,3
+2023,Himachal Pradesh,Total Rape Cases (Known+ Unknown Offenders),total_cases,344
+2023,Jharkhand,Cases Offender known to Victim (Total),known_total,1186
+2023,Jharkhand,Family Members,family,25
+2023,Jharkhand,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,736
+2023,Jharkhand,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,425
+2023,Jharkhand,Cases Offenders Unknown or Not Identified,unknown,35
+2023,Jharkhand,Total Rape Cases (Known+ Unknown Offenders),total_cases,1221
+2023,Karnataka,Cases Offender known to Victim (Total),known_total,651
+2023,Karnataka,Family Members,family,54
+2023,Karnataka,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,290
+2023,Karnataka,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,307
+2023,Karnataka,Cases Offenders Unknown or Not Identified,unknown,5
+2023,Karnataka,Total Rape Cases (Known+ Unknown Offenders),total_cases,656
+2023,Kerala,Cases Offender known to Victim (Total),known_total,829
+2023,Kerala,Family Members,family,71
+2023,Kerala,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,479
+2023,Kerala,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,279
+2023,Kerala,Cases Offenders Unknown or Not Identified,unknown,14
+2023,Kerala,Total Rape Cases (Known+ Unknown Offenders),total_cases,843
+2023,Madhya Pradesh,Cases Offender known to Victim (Total),known_total,2951
+2023,Madhya Pradesh,Family Members,family,222
+2023,Madhya Pradesh,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,1621
+2023,Madhya Pradesh,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,1108
+2023,Madhya Pradesh,Cases Offenders Unknown or Not Identified,unknown,28
+2023,Madhya Pradesh,Total Rape Cases (Known+ Unknown Offenders),total_cases,2979
+2023,Maharashtra,Cases Offender known to Victim (Total),known_total,2927
+2023,Maharashtra,Family Members,family,113
+2023,Maharashtra,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,2281
+2023,Maharashtra,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,533
+2023,Maharashtra,Cases Offenders Unknown or Not Identified,unknown,3
+2023,Maharashtra,Total Rape Cases (Known+ Unknown Offenders),total_cases,2930
+2023,Manipur,Cases Offender known to Victim (Total),known_total,26
+2023,Manipur,Family Members,family,2
+2023,Manipur,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,24
+2023,Manipur,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,0
+2023,Manipur,Cases Offenders Unknown or Not Identified,unknown,1
+2023,Manipur,Total Rape Cases (Known+ Unknown Offenders),total_cases,27
+2023,Meghalaya,Cases Offender known to Victim (Total),known_total,64
+2023,Meghalaya,Family Members,family,2
+2023,Meghalaya,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,16
+2023,Meghalaya,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,46
+2023,Meghalaya,Cases Offenders Unknown or Not Identified,unknown,2
+2023,Meghalaya,Total Rape Cases (Known+ Unknown Offenders),total_cases,66
+2023,Mizoram,Cases Offender known to Victim (Total),known_total,36
+2023,Mizoram,Family Members,family,10
+2023,Mizoram,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,6
+2023,Mizoram,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,20
+2023,Mizoram,Cases Offenders Unknown or Not Identified,unknown,0
+2023,Mizoram,Total Rape Cases (Known+ Unknown Offenders),total_cases,36
+2023,Nagaland,Cases Offender known to Victim (Total),known_total,8
+2023,Nagaland,Family Members,family,0
+2023,Nagaland,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,0
+2023,Nagaland,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,8
+2023,Nagaland,Cases Offenders Unknown or Not Identified,unknown,2
+2023,Nagaland,Total Rape Cases (Known+ Unknown Offenders),total_cases,10
+2023,Odisha,Cases Offender known to Victim (Total),known_total,1195
+2023,Odisha,Family Members,family,0
+2023,Odisha,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,316
+2023,Odisha,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,879
+2023,Odisha,Cases Offenders Unknown or Not Identified,unknown,0
+2023,Odisha,Total Rape Cases (Known+ Unknown Offenders),total_cases,1195
+2023,Punjab,Cases Offender known to Victim (Total),known_total,457
+2023,Punjab,Family Members,family,40
+2023,Punjab,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,276
+2023,Punjab,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,141
+2023,Punjab,Cases Offenders Unknown or Not Identified,unknown,0
+2023,Punjab,Total Rape Cases (Known+ Unknown Offenders),total_cases,457
+2023,Rajasthan,Cases Offender known to Victim (Total),known_total,4958
+2023,Rajasthan,Family Members,family,362
+2023,Rajasthan,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,2152
+2023,Rajasthan,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,2444
+2023,Rajasthan,Cases Offenders Unknown or Not Identified,unknown,120
+2023,Rajasthan,Total Rape Cases (Known+ Unknown Offenders),total_cases,5078
+2023,Sikkim,Cases Offender known to Victim (Total),known_total,9
+2023,Sikkim,Family Members,family,1
+2023,Sikkim,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,3
+2023,Sikkim,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,5
+2023,Sikkim,Cases Offenders Unknown or Not Identified,unknown,0
+2023,Sikkim,Total Rape Cases (Known+ Unknown Offenders),total_cases,9
+2023,Tamil Nadu,Cases Offender known to Victim (Total),known_total,362
+2023,Tamil Nadu,Family Members,family,19
+2023,Tamil Nadu,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,224
+2023,Tamil Nadu,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,119
+2023,Tamil Nadu,Cases Offenders Unknown or Not Identified,unknown,3
+2023,Tamil Nadu,Total Rape Cases (Known+ Unknown Offenders),total_cases,365
+2023,Telangana,Cases Offender known to Victim (Total),known_total,815
+2023,Telangana,Family Members,family,42
+2023,Telangana,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,557
+2023,Telangana,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,216
+2023,Telangana,Cases Offenders Unknown or Not Identified,unknown,2
+2023,Telangana,Total Rape Cases (Known+ Unknown Offenders),total_cases,817
+2023,Tripura,Cases Offender known to Victim (Total),known_total,57
+2023,Tripura,Family Members,family,14
+2023,Tripura,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,19
+2023,Tripura,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,24
+2023,Tripura,Cases Offenders Unknown or Not Identified,unknown,0
+2023,Tripura,Total Rape Cases (Known+ Unknown Offenders),total_cases,57
+2023,Uttar Pradesh,Cases Offender known to Victim (Total),known_total,3439
+2023,Uttar Pradesh,Family Members,family,228
+2023,Uttar Pradesh,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,1669
+2023,Uttar Pradesh,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,1542
+2023,Uttar Pradesh,Cases Offenders Unknown or Not Identified,unknown,77
+2023,Uttar Pradesh,Total Rape Cases (Known+ Unknown Offenders),total_cases,3516
+2023,Uttarakhand,Cases Offender known to Victim (Total),known_total,418
+2023,Uttarakhand,Family Members,family,10
+2023,Uttarakhand,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,245
+2023,Uttarakhand,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,163
+2023,Uttarakhand,Cases Offenders Unknown or Not Identified,unknown,3
+2023,Uttarakhand,Total Rape Cases (Known+ Unknown Offenders),total_cases,421
+2023,West Bengal,Cases Offender known to Victim (Total),known_total,917
+2023,West Bengal,Family Members,family,27
+2023,West Bengal,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,11
+2023,West Bengal,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,879
+2023,West Bengal,Cases Offenders Unknown or Not Identified,unknown,193
+2023,West Bengal,Total Rape Cases (Known+ Unknown Offenders),total_cases,1110
+2023,Andaman & Nicobar Islands,Cases Offender known to Victim (Total),known_total,14
+2023,Andaman & Nicobar Islands,Family Members,family,1
+2023,Andaman & Nicobar Islands,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,6
+2023,Andaman & Nicobar Islands,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,7
+2023,Andaman & Nicobar Islands,Cases Offenders Unknown or Not Identified,unknown,0
+2023,Andaman & Nicobar Islands,Total Rape Cases (Known+ Unknown Offenders),total_cases,14
+2023,Chandigarh,Cases Offender known to Victim (Total),known_total,101
+2023,Chandigarh,Family Members,family,6
+2023,Chandigarh,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,74
+2023,Chandigarh,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,21
+2023,Chandigarh,Cases Offenders Unknown or Not Identified,unknown,1
+2023,Chandigarh,Total Rape Cases (Known+ Unknown Offenders),total_cases,102
+2023,Dadra & Nagar Haveli and Daman & Diu,Cases Offender known to Victim (Total),known_total,6
+2023,Dadra & Nagar Haveli and Daman & Diu,Family Members,family,0
+2023,Dadra & Nagar Haveli and Daman & Diu,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,2
+2023,Dadra & Nagar Haveli and Daman & Diu,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,4
+2023,Dadra & Nagar Haveli and Daman & Diu,Cases Offenders Unknown or Not Identified,unknown,0
+2023,Dadra & Nagar Haveli and Daman & Diu,Total Rape Cases (Known+ Unknown Offenders),total_cases,6
+2023,Delhi,Cases Offender known to Victim (Total),known_total,1089
+2023,Delhi,Family Members,family,87
+2023,Delhi,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,518
+2023,Delhi,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,484
+2023,Delhi,Cases Offenders Unknown or Not Identified,unknown,5
+2023,Delhi,Total Rape Cases (Known+ Unknown Offenders),total_cases,1094
+2023,Jammu & Kashmir,Cases Offender known to Victim (Total),known_total,209
+2023,Jammu & Kashmir,Family Members,family,16
+2023,Jammu & Kashmir,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,76
+2023,Jammu & Kashmir,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,117
+2023,Jammu & Kashmir,Cases Offenders Unknown or Not Identified,unknown,22
+2023,Jammu & Kashmir,Total Rape Cases (Known+ Unknown Offenders),total_cases,231
+2023,Ladakh,Cases Offender known to Victim (Total),known_total,1
+2023,Ladakh,Family Members,family,0
+2023,Ladakh,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,1
+2023,Ladakh,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,0
+2023,Ladakh,Cases Offenders Unknown or Not Identified,unknown,1
+2023,Ladakh,Total Rape Cases (Known+ Unknown Offenders),total_cases,2
+2023,Lakshadweep,Cases Offender known to Victim (Total),known_total,1
+2023,Lakshadweep,Family Members,family,0
+2023,Lakshadweep,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,1
+2023,Lakshadweep,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,0
+2023,Lakshadweep,Cases Offenders Unknown or Not Identified,unknown,0
+2023,Lakshadweep,Total Rape Cases (Known+ Unknown Offenders),total_cases,1
+2023,Puducherry,Cases Offender known to Victim (Total),known_total,9
+2023,Puducherry,Family Members,family,0
+2023,Puducherry,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,0
+2023,Puducherry,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,9
+2023,Puducherry,Cases Offenders Unknown or Not Identified,unknown,0
+2023,Puducherry,Total Rape Cases (Known+ Unknown Offenders),total_cases,9
+2023,All India,Cases Offender known to Victim (Total),known_total,28915
+2023,All India,Family Members,family,1750
+2023,All India,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,14633
+2023,All India,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,12532
+2023,All India,Cases Offenders Unknown or Not Identified,unknown,755
+2023,All India,Total Rape Cases (Known+ Unknown Offenders),total_cases,29670
+2024,Andhra Pradesh,Cases Offender known to Victim (Total),known_total,425
+2024,Andhra Pradesh,Family Members,family,36
+2024,Andhra Pradesh,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,197
+2024,Andhra Pradesh,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,192
+2024,Andhra Pradesh,Cases Offenders Unknown or Not Identified,unknown,16
+2024,Andhra Pradesh,Total Rape Cases (Known+Unknown Offenders),total_cases,441
+2024,Arunachal Pradesh,Cases Offender known to Victim (Total),known_total,76
+2024,Arunachal Pradesh,Family Members,family,14
+2024,Arunachal Pradesh,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,23
+2024,Arunachal Pradesh,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,39
+2024,Arunachal Pradesh,Cases Offenders Unknown or Not Identified,unknown,0
+2024,Arunachal Pradesh,Total Rape Cases (Known+Unknown Offenders),total_cases,76
+2024,Assam,Cases Offender known to Victim (Total),known_total,862
+2024,Assam,Family Members,family,39
+2024,Assam,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,340
+2024,Assam,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,483
+2024,Assam,Cases Offenders Unknown or Not Identified,unknown,65
+2024,Assam,Total Rape Cases (Known+Unknown Offenders),total_cases,927
+2024,Bihar,Cases Offender known to Victim (Total),known_total,1085
+2024,Bihar,Family Members,family,59
+2024,Bihar,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,507
+2024,Bihar,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,519
+2024,Bihar,Cases Offenders Unknown or Not Identified,unknown,80
+2024,Bihar,Total Rape Cases (Known+Unknown Offenders),total_cases,1165
+2024,Chhattisgarh,Cases Offender known to Victim (Total),known_total,1159
+2024,Chhattisgarh,Family Members,family,50
+2024,Chhattisgarh,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,702
+2024,Chhattisgarh,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,407
+2024,Chhattisgarh,Cases Offenders Unknown or Not Identified,unknown,12
+2024,Chhattisgarh,Total Rape Cases (Known+Unknown Offenders),total_cases,1171
+2024,Goa,Cases Offender known to Victim (Total),known_total,98
+2024,Goa,Family Members,family,8
+2024,Goa,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,68
+2024,Goa,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,22
+2024,Goa,Cases Offenders Unknown or Not Identified,unknown,7
+2024,Goa,Total Rape Cases (Known+Unknown Offenders),total_cases,105
+2024,Gujarat,Cases Offender known to Victim (Total),known_total,652
+2024,Gujarat,Family Members,family,20
+2024,Gujarat,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,467
+2024,Gujarat,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,165
+2024,Gujarat,Cases Offenders Unknown or Not Identified,unknown,9
+2024,Gujarat,Total Rape Cases (Known+Unknown Offenders),total_cases,661
+2024,Haryana,Cases Offender known to Victim (Total),known_total,1257
+2024,Haryana,Family Members,family,116
+2024,Haryana,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,636
+2024,Haryana,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,505
+2024,Haryana,Cases Offenders Unknown or Not Identified,unknown,134
+2024,Haryana,Total Rape Cases (Known+Unknown Offenders),total_cases,1391
+2024,Himachal Pradesh,Cases Offender known to Victim (Total),known_total,324
+2024,Himachal Pradesh,Family Members,family,34
+2024,Himachal Pradesh,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,133
+2024,Himachal Pradesh,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,157
+2024,Himachal Pradesh,Cases Offenders Unknown or Not Identified,unknown,0
+2024,Himachal Pradesh,Total Rape Cases (Known+Unknown Offenders),total_cases,324
+2024,Jharkhand,Cases Offender known to Victim (Total),known_total,1057
+2024,Jharkhand,Family Members,family,90
+2024,Jharkhand,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,650
+2024,Jharkhand,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,317
+2024,Jharkhand,Cases Offenders Unknown or Not Identified,unknown,16
+2024,Jharkhand,Total Rape Cases (Known+Unknown Offenders),total_cases,1073
+2024,Karnataka,Cases Offender known to Victim (Total),known_total,653
+2024,Karnataka,Family Members,family,78
+2024,Karnataka,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,319
+2024,Karnataka,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,256
+2024,Karnataka,Cases Offenders Unknown or Not Identified,unknown,18
+2024,Karnataka,Total Rape Cases (Known+Unknown Offenders),total_cases,671
+2024,Kerala,Cases Offender known to Victim (Total),known_total,933
+2024,Kerala,Family Members,family,53
+2024,Kerala,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,624
+2024,Kerala,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,256
+2024,Kerala,Cases Offenders Unknown or Not Identified,unknown,7
+2024,Kerala,Total Rape Cases (Known+Unknown Offenders),total_cases,940
+2024,Madhya Pradesh,Cases Offender known to Victim (Total),known_total,2981
+2024,Madhya Pradesh,Family Members,family,281
+2024,Madhya Pradesh,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,1448
+2024,Madhya Pradesh,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,1252
+2024,Madhya Pradesh,Cases Offenders Unknown or Not Identified,unknown,80
+2024,Madhya Pradesh,Total Rape Cases (Known+Unknown Offenders),total_cases,3061
+2024,Maharashtra,Cases Offender known to Victim (Total),known_total,3019
+2024,Maharashtra,Family Members,family,145
+2024,Maharashtra,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,2037
+2024,Maharashtra,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,837
+2024,Maharashtra,Cases Offenders Unknown or Not Identified,unknown,72
+2024,Maharashtra,Total Rape Cases (Known+Unknown Offenders),total_cases,3091
+2024,Manipur,Cases Offender known to Victim (Total),known_total,19
+2024,Manipur,Family Members,family,0
+2024,Manipur,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,14
+2024,Manipur,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,5
+2024,Manipur,Cases Offenders Unknown or Not Identified,unknown,0
+2024,Manipur,Total Rape Cases (Known+Unknown Offenders),total_cases,19
+2024,Meghalaya,Cases Offender known to Victim (Total),known_total,45
+2024,Meghalaya,Family Members,family,13
+2024,Meghalaya,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,7
+2024,Meghalaya,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,25
+2024,Meghalaya,Cases Offenders Unknown or Not Identified,unknown,12
+2024,Meghalaya,Total Rape Cases (Known+Unknown Offenders),total_cases,57
+2024,Mizoram,Cases Offender known to Victim (Total),known_total,17
+2024,Mizoram,Family Members,family,4
+2024,Mizoram,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,7
+2024,Mizoram,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,6
+2024,Mizoram,Cases Offenders Unknown or Not Identified,unknown,3
+2024,Mizoram,Total Rape Cases (Known+Unknown Offenders),total_cases,20
+2024,Nagaland,Cases Offender known to Victim (Total),known_total,11
+2024,Nagaland,Family Members,family,2
+2024,Nagaland,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,0
+2024,Nagaland,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,9
+2024,Nagaland,Cases Offenders Unknown or Not Identified,unknown,3
+2024,Nagaland,Total Rape Cases (Known+Unknown Offenders),total_cases,14
+2024,Odisha,Cases Offender known to Victim (Total),known_total,1265
+2024,Odisha,Family Members,family,22
+2024,Odisha,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,61
+2024,Odisha,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,1182
+2024,Odisha,Cases Offenders Unknown or Not Identified,unknown,3
+2024,Odisha,Total Rape Cases (Known+Unknown Offenders),total_cases,1268
+2024,Punjab,Cases Offender known to Victim (Total),known_total,472
+2024,Punjab,Family Members,family,49
+2024,Punjab,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,194
+2024,Punjab,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,229
+2024,Punjab,Cases Offenders Unknown or Not Identified,unknown,3
+2024,Punjab,Total Rape Cases (Known+Unknown Offenders),total_cases,475
+2024,Rajasthan,Cases Offender known to Victim (Total),known_total,4795
+2024,Rajasthan,Family Members,family,453
+2024,Rajasthan,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,2129
+2024,Rajasthan,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,2213
+2024,Rajasthan,Cases Offenders Unknown or Not Identified,unknown,76
+2024,Rajasthan,Total Rape Cases (Known+Unknown Offenders),total_cases,4871
+2024,Sikkim,Cases Offender known to Victim (Total),known_total,7
+2024,Sikkim,Family Members,family,2
+2024,Sikkim,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,1
+2024,Sikkim,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,4
+2024,Sikkim,Cases Offenders Unknown or Not Identified,unknown,0
+2024,Sikkim,Total Rape Cases (Known+Unknown Offenders),total_cases,7
+2024,Tamil Nadu,Cases Offender known to Victim (Total),known_total,412
+2024,Tamil Nadu,Family Members,family,42
+2024,Tamil Nadu,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,225
+2024,Tamil Nadu,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,145
+2024,Tamil Nadu,Cases Offenders Unknown or Not Identified,unknown,7
+2024,Tamil Nadu,Total Rape Cases (Known+Unknown Offenders),total_cases,419
+2024,Telangana,Cases Offender known to Victim (Total),known_total,1143
+2024,Telangana,Family Members,family,148
+2024,Telangana,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,599
+2024,Telangana,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,396
+2024,Telangana,Cases Offenders Unknown or Not Identified,unknown,5
+2024,Telangana,Total Rape Cases (Known+Unknown Offenders),total_cases,1148
+2024,Tripura,Cases Offender known to Victim (Total),known_total,64
+2024,Tripura,Family Members,family,5
+2024,Tripura,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,28
+2024,Tripura,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,31
+2024,Tripura,Cases Offenders Unknown or Not Identified,unknown,0
+2024,Tripura,Total Rape Cases (Known+Unknown Offenders),total_cases,64
+2024,Uttar Pradesh,Cases Offender known to Victim (Total),known_total,3114
+2024,Uttar Pradesh,Family Members,family,176
+2024,Uttar Pradesh,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,1718
+2024,Uttar Pradesh,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,1220
+2024,Uttar Pradesh,Cases Offenders Unknown or Not Identified,unknown,95
+2024,Uttar Pradesh,Total Rape Cases (Known+Unknown Offenders),total_cases,3209
+2024,Uttarakhand,Cases Offender known to Victim (Total),known_total,304
+2024,Uttarakhand,Family Members,family,20
+2024,Uttarakhand,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,161
+2024,Uttarakhand,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,123
+2024,Uttarakhand,Cases Offenders Unknown or Not Identified,unknown,1
+2024,Uttarakhand,Total Rape Cases (Known+Unknown Offenders),total_cases,305
+2024,West Bengal,Cases Offender known to Victim (Total),known_total,949
+2024,West Bengal,Family Members,family,51
+2024,West Bengal,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,3
+2024,West Bengal,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,895
+2024,West Bengal,Cases Offenders Unknown or Not Identified,unknown,169
+2024,West Bengal,Total Rape Cases (Known+Unknown Offenders),total_cases,1118
+2024,Andaman & Nicobar Islands,Cases Offender known to Victim (Total),known_total,7
+2024,Andaman & Nicobar Islands,Family Members,family,0
+2024,Andaman & Nicobar Islands,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,6
+2024,Andaman & Nicobar Islands,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,1
+2024,Andaman & Nicobar Islands,Cases Offenders Unknown or Not Identified,unknown,0
+2024,Andaman & Nicobar Islands,Total Rape Cases (Known+Unknown Offenders),total_cases,7
+2024,Chandigarh,Cases Offender known to Victim (Total),known_total,96
+2024,Chandigarh,Family Members,family,6
+2024,Chandigarh,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,23
+2024,Chandigarh,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,67
+2024,Chandigarh,Cases Offenders Unknown or Not Identified,unknown,0
+2024,Chandigarh,Total Rape Cases (Known+Unknown Offenders),total_cases,96
+2024,Dadra & Nagar Haveli and Daman & Diu,Cases Offender known to Victim (Total),known_total,11
+2024,Dadra & Nagar Haveli and Daman & Diu,Family Members,family,2
+2024,Dadra & Nagar Haveli and Daman & Diu,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,6
+2024,Dadra & Nagar Haveli and Daman & Diu,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,3
+2024,Dadra & Nagar Haveli and Daman & Diu,Cases Offenders Unknown or Not Identified,unknown,0
+2024,Dadra & Nagar Haveli and Daman & Diu,Total Rape Cases (Known+Unknown Offenders),total_cases,11
+2024,Delhi,Cases Offender known to Victim (Total),known_total,1029
+2024,Delhi,Family Members,family,109
+2024,Delhi,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,438
+2024,Delhi,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,482
+2024,Delhi,Cases Offenders Unknown or Not Identified,unknown,29
+2024,Delhi,Total Rape Cases (Known+Unknown Offenders),total_cases,1058
+2024,Jammu & Kashmir,Cases Offender known to Victim (Total),known_total,244
+2024,Jammu & Kashmir,Family Members,family,7
+2024,Jammu & Kashmir,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,97
+2024,Jammu & Kashmir,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,140
+2024,Jammu & Kashmir,Cases Offenders Unknown or Not Identified,unknown,17
+2024,Jammu & Kashmir,Total Rape Cases (Known+Unknown Offenders),total_cases,261
+2024,Ladakh,Cases Offender known to Victim (Total),known_total,1
+2024,Ladakh,Family Members,family,0
+2024,Ladakh,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,1
+2024,Ladakh,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,0
+2024,Ladakh,Cases Offenders Unknown or Not Identified,unknown,0
+2024,Ladakh,Total Rape Cases (Known+Unknown Offenders),total_cases,1
+2024,Lakshadweep,Cases Offender known to Victim (Total),known_total,2
+2024,Lakshadweep,Family Members,family,0
+2024,Lakshadweep,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,2
+2024,Lakshadweep,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,0
+2024,Lakshadweep,Cases Offenders Unknown or Not Identified,unknown,0
+2024,Lakshadweep,Total Rape Cases (Known+Unknown Offenders),total_cases,2
+2024,Puducherry,Cases Offender known to Victim (Total),known_total,9
+2024,Puducherry,Family Members,family,0
+2024,Puducherry,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,8
+2024,Puducherry,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,1
+2024,Puducherry,Cases Offenders Unknown or Not Identified,unknown,0
+2024,Puducherry,Total Rape Cases (Known+Unknown Offenders),total_cases,9
+2024,All India,Cases Offender known to Victim (Total),known_total,28597
+2024,All India,Family Members,family,2134
+2024,All India,Friends/ Online-Friends or Live in Partners on Pretext of Marriage / Separated Husband,friends_online_friends_livein_partners_separated_husband,13879
+2024,All India,Family Friends/ Neighbors/ Employer or Other Known Persons,family_friends_neighbours_employer_other_known,12584
+2024,All India,Cases Offenders Unknown or Not Identified,unknown,939
+2024,All India,Total Rape Cases (Known+Unknown Offenders),total_cases,29536

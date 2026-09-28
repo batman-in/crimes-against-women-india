@@ -1,0 +1,45 @@
+report_year,report_date,house,ipc_section,charge_label,charge_group,legislators_with_charge,total_charges_published,method
+2017,2017-08-30,Lok Sabha,354,Assault/criminal force to outrage modesty,Assault / outraging modesty,1,,derived: legislators whose declared charge summary lists this section
+2017,2017-08-30,Lok Sabha,373,Buying minor for prostitution,Trafficking of minors,1,,derived: legislators whose declared charge summary lists this section
+2017,2017-08-30,Rajya Sabha,354,Assault/criminal force to outrage modesty,Assault / outraging modesty,1,,derived: legislators whose declared charge summary lists this section
+2017,2017-08-30,State Assembly,354,Assault/criminal force to outrage modesty,Assault / outraging modesty,34,,derived: legislators whose declared charge summary lists this section
+2017,2017-08-30,State Assembly,354B,Assault with intent to disrobe,Assault / outraging modesty,1,,derived: legislators whose declared charge summary lists this section
+2017,2017-08-30,State Assembly,366,Kidnapping/abducting woman to compel marriage,Kidnapping / abduction of women,2,,derived: legislators whose declared charge summary lists this section
+2017,2017-08-30,State Assembly,376,Rape,Rape,4,,derived: legislators whose declared charge summary lists this section
+2017,2017-08-30,State Assembly,498A,Cruelty by husband or his relatives,Cruelty / marital offences,1,,derived: legislators whose declared charge summary lists this section
+2017,2017-08-30,State Assembly,509,"Word, gesture or act to insult modesty of a woman",Insult to modesty,16,,derived: legislators whose declared charge summary lists this section
+2018,2018-04-19,Lok Sabha,354,Assault/criminal force to outrage modesty,Assault / outraging modesty,1,,derived: legislators whose declared charge summary lists this section
+2018,2018-04-19,Lok Sabha,373,Buying minor for prostitution,Trafficking of minors,1,,derived: legislators whose declared charge summary lists this section
+2018,2018-04-19,Rajya Sabha,354,Assault/criminal force to outrage modesty,Assault / outraging modesty,1,,derived: legislators whose declared charge summary lists this section
+2018,2018-04-19,State Assembly,354,Assault/criminal force to outrage modesty,Assault / outraging modesty,33,,derived: legislators whose declared charge summary lists this section
+2018,2018-04-19,State Assembly,354B,Assault with intent to disrobe,Assault / outraging modesty,1,,derived: legislators whose declared charge summary lists this section
+2018,2018-04-19,State Assembly,366,Kidnapping/abducting woman to compel marriage,Kidnapping / abduction of women,2,,derived: legislators whose declared charge summary lists this section
+2018,2018-04-19,State Assembly,376,Rape,Rape,3,,derived: legislators whose declared charge summary lists this section
+2018,2018-04-19,State Assembly,509,"Word, gesture or act to insult modesty of a woman",Insult to modesty,16,,derived: legislators whose declared charge summary lists this section
+2024,2024-08-21,Lok Sabha,354,Assault/criminal force to outrage modesty,Assault / outraging modesty,5,,derived: legislators whose declared charge summary lists this section
+2024,2024-08-21,Lok Sabha,354A,Sexual harassment,Sexual harassment,2,,derived: legislators whose declared charge summary lists this section
+2024,2024-08-21,Lok Sabha,376,Rape,Rape,2,,derived: legislators whose declared charge summary lists this section
+2024,2024-08-21,Lok Sabha,498A,Cruelty by husband or his relatives,Cruelty / marital offences,1,,derived: legislators whose declared charge summary lists this section
+2024,2024-08-21,Lok Sabha,509,"Word, gesture or act to insult modesty of a woman",Insult to modesty,10,,derived: legislators whose declared charge summary lists this section
+2024,2024-08-21,Rajya Sabha,509,"Word, gesture or act to insult modesty of a woman",Insult to modesty,1,,derived: legislators whose declared charge summary lists this section
+2024,2024-08-21,State Assembly,313,Causing miscarriage without woman's consent,Miscarriage without consent,4,,derived: legislators whose declared charge summary lists this section
+2024,2024-08-21,State Assembly,354,Assault/criminal force to outrage modesty,Assault / outraging modesty,78,,derived: legislators whose declared charge summary lists this section
+2024,2024-08-21,State Assembly,354A,Sexual harassment,Sexual harassment,8,,derived: legislators whose declared charge summary lists this section
+2024,2024-08-21,State Assembly,354B,Assault with intent to disrobe,Assault / outraging modesty,7,,derived: legislators whose declared charge summary lists this section
+2024,2024-08-21,State Assembly,354C,Voyeurism,Voyeurism / stalking,2,,derived: legislators whose declared charge summary lists this section
+2024,2024-08-21,State Assembly,354D,Stalking,Voyeurism / stalking,2,,derived: legislators whose declared charge summary lists this section
+2024,2024-08-21,State Assembly,366,Kidnapping/abducting woman to compel marriage,Kidnapping / abduction of women,5,,derived: legislators whose declared charge summary lists this section
+2024,2024-08-21,State Assembly,372,Selling minor for prostitution,Trafficking of minors,1,,derived: legislators whose declared charge summary lists this section
+2024,2024-08-21,State Assembly,373,Buying minor for prostitution,Trafficking of minors,1,,derived: legislators whose declared charge summary lists this section
+2024,2024-08-21,State Assembly,376,Rape,Rape,12,,derived: legislators whose declared charge summary lists this section
+2024,2024-08-21,State Assembly,376(2)(n),Repeated rape on the same woman,Rape,2,,derived: legislators whose declared charge summary lists this section
+2024,2024-08-21,State Assembly,493,Cohabitation by deceitfully inducing belief of lawful marriage,Cruelty / marital offences,1,,derived: legislators whose declared charge summary lists this section
+2024,2024-08-21,State Assembly,498,Enticing/detaining a married woman,Cruelty / marital offences,2,,derived: legislators whose declared charge summary lists this section
+2024,2024-08-21,State Assembly,498A,Cruelty by husband or his relatives,Cruelty / marital offences,10,,derived: legislators whose declared charge summary lists this section
+2024,2024-08-21,State Assembly,509,"Word, gesture or act to insult modesty of a woman",Insult to modesty,55,,derived: legislators whose declared charge summary lists this section
+2017,2017-08-30,All houses,354,Assault/criminal force to outrage modesty,Assault / outraging modesty,,36,published (Table: Type and Number of charges)
+2017,2017-08-30,All houses,366,Kidnapping/abducting woman to compel marriage,Kidnapping / abduction of women,,2,published (Table: Type and Number of charges)
+2017,2017-08-30,All houses,376,Rape,Rape,,4,published (Table: Type and Number of charges)
+2017,2017-08-30,All houses,498A,Cruelty by husband or his relatives,Cruelty / marital offences,,1,published (Table: Type and Number of charges)
+2017,2017-08-30,All houses,373,Buying minor for prostitution,Trafficking of minors,,1,published (Table: Type and Number of charges)
+2017,2017-08-30,All houses,509,"Word, gesture or act to insult modesty of a woman",Insult to modesty,,16,published (Table: Type and Number of charges)

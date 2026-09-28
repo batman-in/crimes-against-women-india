@@ -1,0 +1,16 @@
+report_year,report_date,house,legislators_with_cases,rape_cases_legislators,legislators_analysed,method
+2017,2017-08-30,State Assembly,48,4,4078.0,published
+2017,2017-08-30,Lok Sabha,2,0,,derived from per-member details (MP total published)
+2017,2017-08-30,Rajya Sabha,1,0,,derived from per-member details (MP total published)
+2017,2017-08-30,Parliament (LS+RS),3,0,774.0,published
+2018,2018-04-19,State Assembly,45,3,4077.0,published
+2018,2018-04-19,Lok Sabha,2,0,,derived from per-member details (MP total published)
+2018,2018-04-19,Rajya Sabha,1,0,,derived from per-member details (MP total published)
+2018,2018-04-19,Parliament (LS+RS),3,0,768.0,published
+2024,2024-08-21,State Assembly,135,14,3938.0,published
+2024,2024-08-21,Lok Sabha,15,2,,derived from per-member details (MP total published)
+2024,2024-08-21,Rajya Sabha,1,0,,derived from per-member details (MP total published)
+2024,2024-08-21,Parliament (LS+RS),16,2,755.0,published
+2023,2023-08-10,State Assembly,113,14,4001.0,press_headline_only
+2023,2023-08-10,Parliament (LS+RS),21,4,762.0,press_headline_only
+2025,2025,State Assembly,127,13,4092.0,"published: ADR All-India Sitting MLAs 2025 report, state table (MLAs only)"

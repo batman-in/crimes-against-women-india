@@ -1,0 +1,12 @@
+node_modules/
+web/dist/
+.netlify/
+__pycache__/
+*.pyc
+# Large tables are committed gzipped (*.csv.gz); the uncompressed copies stay local
+data/interim/minor_girls_district.csv
+data/interim/ncrb_district_crime_heads_2015_2022.csv
+# Local tooling
+*.log
+.DS_Store
+Thumbs.db
