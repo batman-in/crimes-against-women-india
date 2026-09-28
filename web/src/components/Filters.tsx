@@ -192,7 +192,7 @@ export function Filters(p: Props) {
         </ToggleGroup>
       </section>}
 
-      <section className={`flex flex-col gap-3 ${mobile ? 'order-2' : ''}`}>
+      {!mobile && <section className="flex flex-col gap-3">
         <Label>Map style</Label>
         <ToggleGroup type="single" variant="outline" value={p.mode} onValueChange={(v) => v && p.setMode(v as MapMode)} className="w-full">
           <ToggleGroupItem value="fill" className="flex-1">Filled areas</ToggleGroupItem>
@@ -206,7 +206,7 @@ export function Filters(p: Props) {
           District data: {p.districtYears.length ? describeYears(p.districtYears) : 'not available for this filter'}.
           Select a state to open its districts.
         </p>
-      </section>
+      </section>}
     </div>
   )
 }

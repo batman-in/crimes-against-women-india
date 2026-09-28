@@ -7,7 +7,7 @@ import { Filters } from '@/components/Filters'
 import { Legend } from '@/components/Legend'
 import { MapView, type AreaStyle, type MapMode } from '@/components/MapView'
 import { SidePanel } from '@/components/SidePanel'
-import { CrimeChips, FiltersSheet, MobileFilterBar, SummaryCard, YearDock } from '@/components/mobile/MobileUI'
+import { CrimeChips, FiltersSheet, MapControls, MobileFilterBar, SummaryCard, YearDock } from '@/components/mobile/MobileUI'
 import { Sources } from '@/components/Sources'
 import { Button } from '@/components/ui/button'
 import { TooltipProvider } from '@/components/ui/tooltip'
@@ -192,6 +192,8 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
     ? `MPs/MLAs with declared cases (ADR ${adrYear})`
     : `${effective.offender === 'all' ? data.cats[effective.cat]?.label : 'Rape, by offender'}, by ${districtLevel && mode === 'fill' ? 'district' : 'state'}`
 
+  useNetlifyBadgeInFooter(isMobile)
+
   const detailsRef = useRef<HTMLElement>(null)
   const showDetails = () => detailsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   const [sheetOpen, setSheetOpen] = useState(false)
@@ -277,6 +279,7 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
           districts are counted in their parent district.
         </p>
         <Sources />
+        <div id="netlify-badge-slot" />
       </footer>
     </>
   )
@@ -310,7 +313,7 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
       ...(state ? [{ label: state, onClick: district ? () => setDistrict(null) : undefined }] : []),
       ...(district ? [{ label: districtName(district).split(',')[0] }] : []),
     ]
-    const activeCount = (filters.offender !== 'all' ? 1 : 0) + (mode === 'heat' ? 1 : 0) + (showDistricts ? 1 : 0)
+    const activeCount = filters.offender !== 'all' ? 1 : 0 // map style and districts are on the map itself
     const pill = filters.offender !== 'all'
       ? { label: legislators ? 'MPs/MLAs (ADR)' : OFFENDER_LABELS[filters.offender] ?? filters.offender, onClear: () => setFilters({ offender: 'all' }) }
       : undefined
@@ -375,11 +378,20 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
 
             <main className="relative h-[52svh] min-h-[320px] border-y border-[var(--m-border)]">
               {mapView}
-              {!state && (
-                <p className="pointer-events-none absolute top-2 left-2 rounded-full bg-[var(--m-surface)]/95 px-3 py-1 text-xs text-[var(--m-ink-soft)] shadow-sm">
-                  Tap a state to see its districts
-                </p>
-              )}
+              <div className="absolute top-2 left-2 flex flex-col items-start gap-1.5">
+                <MapControls
+                  mode={mode}
+                  setMode={setMode}
+                  showDistricts={showDistricts}
+                  setShowDistricts={setShowDistricts}
+                  districtsAvailable={districtYears.length > 0}
+                />
+                {!state && (
+                  <p className="pointer-events-none rounded-full bg-[var(--m-surface)]/90 px-2.5 py-0.5 text-[11px] text-[var(--m-ink-soft)] shadow-sm">
+                    Tap a state to see its districts
+                  </p>
+                )}
+              </div>
               {legend}
             </main>
 
@@ -441,6 +453,21 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
       </div>
     </TooltipProvider>
   )
+}
+
+/** Move Netlify's floating badge (added to <body> by the host) into the footer, so it covers nothing. */
+function useNetlifyBadgeInFooter(layoutKey: unknown) {
+  useEffect(() => {
+    const move = () => {
+      const badge = document.getElementById('nl-badge-frame')
+      const slot = document.getElementById('netlify-badge-slot')
+      if (badge && slot && badge.parentElement !== slot) slot.appendChild(badge)
+    }
+    move()
+    const obs = new MutationObserver(move)
+    obs.observe(document.body, { childList: true, subtree: true })
+    return () => obs.disconnect()
+  }, [layoutKey])
 }
 
 function useIsMobile(query = '(max-width: 1023px)') {

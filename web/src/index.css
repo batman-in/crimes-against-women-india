@@ -190,10 +190,10 @@ body {
     --m-border: #e6e1dc;
     --m-ink: #1f1b24;
     --m-ink-soft: #625b69;
-    --brand: #6a2c9e;        /* 8.6:1 on white */
+    --brand: #5d4278;        /* muted plum, 8.9:1 on white */
     --brand-fg: #ffffff;
-    --brand-ink: #5b2388;    /* purple text on light surfaces */
-    --brand-soft: #f1e8f9;
+    --brand-ink: #4f3868;    /* plum text on light surfaces */
+    --brand-soft: #efeaf3;
     --bad: #b3261e;          /* a rise in crime */
     --bad-soft: #fdecea;
     --good: #0f6e63;         /* a fall in crime */
@@ -207,10 +207,10 @@ body {
     --m-border: #353039;
     --m-ink: #f3f0f5;
     --m-ink-soft: #b3abb9;
-    --brand: #c9a7f0;        /* light purple on dark ground, 9:1 */
-    --brand-fg: #1b0f2b;
-    --brand-ink: #d8bff5;
-    --brand-soft: #2d2139;
+    --brand: #a996c4;        /* soft lavender on dark ground, 7:1 */
+    --brand-fg: #1a1424;
+    --brand-ink: #c9bcdc;
+    --brand-soft: #2a2432;
     --bad: #ff8a80;
     --bad-soft: #3a1c1c;
     --good: #5fd4c4;
@@ -220,3 +220,11 @@ body {
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .brand-slider [data-slot="slider-range"] { background: var(--brand); }
 .brand-slider [data-slot="slider-thumb"] { border-color: var(--brand); width: 1.25rem; height: 1.25rem; }
+
+/* Netlify's free-plan badge is a fixed iframe in the bottom-right corner, where the mobile year
+   dock and filters sit. The app moves it into the footer slot below; this keeps it in the flow. */
+#netlify-badge-slot #nl-badge-frame {
+    position: static !important;
+    display: block;
+    margin-top: 0.75rem;
+}

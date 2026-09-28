@@ -182,7 +182,7 @@ export function SummaryCard(props: {
         <button
           type="button"
           onClick={props.onDetails}
-          className="inline-flex h-10 shrink-0 items-center gap-1 rounded-full bg-[var(--brand)] px-4 text-sm font-semibold text-[var(--brand-fg)] shadow-sm active:opacity-90"
+          className="inline-flex h-10 shrink-0 items-center gap-1 rounded-full bg-[var(--brand-soft)] px-4 text-sm font-semibold text-[var(--brand-ink)] active:opacity-80"
         >
           Details <ChevronDown className="size-4" />
         </button>
@@ -288,5 +288,45 @@ export function FiltersSheet(props: { open: boolean; setOpen: (v: boolean) => vo
         </button>
       </SheetContent>
     </Sheet>
+  )
+}
+
+/** On-map controls: how the map is drawn, and whether districts are shown across India. */
+export function MapControls(props: {
+  mode: 'fill' | 'heat'
+  setMode: (m: 'fill' | 'heat') => void
+  showDistricts: boolean
+  setShowDistricts: (v: boolean) => void
+  districtsAvailable: boolean
+}) {
+  const seg = (on: boolean) =>
+    `h-8 rounded-full px-3 text-xs font-semibold whitespace-nowrap transition-colors ${
+      on ? 'bg-[var(--brand)] text-[var(--brand-fg)]' : 'text-[var(--m-ink-soft)]'
+    }`
+  return (
+    <div className="flex items-center gap-1.5">
+      <div role="radiogroup" aria-label="Map style" className="flex rounded-full border border-[var(--m-border)] bg-[var(--m-surface)]/95 p-0.5 shadow-sm backdrop-blur">
+        <button type="button" role="radio" aria-checked={props.mode === 'fill'} onClick={() => props.setMode('fill')} className={seg(props.mode === 'fill')}>
+          Filled
+        </button>
+        <button type="button" role="radio" aria-checked={props.mode === 'heat'} onClick={() => props.setMode('heat')} className={seg(props.mode === 'heat')}>
+          Heatmap
+        </button>
+      </div>
+      <button
+        type="button"
+        aria-pressed={props.showDistricts}
+        disabled={!props.districtsAvailable}
+        onClick={() => props.setShowDistricts(!props.showDistricts)}
+        title={props.districtsAvailable ? 'Show districts across India' : 'No district data for this filter'}
+        className={`h-9 rounded-full border px-3 text-xs font-semibold whitespace-nowrap shadow-sm backdrop-blur transition-colors disabled:opacity-40 ${
+          props.showDistricts
+            ? 'border-transparent bg-[var(--brand)] text-[var(--brand-fg)]'
+            : 'border-[var(--m-border)] bg-[var(--m-surface)]/95 text-[var(--m-ink)]'
+        }`}
+      >
+        Districts
+      </button>
+    </div>
   )
 }
