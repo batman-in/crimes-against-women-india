@@ -173,10 +173,19 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
   const hasDistrictData = defined(districtVals).length > 0
   const districtLevel = hasDistrictData && (showDistricts || !!state)
 
-  // Heatmap: weight district points where district data exists, otherwise state centres
+  // Heatmap follows the same level as the filled map: state centres, or district centres when
+  // districts are switched on (all of India) or a state is open (that state's districts only).
+  const heatLevel: 'state' | 'district' = districtLevel ? 'district' : 'state'
   const heatPoints = useMemo<FeatureCollection>(() => {
-    const vals = hasDistrictData ? districtVals : stateVals
-    const coords = hasDistrictData ? data.points.districts : data.points.states
+    let vals: Record<string, number | undefined> = stateVals
+    if (heatLevel === 'district') {
+      vals = districtVals
+      if (state && !showDistricts) {
+        const inState = new Set(districtsOf(state))
+        vals = Object.fromEntries(Object.entries(districtVals).filter(([g]) => inState.has(g)))
+      }
+    }
+    const coords = heatLevel === 'district' ? data.points.districts : data.points.states
     const max = Math.max(...defined(vals), 1)
     const features: Feature<Point>[] = []
     for (const [id, v] of Object.entries(vals)) {
@@ -184,7 +193,7 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
       features.push({ type: 'Feature', geometry: { type: 'Point', coordinates: coords[id] }, properties: { w: Math.sqrt(v / max) } })
     }
     return { type: 'FeatureCollection', features }
-  }, [hasDistrictData, districtVals, stateVals, data.points])
+  }, [heatLevel, districtVals, stateVals, data.points, state, showDistricts, districtsOf])
 
   const stateLabels = useMemo<FeatureCollection>(() => ({
     type: 'FeatureCollection',
@@ -195,7 +204,7 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
 
   const legendTitle = legislators
     ? `MPs/MLAs with declared cases (ADR ${adrYear})`
-    : `${effective.offender === 'all' ? data.cats[effective.cat]?.label : 'Rape, by offender'}, by ${districtLevel && mode === 'fill' ? 'district' : 'state'}`
+    : `${effective.offender === 'all' ? data.cats[effective.cat]?.label : 'Rape, by offender'}, by ${districtLevel ? 'district' : 'state'}`
 
   useNetlifyBadgeInFooter(isMobile)
 
@@ -238,6 +247,7 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
       stateStyles={stateStyles}
       districtStyles={hasDistrictData ? districtStyles : {}}
       heatPoints={heatPoints}
+      heatLevel={heatLevel}
       onSelectState={selectState}
       onSelectDistrict={setDistrict}
     />

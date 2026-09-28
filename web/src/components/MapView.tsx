@@ -29,6 +29,7 @@ interface Props {
   stateStyles: Record<string, AreaStyle>
   districtStyles: Record<string, AreaStyle>
   heatPoints: FeatureCollection // Point features with property w in 0..1
+  heatLevel?: 'state' | 'district' // wider spots for ~36 states, tighter for ~600 districts
   onSelectState: (name: string | null) => void
   onSelectDistrict: (gid: string | null) => void
 }
@@ -288,6 +289,12 @@ function applyAll(map: maplibregl.Map, p: Props) {
     map.setFeatureState({ source: 'districts', id }, { color: p.districtStyles[id]?.color ?? null })
   }
   ;(map.getSource('heat') as GeoJSONSource).setData(p.heatPoints)
+  map.setPaintProperty('heat', 'heatmap-radius', p.heatLevel === 'district'
+    ? ['interpolate', ['linear'], ['zoom'], 3, 12, 5, 26, 6, 44, 7, 62, 9, 96, 11, 140]
+    : ['interpolate', ['linear'], ['zoom'], 3, 44, 5, 80, 7, 140, 9, 220])
+  map.setPaintProperty('heat', 'heatmap-intensity', p.heatLevel === 'district'
+    ? ['interpolate', ['linear'], ['zoom'], 3, 1.3, 6, 2.2, 9, 2.8]
+    : ['interpolate', ['linear'], ['zoom'], 3, 1.8, 6, 2.4, 9, 3])
 
   const heat = p.mode === 'heat'
   const sel = p.selectedState
