@@ -18,6 +18,7 @@ interface Props {
   districts: FeatureCollection
   india: FeatureCollection // national boundary as depicted by the Government of India
   stateLabels: FeatureCollection // Point features with property name
+  labelMask?: Geometry // only basemap labels inside this polygon (India) are drawn
   theme: 'light' | 'dark'
   mode: MapMode
   touch?: boolean // phone/tablet layout: no hover labels (the summary card shows the value)
@@ -192,6 +193,20 @@ export function MapView(props: Props) {
       if ('source-layer' in l && l['source-layer'] === 'boundary') map.setLayoutProperty(l.id, 'visibility', 'none')
       if (l.type === 'symbol' && /(^|_)state($|_)/.test(l.id)) map.setLayoutProperty(l.id, 'visibility', 'none')
       if (!labelFont && l.type === 'symbol' && l.layout && 'text-font' in l.layout) labelFont = l.layout['text-font'] as string[]
+    }
+    // Names of places outside India are not shown: every basemap label layer keeps only
+    // features that lie within the official outline. A layer that can't take the filter is hidden.
+    if (p.labelMask) {
+      for (const l of map.getStyle().layers ?? []) {
+        if (l.type !== 'symbol' || map.getLayoutProperty(l.id, 'visibility') === 'none') continue
+        const within = ['within', p.labelMask] as unknown as maplibregl.FilterSpecification
+        const prev = map.getFilter(l.id)
+        try {
+          map.setFilter(l.id, prev ? (['all', prev, within] as unknown as maplibregl.FilterSpecification) : within)
+        } catch {
+          map.setLayoutProperty(l.id, 'visibility', 'none')
+        }
+      }
     }
     const firstSymbol = map.getStyle().layers?.find((l) => l.type === 'symbol')?.id
     map.addSource('states', { type: 'geojson', data: p.states, promoteId: 'name' })

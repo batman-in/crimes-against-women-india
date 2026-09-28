@@ -1,7 +1,7 @@
 import { Moon, Sun } from 'lucide-react'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { feature } from 'topojson-client'
-import type { Feature, FeatureCollection, Point } from 'geojson'
+import type { Feature, FeatureCollection, Geometry, Point } from 'geojson'
 import type { GeometryCollection, Topology } from 'topojson-specification'
 import { Filters } from '@/components/Filters'
 import { Legend } from '@/components/Legend'
@@ -24,6 +24,7 @@ interface Geo {
   states: FeatureCollection
   districts: FeatureCollection
   india: FeatureCollection
+  indiaMask: Geometry // simplified India polygon: basemap labels outside it are hidden
 }
 
 async function loadGeo(): Promise<Geo> {
@@ -31,7 +32,9 @@ async function loadGeo(): Promise<Geo> {
   const [s, d, i] = await Promise.all(
     ['states', 'districts', 'india'].map((n) => fetch(`${base}data/${n}.topo.json`).then((r) => r.json() as Promise<Topology>)),
   )
+  const mask = await fetch(`${base}data/india_mask.json`).then((r) => r.json())
   return {
+    indiaMask: (mask.type === 'GeometryCollection' ? mask.geometries[0] : mask.type === 'FeatureCollection' ? mask.features[0].geometry : mask) as Geometry,
     states: feature(s, s.objects.states as GeometryCollection) as FeatureCollection,
     districts: feature(d, d.objects.districts as GeometryCollection) as FeatureCollection,
     india: feature(i, i.objects.india as GeometryCollection) as FeatureCollection,
@@ -223,6 +226,7 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
       states={geo.states}
       districts={geo.districts}
       india={geo.india}
+      labelMask={geo.indiaMask}
       stateLabels={stateLabels}
       theme={theme}
       mode={mode}

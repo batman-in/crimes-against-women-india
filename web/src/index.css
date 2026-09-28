@@ -250,3 +250,15 @@ body {
 .m-ui .maplibregl-ctrl-attrib {
     background: color-mix(in srgb, var(--m-surface) 55%, transparent) !important;
 }
+
+/* Mobile slogan: Anton is a heavy condensed poster face, so the line can be ~65% larger than the
+   body-font version and still fit on one line at 360px. */
+.m-ui .slogan-banner { padding-block: 0.4rem 0.45rem; }
+.m-ui .slogan-text {
+    font-family: 'Anton', 'Impact', 'Arial Narrow Bold', sans-serif;
+    font-weight: 400; /* Anton's single weight is already extra heavy */
+    font-size: clamp(1.45rem, 7.4vw, 2.4rem);
+    letter-spacing: 0.045em;
+    line-height: 1.05;
+    text-shadow: 0 1px 0 rgb(0 0 0 / 0.25);
+}

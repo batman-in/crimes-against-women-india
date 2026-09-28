@@ -524,6 +524,8 @@ def main():
     (OUT / "states.topo.json").write_text((GEO / "states.topo.json").read_text())
     # National outline (all states dissolved, full detail) drawn as the official boundary line
     (OUT / "india.topo.json").write_text((GEO / "india_outline.topo.json").read_text())
+    # Simplified outline used to keep only basemap labels that fall inside India
+    (OUT / "india_mask.json").write_text((GEO / "india_label_mask.geojson").read_text())
     print(f"wrote {OUT}: {len(states)} states, years {years[0]}-{years[-1]}, national years {len(national)}, "
           f"offender states {len(offenders)}, ADR tables {list(data['adr'])}")
     print(f"data.json {(OUT / 'data.json').stat().st_size / 1e6:.2f} MB")
