@@ -83,6 +83,11 @@ See `data/interim/README_*.md` for details on each collected dataset.
   (by state, party, house and charge) are stored.
 - **No pincode level.** No public source publishes crime data below the district.
 
+## Code of conduct
+
+Everyone taking part in this project is expected to follow the [Code of Conduct](CODE_OF_CONDUCT.md).
+In particular, never share anything that could identify a victim or survivor.
+
 ## Licence
 
 The code (`scripts/`, `web/`) is under the MIT licence; see `LICENSE`. The data comes from the
