@@ -1,4 +1,4 @@
-import { ChevronLeft, ChevronRight, Moon, Pause, Play, SlidersHorizontal, Sun } from 'lucide-react'
+import { Moon, Sun } from 'lucide-react'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { feature } from 'topojson-client'
 import type { Feature, FeatureCollection, Point } from 'geojson'
@@ -7,13 +7,13 @@ import { Filters } from '@/components/Filters'
 import { Legend } from '@/components/Legend'
 import { MapView, type AreaStyle, type MapMode } from '@/components/MapView'
 import { SidePanel } from '@/components/SidePanel'
+import { CrimeChips, FiltersSheet, MobileFilterBar, SummaryCard, YearDock } from '@/components/mobile/MobileUI'
 import { Sources } from '@/components/Sources'
 import { Button } from '@/components/ui/button'
-import { Sheet, SheetClose, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
 import { TooltipProvider } from '@/components/ui/tooltip'
-import { adrByState, adrMapYears, adrYearFor } from '@/lib/adr'
+import { adrByState, adrMapYears, adrReports, adrYearFor } from '@/lib/adr'
 import {
-  districtValue, formatValue, loadData, metricUnit, offenderOptions, stateValue, yearsWithData,
+  OFFENDER_LABELS, districtValue, formatValue, loadData, metricUnit, nationalValue, offenderOptions, stateValue, yearsWithData,
   type DashboardData, type Filters as F,
 } from '@/lib/data'
 import { NO_DATA, RAMP_DARK, RAMP_LIGHT, colorFor, quantileBreaks } from '@/lib/scale'
@@ -194,10 +194,9 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
 
   const detailsRef = useRef<HTMLElement>(null)
   const showDetails = () => detailsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  const current = district ? districtVals[district] : state ? stateVals[state] : undefined
-  const placeName = district ? districtName(district).split(',')[0] : state
+  const [sheetOpen, setSheetOpen] = useState(false)
 
-  const filtersPanel = (
+  const filtersPanel = (variant: 'desktop' | 'mobile') => (
     <Filters
       data={data}
       filters={filters}
@@ -211,17 +210,205 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
       setPlaying={setPlaying}
       stateYears={stateYears}
       districtYears={districtYears}
+      variant={variant}
     />
   )
+
+  const mapView = (
+    <MapView
+      states={geo.states}
+      districts={geo.districts}
+      india={geo.india}
+      stateLabels={stateLabels}
+      theme={theme}
+      mode={mode}
+      cooperative={isMobile}
+      showDistricts={showDistricts && hasDistrictData}
+      selectedState={state}
+      selectedDistrict={district}
+      stateStyles={stateStyles}
+      districtStyles={hasDistrictData ? districtStyles : {}}
+      heatPoints={heatPoints}
+      onSelectState={selectState}
+      onSelectDistrict={setDistrict}
+    />
+  )
+
+  const legend = (
+    <div className="absolute right-2 bottom-7 left-2 rounded-lg border bg-background/90 p-2 shadow-sm backdrop-blur sm:right-auto sm:bottom-8 sm:left-3 sm:w-80 sm:p-3">
+      <Legend
+        title={legendTitle}
+        breaks={districtLevel && mode === 'fill' ? districtBreaks : stateBreaks}
+        ramp={ramp}
+        metric={legislators ? 'count' : filters.metric}
+        noData={noData}
+        heat={mode === 'heat'}
+        unit={legislators ? 'MPs/MLAs' : undefined}
+        compact={isMobile}
+      />
+      {state && !hasDistrictData && !legislators && (
+        <p className="mt-2 text-[11px] text-muted-foreground">No district data for this filter and year, so the whole state is shown.</p>
+      )}
+    </div>
+  )
+
+  const details = (
+    <>
+      <SidePanel
+        data={data}
+        filters={effective}
+        setFilters={setFilters}
+        state={state}
+        district={district}
+        districtName={districtName}
+        districtsOf={districtsOf}
+        stateNames={stateNames}
+        onSelectState={selectState}
+        onSelectDistrict={setDistrict}
+        hideHeadline={isMobile}
+      />
+      <footer className="mt-8 border-t pt-4 text-[11px] leading-relaxed text-muted-foreground">
+        <p className="mb-2 text-xs text-foreground">
+          Compiled by {AUTHOR_ROLE}.
+        </p>
+        <p className="mb-4">
+          Figures are cases registered by police, so they reflect reporting and registration as well as crime.
+          State boundaries are based on Survey of India maps. District boundaries are GADM (c. 2010); newer
+          districts are counted in their parent district.
+        </p>
+        <Sources />
+      </footer>
+    </>
+  )
+
+  const slogan = (
+    <div className="slogan-banner px-4 py-2 text-center sm:py-3" role="banner">
+      <p className="slogan-text leading-tight font-black whitespace-nowrap uppercase">
+        Educate <span aria-hidden className="opacity-60">·</span> Agitate <span aria-hidden className="opacity-60">·</span> Organise
+      </p>
+    </div>
+  )
+  const themeButton = (
+    <Button variant="ghost" size="icon" className="shrink-0" onClick={toggle} aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}>
+      {theme === 'dark' ? <Sun /> : <Moon />}
+    </Button>
+  )
+
+  if (isMobile) {
+    // Headline for the summary card: the selected place, this year vs the previous year with data
+    const valueAt = (fy: F) =>
+      district ? districtValue(data, district, fy) : state ? stateValue(data, state, fy) : nationalValue(data, fy)
+    const prevYear = [...stateYears].reverse().find((y) => y < filters.year)
+    const now = valueAt(effective)
+    const before = prevYear !== undefined ? valueAt({ ...effective, year: prevYear }) : undefined
+    const change = now.value !== undefined && before?.value ? (now.value - before.value) / before.value : undefined
+    const adrNow = legislators && adrYear ? adrByState(data, adrYear) : {}
+    const adrTotal = legislators ? (adrReports(data).find((r) => r.year === adrYear)?.houses ?? []).reduce((t, h) => t + h.count, 0) : 0
+    const what = effective.offender === 'all' ? data.cats[effective.cat]?.label : `Rape by ${OFFENDER_LABELS[effective.offender]?.toLowerCase() ?? effective.offender}`
+    const crumbs = [
+      { label: 'India', onClick: state ? () => selectState(null) : undefined },
+      ...(state ? [{ label: state, onClick: district ? () => setDistrict(null) : undefined }] : []),
+      ...(district ? [{ label: districtName(district).split(',')[0] }] : []),
+    ]
+    const activeCount = (filters.offender !== 'all' ? 1 : 0) + (mode === 'heat' ? 1 : 0) + (showDistricts ? 1 : 0)
+    const pill = filters.offender !== 'all'
+      ? { label: legislators ? 'MPs/MLAs (ADR)' : OFFENDER_LABELS[filters.offender] ?? filters.offender, onClear: () => setFilters({ offender: 'all' }) }
+      : undefined
+
+    return (
+      <TooltipProvider>
+        <div className="m-ui flex h-full flex-col">
+          {slogan}
+          <header className="flex items-center justify-between gap-3 border-b border-[var(--m-border)] px-4 py-2">
+            <div className="min-w-0">
+              <h1 className="text-base font-bold tracking-tight">Crimes Against Women in India</h1>
+              <p className="truncate text-xs text-[var(--m-ink-soft)]">NCRB police records · 2001–2024</p>
+            </div>
+            {themeButton}
+          </header>
+
+          <div className="min-h-0 flex-1 overflow-y-auto pb-24">
+            <MobileFilterBar
+              chips={
+                <CrimeChips
+                  data={data}
+                  cat={effective.cat}
+                  setCat={(k) => setFilters({ cat: k })}
+                  disabled={filters.offender !== 'all'}
+                  onMore={() => setSheetOpen(true)}
+                />
+              }
+              metric={filters.metric}
+              setMetric={(m) => setFilters({ metric: m })}
+              metricDisabled={legislators}
+              activeCount={activeCount}
+              onOpenFilters={() => setSheetOpen(true)}
+              pill={pill}
+            />
+
+            {legislators ? (
+              <SummaryCard
+                crumbs={crumbs}
+                subtitle={`Sitting MPs/MLAs with declared cases · ADR ${adrYear ?? ''}`}
+                value={String(state ? adrNow[state]?.total ?? 0 : adrTotal)}
+                unit="legislators"
+                secondary="Pending cases, not convictions"
+                onDetails={showDetails}
+              />
+            ) : (
+              <SummaryCard
+                crumbs={crumbs}
+                subtitle={`${what} · ${filters.year}`}
+                value={formatValue(now.value, filters.metric)}
+                unit={now.value !== undefined ? metricUnit(filters.metric) : undefined}
+                secondary={
+                  filters.metric === 'rate'
+                    ? now.count !== undefined ? `${now.count.toLocaleString('en-IN')} cases` : undefined
+                    : now.rate !== undefined ? `${formatValue(now.rate, 'rate')} per lakh women` : undefined
+                }
+                change={change}
+                prevYear={prevYear}
+                onDetails={showDetails}
+                note={now.via ? `Reported for ${now.via} in this year.` : undefined}
+              />
+            )}
+
+            <main className="relative h-[52svh] min-h-[320px] border-y border-[var(--m-border)]">
+              {mapView}
+              {!state && (
+                <p className="pointer-events-none absolute top-2 left-2 rounded-full bg-[var(--m-surface)]/95 px-3 py-1 text-xs text-[var(--m-ink-soft)] shadow-sm">
+                  Tap a state to see its districts
+                </p>
+              )}
+              {legend}
+            </main>
+
+            <aside ref={detailsRef} className="scroll-mt-28 p-4" aria-label="Details">
+              {details}
+            </aside>
+          </div>
+
+          <YearDock
+            years={stateYears}
+            allYears={data.years}
+            year={filters.year}
+            setYear={(y) => setFilters({ year: y })}
+            playing={playing}
+            setPlaying={setPlaying}
+            reportYears={legislators ? adrMapYears(data) : undefined}
+          />
+          <FiltersSheet open={sheetOpen} setOpen={setSheetOpen}>
+            {filtersPanel('mobile')}
+          </FiltersSheet>
+        </div>
+      </TooltipProvider>
+    )
+  }
 
   return (
     <TooltipProvider>
       <div className="flex h-full flex-col bg-background text-foreground">
-        <div className="slogan-banner px-4 py-2 text-center sm:py-3" role="banner">
-          <p className="slogan-text leading-tight font-black whitespace-nowrap uppercase">
-            Educate <span aria-hidden className="opacity-60">·</span> Agitate <span aria-hidden className="opacity-60">·</span> Organise
-          </p>
-        </div>
+        {slogan}
         <header className="flex items-center justify-between gap-3 border-b px-4 py-2.5 sm:py-3">
           <div className="min-w-0">
             <h1 className="text-base font-semibold tracking-tight text-balance sm:truncate sm:text-lg">Crimes Against Women in India</h1>
@@ -229,160 +416,30 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
               Cases registered by police (NCRB), by state and district, 2001–2024 · By {AUTHOR_ROLE}
             </p>
           </div>
-          <Button variant="ghost" size="icon" className="shrink-0" onClick={toggle} aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}>
-            {theme === 'dark' ? <Sun /> : <Moon />}
-          </Button>
+          {themeButton}
         </header>
 
-        <div className="min-h-0 flex-1 overflow-y-auto lg:grid lg:grid-cols-[300px_minmax(0,1fr)_380px] lg:overflow-hidden">
-          {isMobile ? (
-            <MobileBar
-              year={filters.year}
-              years={legislators ? adrMapYears(data) : stateYears}
-              label={legislators ? `ADR ${adrYear} report` : legendTitle.split(', by ')[0]}
-              playing={playing}
-              setPlaying={setPlaying}
-              setYear={(y) => setFilters({ year: y })}
-              filtersPanel={filtersPanel}
-            />
-          ) : (
-            <aside className="overflow-y-auto border-r p-4" aria-label="Filters">
-              {filtersPanel}
-            </aside>
-          )}
+        <div className="min-h-0 flex-1 lg:grid lg:grid-cols-[300px_minmax(0,1fr)_380px] lg:overflow-hidden">
+          <aside className="overflow-y-auto border-r p-4" aria-label="Filters">
+            {filtersPanel('desktop')}
+          </aside>
 
-          <main className="relative h-[58svh] min-h-[340px] lg:h-auto">
-            <MapView
-              states={geo.states}
-              districts={geo.districts}
-              india={geo.india}
-              stateLabels={stateLabels}
-              theme={theme}
-              mode={mode}
-              cooperative={isMobile}
-              showDistricts={showDistricts && hasDistrictData}
-              selectedState={state}
-              selectedDistrict={district}
-              stateStyles={stateStyles}
-              districtStyles={hasDistrictData ? districtStyles : {}}
-              heatPoints={heatPoints}
-              onSelectState={selectState}
-              onSelectDistrict={setDistrict}
-            />
-            {state && !isMobile && (
+          <main className="relative h-auto">
+            {mapView}
+            {state && (
               <Button size="sm" variant="secondary" className="absolute top-3 left-3 shadow" onClick={() => selectState(null)}>
                 Back to India
               </Button>
             )}
-            {state && isMobile && (
-              <div className="absolute top-2 right-12 left-2 flex items-center gap-2 rounded-lg border bg-background/95 p-2 shadow-sm backdrop-blur">
-                <div className="min-w-0 flex-1">
-                  <p className="truncate text-sm font-medium">{placeName}</p>
-                  <p className="truncate text-xs text-muted-foreground tabular-nums">{fmt(current)}</p>
-                </div>
-                <Button size="sm" variant="outline" onClick={() => selectState(null)}>India</Button>
-                <Button size="sm" onClick={showDetails}>Details</Button>
-              </div>
-            )}
-            {isMobile && !state && (
-              <p className="pointer-events-none absolute top-2 left-2 rounded-md bg-background/90 px-2 py-1 text-[11px] text-muted-foreground shadow-sm">
-                Tap a state to see its districts
-              </p>
-            )}
-            <div className="absolute right-2 bottom-7 left-2 rounded-lg border bg-background/90 p-2 shadow-sm backdrop-blur sm:right-auto sm:bottom-8 sm:left-3 sm:w-80 sm:p-3">
-              <Legend
-                title={legendTitle}
-                breaks={districtLevel && mode === 'fill' ? districtBreaks : stateBreaks}
-                ramp={ramp}
-                metric={legislators ? 'count' : filters.metric}
-                noData={noData}
-                heat={mode === 'heat'}
-                unit={legislators ? 'MPs/MLAs' : undefined}
-                compact={isMobile}
-              />
-              {state && !hasDistrictData && !legislators && (
-                <p className="mt-2 text-[11px] text-muted-foreground">No district data for this filter and year, so the whole state is shown.</p>
-              )}
-            </div>
+            {legend}
           </main>
 
-          <aside ref={detailsRef} className="scroll-mt-14 p-4 lg:overflow-y-auto lg:border-l" aria-label="Details">
-            <SidePanel
-              data={data}
-              filters={effective}
-              setFilters={setFilters}
-              state={state}
-              district={district}
-              districtName={districtName}
-              districtsOf={districtsOf}
-              stateNames={stateNames}
-              onSelectState={selectState}
-              onSelectDistrict={setDistrict}
-            />
-            <footer className="mt-8 border-t pt-4 text-[11px] leading-relaxed text-muted-foreground">
-              <p className="mb-2 text-xs text-foreground">
-                Compiled by {AUTHOR_ROLE}.
-              </p>
-              <p className="mb-4">
-                Figures are cases registered by police, so they reflect reporting and registration as well as crime.
-                State boundaries are based on Survey of India maps. District boundaries are GADM (c. 2010); newer
-                districts are counted in their parent district.
-              </p>
-              <Sources />
-            </footer>
+          <aside ref={detailsRef} className="p-4 lg:overflow-y-auto lg:border-l" aria-label="Details">
+            {details}
           </aside>
         </div>
       </div>
     </TooltipProvider>
-  )
-}
-
-/** Phones and tablets: a sticky bar with the year controls and a button that opens all filters. */
-function MobileBar(props: {
-  year: number
-  years: number[]
-  label: string
-  playing: boolean
-  setPlaying: (v: boolean) => void
-  setYear: (y: number) => void
-  filtersPanel: React.ReactNode
-}) {
-  const i = props.years.indexOf(props.year)
-  const prev = i > 0 ? props.years[i - 1] : undefined
-  const next = i >= 0 && i < props.years.length - 1 ? props.years[i + 1] : undefined
-  return (
-    <div className="sticky top-0 z-20 flex items-center gap-2 border-b bg-background/95 px-3 py-2 backdrop-blur">
-      <Button size="icon" variant="outline" aria-label={props.playing ? 'Pause year animation' : 'Play through years'} onClick={() => props.setPlaying(!props.playing)}>
-        {props.playing ? <Pause /> : <Play />}
-      </Button>
-      <div className="flex items-center">
-        <Button size="icon" variant="ghost" aria-label="Previous year" disabled={prev === undefined} onClick={() => prev !== undefined && props.setYear(prev)}>
-          <ChevronLeft />
-        </Button>
-        <span className="w-12 text-center text-lg font-semibold tabular-nums">{props.year}</span>
-        <Button size="icon" variant="ghost" aria-label="Next year" disabled={next === undefined} onClick={() => next !== undefined && props.setYear(next)}>
-          <ChevronRight />
-        </Button>
-      </div>
-      <Sheet>
-        <SheetTrigger asChild>
-          <Button variant="outline" className="ml-auto min-w-0 flex-1 justify-start gap-2" aria-label="Open filters">
-            <SlidersHorizontal className="shrink-0" />
-            <span className="truncate">{props.label}</span>
-          </Button>
-        </SheetTrigger>
-        <SheetContent side="bottom" className="max-h-[85svh] overflow-y-auto rounded-t-2xl px-4 pb-[max(1.5rem,env(safe-area-inset-bottom))]">
-          <SheetHeader className="px-0">
-            <SheetTitle>Filters</SheetTitle>
-            <SheetDescription>Changes apply to the map straight away.</SheetDescription>
-          </SheetHeader>
-          {props.filtersPanel}
-          <SheetClose asChild>
-            <Button className="mt-6 w-full">Show map</Button>
-          </SheetClose>
-        </SheetContent>
-      </Sheet>
-    </div>
   )
 }
 

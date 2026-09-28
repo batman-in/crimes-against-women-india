@@ -180,3 +180,43 @@ body {
     font-size: clamp(0.85rem, 4.3vw, 2.25rem);
     letter-spacing: clamp(0.02em, 0.6vw, 0.12em);
 }
+
+/* ---- Mobile UI tokens (scoped to .m-ui so the desktop layout is unchanged) ----------------
+   Purple = the women's-rights movement, dignity and justice: used for everything you can act on.
+   The crimson ramp stays reserved for the data. Warm neutrals keep the chrome calm. */
+.m-ui {
+    --m-bg: #fbf9f7;
+    --m-surface: #ffffff;
+    --m-border: #e6e1dc;
+    --m-ink: #1f1b24;
+    --m-ink-soft: #625b69;
+    --brand: #6a2c9e;        /* 8.6:1 on white */
+    --brand-fg: #ffffff;
+    --brand-ink: #5b2388;    /* purple text on light surfaces */
+    --brand-soft: #f1e8f9;
+    --bad: #b3261e;          /* a rise in crime */
+    --bad-soft: #fdecea;
+    --good: #0f6e63;         /* a fall in crime */
+    --good-soft: #e3f4f1;
+    background: var(--m-bg);
+    color: var(--m-ink);
+}
+.dark .m-ui, .m-ui.dark {
+    --m-bg: #141216;
+    --m-surface: #1d1a21;
+    --m-border: #353039;
+    --m-ink: #f3f0f5;
+    --m-ink-soft: #b3abb9;
+    --brand: #c9a7f0;        /* light purple on dark ground, 9:1 */
+    --brand-fg: #1b0f2b;
+    --brand-ink: #d8bff5;
+    --brand-soft: #2d2139;
+    --bad: #ff8a80;
+    --bad-soft: #3a1c1c;
+    --good: #5fd4c4;
+    --good-soft: #15302d;
+}
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.brand-slider [data-slot="slider-range"] { background: var(--brand); }
+.brand-slider [data-slot="slider-thumb"] { border-color: var(--brand); width: 1.25rem; height: 1.25rem; }

@@ -10,6 +10,8 @@ import {
 } from '@/lib/data'
 
 interface Props {
+  /** mobile shows location and the headline number in its own summary card */
+  hideHeadline?: boolean
   data: DashboardData
   filters: Filters
   setFilters: (f: Partial<Filters>) => void
@@ -49,13 +51,13 @@ export function SidePanel(p: Props) {
 
   return (
     <div className="flex flex-col gap-6">
-      <Breadcrumb state={state} district={district ? p.districtName(district).split(',')[0] : null} onIndia={() => p.onSelectState(null)} onState={() => p.onSelectDistrict(null)} />
+      {!p.hideHeadline && <Breadcrumb state={state} district={district ? p.districtName(district).split(',')[0] : null} onIndia={() => p.onSelectState(null)} onState={() => p.onSelectDistrict(null)} />}
 
       {legislators ? (
         <AdrPanel data={d} year={f.year} state={state} />
       ) : (
         <>
-          <section className="flex flex-col gap-1">
+          <section className={p.hideHeadline ? 'hidden' : 'flex flex-col gap-1'}>
             <h2 className="text-balance text-xl font-semibold">{title}</h2>
             <p className="text-sm text-muted-foreground">{label}, {f.year}</p>
             <div className="mt-2 flex items-baseline gap-2">

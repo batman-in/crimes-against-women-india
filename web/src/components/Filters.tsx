@@ -22,6 +22,8 @@ interface Props {
   setPlaying: (v: boolean) => void
   stateYears: number[]
   districtYears: number[]
+  /** mobile: year and measure live in the bar/dock; crime types show as tappable chips */
+  variant?: 'desktop' | 'mobile'
 }
 
 export function Filters(p: Props) {
@@ -33,9 +35,11 @@ export function Filters(p: Props) {
   const cat = data.cats[f.cat]
 
 
+  const mobile = p.variant === 'mobile'
+
   return (
     <div className="flex flex-col gap-6">
-      {legislators ? (
+      {mobile ? null : legislators ? (
         <section className="flex flex-col gap-3">
           <Label>ADR report</Label>
           <ToggleGroup
@@ -80,6 +84,44 @@ export function Filters(p: Props) {
         </section>
       )}
 
+      {mobile ? (
+        <section className="order-3 flex flex-col gap-3" aria-label="All crime types">
+          <p className="text-sm font-semibold">All crime types</p>
+          {(offenderMode || legislators) && (
+            <p className="text-xs text-muted-foreground">
+              {legislators ? 'ADR counts all declared crimes against women together.' : 'Offender data covers rape cases only.'}
+            </p>
+          )}
+          {Object.entries(data.catGroups).map(([group, keys]) => {
+            const present = keys.filter((k) => data.coverage[k])
+            if (!present.length) return null
+            return (
+              <div key={group} className="flex flex-col gap-1.5">
+                <p className="text-xs font-medium text-[var(--m-ink-soft)] uppercase tracking-wide">{group}</p>
+                <div className="flex flex-wrap gap-1.5">
+                  {present.map((k) => {
+                    const on = (offenderMode ? 'rape' : f.cat) === k
+                    return (
+                      <button
+                        key={k}
+                        type="button"
+                        aria-pressed={on}
+                        disabled={offenderMode || legislators}
+                        onClick={() => p.setFilters({ cat: k })}
+                        className={`min-h-10 rounded-full border px-3.5 py-2 text-left text-sm font-medium disabled:opacity-40 ${
+                          on ? 'border-transparent bg-[var(--brand)] text-[var(--brand-fg)]' : 'border-[var(--m-border)] bg-[var(--m-surface)]'
+                        }`}
+                      >
+                        {data.cats[k].label}
+                      </button>
+                    )
+                  })}
+                </div>
+              </div>
+            )
+          })}
+        </section>
+      ) : (
       <section className="flex flex-col gap-2">
         <Label htmlFor="cat">Crime type</Label>
         <Select value={offenderMode ? 'rape' : f.cat} onValueChange={(v) => p.setFilters({ cat: v })} disabled={offenderMode || legislators}>
@@ -108,8 +150,9 @@ export function Filters(p: Props) {
           {legislators ? 'ADR counts all declared crimes against women together.' : offenderMode ? 'Offender data covers rape cases only.' : cat?.legal}
         </p>
       </section>
+      )}
 
-      <section className="flex flex-col gap-2">
+      <section className={`flex flex-col gap-2 ${mobile ? 'order-1' : ''}`}>
         <Label htmlFor="offender">Who committed it</Label>
         <Select value={f.offender} onValueChange={(v) => p.setFilters({ offender: v })}>
           <SelectTrigger id="offender" className="w-full">
@@ -134,7 +177,7 @@ export function Filters(p: Props) {
         </p>
       </section>
 
-      <section className="flex flex-col gap-2">
+      {!mobile && <section className="flex flex-col gap-2">
         <Label>Measure</Label>
         <ToggleGroup
           type="single"
@@ -147,9 +190,9 @@ export function Filters(p: Props) {
           <ToggleGroupItem value="count" className="flex-1">Cases</ToggleGroupItem>
           <ToggleGroupItem value="rate" className="flex-1">Rate per lakh</ToggleGroupItem>
         </ToggleGroup>
-      </section>
+      </section>}
 
-      <section className="flex flex-col gap-3">
+      <section className={`flex flex-col gap-3 ${mobile ? 'order-2' : ''}`}>
         <Label>Map style</Label>
         <ToggleGroup type="single" variant="outline" value={p.mode} onValueChange={(v) => v && p.setMode(v as MapMode)} className="w-full">
           <ToggleGroupItem value="fill" className="flex-1">Filled areas</ToggleGroupItem>
