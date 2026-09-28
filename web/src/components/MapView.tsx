@@ -94,6 +94,10 @@ export function MapView(props: Props) {
 
     const popup = new maplibregl.Popup({ closeButton: false, closeOnClick: false, offset: 12, className: 'area-popup' })
 
+    map.on('load', () => {
+      // Phones: start with the credit collapsed to its (i) button so it doesn't cover the map
+      if (latest.current.touch) map.getContainer().querySelector('.maplibregl-ctrl-attrib')?.classList.remove('maplibregl-compact-show')
+    })
     map.on('style.load', () => {
       addLayers(map)
       ready.current = true

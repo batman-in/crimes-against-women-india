@@ -240,7 +240,13 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
   )
 
   const legend = (
-    <div className="absolute right-2 bottom-7 left-2 rounded-lg border bg-background/90 p-2 shadow-sm backdrop-blur sm:right-auto sm:bottom-8 sm:left-3 sm:w-80 sm:p-3">
+    <div
+      className={
+        isMobile
+          ? 'map-glass absolute bottom-2 left-2 w-[60%] max-w-[230px] rounded-md px-2 py-1.5'
+          : 'absolute right-2 bottom-7 left-2 rounded-lg border bg-background/90 p-2 shadow-sm backdrop-blur sm:right-auto sm:bottom-8 sm:left-3 sm:w-80 sm:p-3'
+      }
+    >
       <Legend
         title={legendTitle}
         breaks={districtLevel && mode === 'fill' ? districtBreaks : stateBreaks}
@@ -252,7 +258,9 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
         compact={isMobile}
       />
       {state && !hasDistrictData && !legislators && (
-        <p className="mt-2 text-[11px] text-muted-foreground">No district data for this filter and year, so the whole state is shown.</p>
+        <p className={isMobile ? 'mt-1 text-[9px] leading-tight opacity-75' : 'mt-2 text-[11px] text-muted-foreground'}>
+          No district data for this filter and year, so the whole state is shown.
+        </p>
       )}
     </div>
   )
@@ -391,7 +399,7 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
                   districtsAvailable={districtYears.length > 0}
                 />
                 {!state && (
-                  <p className="pointer-events-none rounded-full bg-[var(--m-surface)]/90 px-2.5 py-0.5 text-[11px] text-[var(--m-ink-soft)] shadow-sm">
+                  <p className="map-glass pointer-events-none rounded-full px-2.5 py-0.5 text-[11px]">
                     Tap a state to see its districts
                   </p>
                 )}

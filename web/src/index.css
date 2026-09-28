@@ -228,3 +228,25 @@ body {
     display: block;
     margin-top: 0.75rem;
 }
+
+/* On-map UI on phones: translucent so the data underneath stays visible (no blur, which would
+   smear the choropleth). Text keeps a light halo for legibility over any fill colour. */
+.m-ui .map-glass {
+    background: color-mix(in srgb, var(--m-surface) 62%, transparent);
+    border: 1px solid color-mix(in srgb, var(--m-border) 70%, transparent);
+    color: var(--m-ink);
+    text-shadow: 0 0 3px color-mix(in srgb, var(--m-surface) 90%, transparent);
+}
+.m-ui .map-glass-on {
+    background: color-mix(in srgb, var(--brand) 78%, transparent);
+    color: var(--brand-fg);
+    border: 1px solid transparent;
+}
+.m-ui .maplibregl-ctrl-group {
+    background: color-mix(in srgb, var(--m-surface) 62%, transparent) !important;
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--m-border) 70%, transparent) !important;
+}
+.m-ui .maplibregl-ctrl-group button + button { border-top-color: color-mix(in srgb, var(--m-border) 70%, transparent); }
+.m-ui .maplibregl-ctrl-attrib {
+    background: color-mix(in srgb, var(--m-surface) 55%, transparent) !important;
+}

@@ -301,11 +301,11 @@ export function MapControls(props: {
 }) {
   const seg = (on: boolean) =>
     `h-8 rounded-full px-3 text-xs font-semibold whitespace-nowrap transition-colors ${
-      on ? 'bg-[var(--brand)] text-[var(--brand-fg)]' : 'text-[var(--m-ink-soft)]'
+      on ? 'bg-[var(--brand)]/75 text-[var(--brand-fg)]' : 'text-[var(--m-ink)]'
     }`
   return (
     <div className="flex items-center gap-1.5">
-      <div role="radiogroup" aria-label="Map style" className="flex rounded-full border border-[var(--m-border)] bg-[var(--m-surface)]/95 p-0.5 shadow-sm backdrop-blur">
+      <div role="radiogroup" aria-label="Map style" className="map-glass flex rounded-full p-0.5">
         <button type="button" role="radio" aria-checked={props.mode === 'fill'} onClick={() => props.setMode('fill')} className={seg(props.mode === 'fill')}>
           Filled
         </button>
@@ -319,10 +319,8 @@ export function MapControls(props: {
         disabled={!props.districtsAvailable}
         onClick={() => props.setShowDistricts(!props.showDistricts)}
         title={props.districtsAvailable ? 'Show districts across India' : 'No district data for this filter'}
-        className={`h-9 rounded-full border px-3 text-xs font-semibold whitespace-nowrap shadow-sm backdrop-blur transition-colors disabled:opacity-40 ${
-          props.showDistricts
-            ? 'border-transparent bg-[var(--brand)] text-[var(--brand-fg)]'
-            : 'border-[var(--m-border)] bg-[var(--m-surface)]/95 text-[var(--m-ink)]'
+        className={`h-9 rounded-full px-3 text-xs font-semibold whitespace-nowrap transition-colors disabled:opacity-40 ${
+          props.showDistricts ? 'map-glass-on' : 'map-glass text-[var(--m-ink)]'
         }`}
       >
         Districts
@@ -337,7 +335,7 @@ export function BackToIndia(props: { onClick: () => void }) {
     <button
       type="button"
       onClick={props.onClick}
-      className="inline-flex h-9 items-center gap-1.5 rounded-full bg-[var(--brand)] pr-3.5 pl-3 text-sm font-semibold text-[var(--brand-fg)] shadow-md active:opacity-90"
+      className="map-glass-on inline-flex h-9 items-center gap-1.5 rounded-full pr-3.5 pl-3 text-sm font-semibold active:opacity-90"
     >
       <ArrowLeft className="size-4" /> India
     </button>
@@ -352,7 +350,7 @@ export function FitIndiaButton(props: { onClick: () => void }) {
       onClick={props.onClick}
       aria-label="Show all of India"
       title="Show all of India"
-      className="grid size-[29px] place-items-center rounded-[4px] bg-white text-[#333] shadow-[0_0_0_2px_rgb(0_0_0/0.1)] active:bg-[#f2f2f2]"
+      className="map-glass grid size-[29px] place-items-center rounded-[4px] text-[var(--m-ink)]"
     >
       <Maximize2 className="size-4" />
     </button>
