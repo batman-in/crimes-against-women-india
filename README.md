@@ -47,6 +47,8 @@ JSON is committed under `web/public/data/`, so Netlify does not need Python.
 | District-wise cases | NCRB district-wise crime against women workbooks | 2015–2024, all heads |
 | Offender relation to rape victim | NCRB table 21 (Kaggle `rajanand`) to 2010; NCRB Table 5.4 / 3A.4 after | 2001–2024, state level (categories change over time) |
 | Custodial rape | NCRB detailed heads; custody type (police, armed forces, public servant, jail, hospital) from 2017 | 2014–2022 |
+| Arrests, charge-sheets, trials, convictions | NCRB Tables 3A.5–3A.10 (`data/interim/ncrb_disposal_*`) | National by crime type 2014–2024; state totals 2001–2010, 2016–2024. NCRB publishes no sentence types. |
+| Juveniles (under 18) | NCRB chapter 5A (`data/interim/ncrb_juvenile_*`) | Juveniles apprehended by crime type and age, national, 2014–2024; cases against juveniles by state |
 | Crimes against minor girls | NCRB crimes-against-children tables (`data/interim/minor_girls_*`) | POCSO 2017–2024; rape of girls, child marriage, foeticide 2001–2024 |
 | Female population | Census 2011 PCA; MoHFW population projections (2020) | 2011; 2012–2036 |
 | Legislators with declared cases | ADR analyses of election affidavits | 2017, 2018, 2024; 2025 (MLAs only, from ADR's all-India sitting MLAs report); 2023 headline only |

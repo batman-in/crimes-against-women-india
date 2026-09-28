@@ -4,6 +4,7 @@ import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
 import { adrByState, adrReports, adrYearFor } from '@/lib/adr'
 import { ADR_REPORT_URL } from './Sources'
+import { Justice } from './Justice'
 import {
   OFFENDER_LABELS, districtValue, formatValue, metricUnit, nationalValue, offenderRec, stateValue,
   type DashboardData, type Filters, type Value,
@@ -98,6 +99,9 @@ export function SidePanel(p: Props) {
           {f.offender === 'all' && <Breakdown data={d} filters={f} state={state} district={district} setFilters={p.setFilters} />}
 
           <OffenderSplit data={d} state={district ? null : state} year={f.year} hidden={!!district} />
+
+          <Separator />
+          <Justice data={d} cat={f.cat} year={f.year} state={state} district={district} />
 
           {ranked.length > 0 && (
             <section className="flex flex-col gap-2">

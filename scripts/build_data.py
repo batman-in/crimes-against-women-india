@@ -212,7 +212,8 @@ def minor_girls(level):
 def extra_state_frames():
     for f in sorted(INTERIM.glob("ncrb_*.csv")):
         df = pd.read_csv(f)
-        if {"year", "state_ut", "crime_head_std", "count"} <= set(df.columns) and "district" not in df.columns:
+        # crime-count tables only: arrest/trial/juvenile outcome tables carry a "measure" column
+        if {"year", "state_ut", "crime_head_std", "count"} <= set(df.columns) and not {"district", "measure"} & set(df.columns):
             yield f.name, df
     mg = minor_girls("state")
     if mg is not None:
@@ -482,6 +483,80 @@ def coverage(states, districts):
                         out.setdefault(k, {}).setdefault(level, set()).add(int(y))
     return {k: {lvl: sorted(ys) for lvl, ys in v.items()} for k, v in out.items()}
 
+# ------------------------------------------------------------ justice outcomes
+# What happened to the accused (police and court disposal) and juveniles apprehended.
+# NCRB publishes no sentence / punishment-level data for crimes against women.
+PERSON_MEASURES = ["arrested", "chargesheeted", "convicted", "acquitted", "discharged"]
+POLICE_MEASURES = ["cases_chargesheeted", "chargesheeting_rate", "cases_pending_investigation",
+                   "pendency_pct_investigation", "cases_fr_false", "cases_fr_true_insufficient_evidence"]
+COURT_MEASURES = ["cases_convicted", "cases_acquitted", "cases_discharged", "cases_trials_completed",
+                  "cases_pending", "cases_for_trial", "conviction_rate", "pendency_pct"]
+JUV_MEASURES = {"juveniles_apprehended": "apprehended", "juveniles_age_below_12": "age_below_12",
+                "juveniles_age_12_16": "age_12_16", "juveniles_age_16_18": "age_16_18"}
+
+
+def build_justice():
+    files = {
+        "persons": INTERIM / "ncrb_disposal_persons_2001_2024.csv",
+        "police": INTERIM / "ncrb_disposal_police_cases_2014_2024.csv",
+        "court": INTERIM / "ncrb_disposal_court_cases_2014_2024.csv",
+        "juvenile": INTERIM / "ncrb_juvenile_caw_2014_2024.csv",
+    }
+    if not all(f.exists() for f in files.values()):
+        return {}
+    keep = {"persons": PERSON_MEASURES, "police": POLICE_MEASURES, "court": COURT_MEASURES}
+    national, states = {}, {}
+    for kind, measures in keep.items():
+        df = pd.read_csv(files[kind], low_memory=False)
+        df = df[df.measure.isin(measures) & df["count"].notna()]
+        for r in df[df.state_ut == "All India"].dropna(subset=["crime_head_std"]).itertuples():
+            rec = national.setdefault(str(int(r.year)), {}).setdefault(r.crime_head_std, {})
+            rec.setdefault(r.measure, round(float(r.count), 1))
+        st = df[(df.state_ut != "All India") & (df.crime_head_std == "total")]
+        for r in st.itertuples():
+            for gname in STATE_TO_GEO.get(r.state_ut, [r.state_ut]):
+                states.setdefault(gname, {}).setdefault(str(int(r.year)), {}).setdefault(r.measure, round(float(r.count), 1))
+    # 2001-2010 state rows exist for undivided states: share them with the later-split map states
+    for child, (parent, last, label) in SPLITS.items():
+        for y, rec in states.get(parent, {}).items():
+            if int(y) <= last and y not in states.get(child, {}):
+                states.setdefault(child, {})[y] = {**rec, "via": label}
+                states[parent][y] = {**rec, "via": label}
+
+    j = pd.read_csv(files["juvenile"], low_memory=False)
+    j = j[j["count"].notna()]
+    pocso = j.crime_head.str.contains("Protection of Children", na=False)
+    j.loc[pocso, "crime_head_std"] = "pocso"  # all child victims (boys and girls)
+    juv_nat, juv_all, juv_states = {}, {}, {}
+    nat = j[(j.state_ut == "All India")]
+    for r in nat[nat.measure.isin(JUV_MEASURES)].dropna(subset=["crime_head_std"]).itertuples():
+        rec = juv_nat.setdefault(str(int(r.year)), {}).setdefault(r.crime_head_std, {})
+        rec[JUV_MEASURES[r.measure]] = rec.get(JUV_MEASURES[r.measure], 0) + int(r.count)
+    # all juvenile crime (IPC/BNS + special laws), for the "share of juvenile crime" figure
+    tot = nat[(nat.measure == "juveniles_apprehended") & nat.crime_head.str.contains("Total Cognizable", na=False)]
+    for y, g in tot.groupby("year"):
+        juv_all[str(int(y))] = int(g["count"].sum())
+    # women-specific total (excludes POCSO, which covers boys too)
+    for y, heads in juv_nat.items():
+        agg = {}
+        for h, rec in heads.items():
+            if h in ("pocso", "total"):
+                continue
+            for k, v in rec.items():
+                agg[k] = agg.get(k, 0) + v
+        heads["total"] = agg
+    st = j[(j.state_ut != "All India") & (j.measure == "cases_against_juveniles")].dropna(subset=["crime_head_std"])
+    st = st[~st.crime_head_std.isin(["pocso"])]
+    for (state, y), g in st.groupby(["state_ut", "year"]):
+        heads = {h: int(v) for h, v in g.groupby("crime_head_std")["count"].sum().items()}
+        heads["total"] = sum(heads.values())
+        for gname in STATE_TO_GEO.get(state, [state]):
+            juv_states.setdefault(gname, {})[str(int(y))] = heads
+    print(f"justice: national years {sorted(national)[:1]}..{sorted(national)[-1:]}, states {len(states)}, "
+          f"juvenile years {sorted(juv_nat)}")
+    return {"national": national, "states": states,
+            "juvenile": {"national": juv_nat, "allJuvenile": juv_all, "states": juv_states}}
+
 
 def main():
     pop = Population()
@@ -517,6 +592,7 @@ def main():
         "offenders": offenders,
         "offendersNational": offenders_nat,
         "adr": build_adr(),
+        "justice": build_justice(),
     }
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "data.json").write_text(json.dumps(data, separators=(",", ":")))

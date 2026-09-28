@@ -389,14 +389,16 @@
   "title": "Disposal of Persons Arrested for Crime Against Women (State/UT-wise) - 2021",
   "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679653175TABLE3A10.pdf",
   "local": "2021\\1679653175TABLE3A10.pdf",
-  "bytes": 133529
+  "bytes": 133529,
+  "table": "3A.10"
  },
  {
   "year": 2021,
   "title": "Disposal of Persons Arrested for Crime Against Women (State/UT-wise) - 2021",
   "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679653180TABLE3A10.xlsx",
   "local": "2021\\1679653180TABLE3A10.xlsx",
-  "bytes": 16436
+  "bytes": 16436,
+  "table": "3A.10"
  },
  {
   "year": 2021,
@@ -466,14 +468,16 @@
   "title": "Disposal of Persons Arrested for Crime Against Women (State/UT-wise) - 2022",
   "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/custom/1701935569TABLE3A10.pdf",
   "local": "2022\\1701935569TABLE3A10.pdf",
-  "bytes": 151707
+  "bytes": 151707,
+  "table": "3A.10"
  },
  {
   "year": 2022,
   "title": "Disposal of Persons Arrested for Crime Against Women (State/UT-wise) - 2022",
   "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/custom/1701935580TABLE3A10.xlsx",
   "local": "2022\\1701935580TABLE3A10.xlsx",
-  "bytes": 17784
+  "bytes": 17784,
+  "table": "3A.10"
  },
  {
   "year": 2022,
@@ -543,14 +547,16 @@
   "title": "3A.10 Disposal of Persons Arrested for Crime Against Women (State/UT-wise) - 2023",
   "url": "https://www.ncrb.gov.in/uploads/files/TABLE3A10.pdf",
   "local": "2023\\TABLE3A10.pdf",
-  "bytes": 150563
+  "bytes": 150563,
+  "table": "3A.10"
  },
  {
   "year": 2023,
   "title": "3A.10 Disposal of Persons Arrested for Crime Against Women (State/UT-wise) - 2023",
   "url": "https://www.ncrb.gov.in/uploads/files/TABLE3A10.xlsx",
   "local": "2023\\TABLE3A10.xlsx",
-  "bytes": 17536
+  "bytes": 17536,
+  "table": "3A.10"
  },
  {
   "year": 2023,
@@ -620,14 +626,16 @@
   "title": "3A.10 Disposal of Persons Arrested for Crime Against Women (State/UT-wise) - 2024",
   "url": "https://www.ncrb.gov.in/uploads/files/TABLE3A101.pdf",
   "local": "2024\\TABLE3A101.pdf",
-  "bytes": 150571
+  "bytes": 150571,
+  "table": "3A.10"
  },
  {
   "year": 2024,
   "title": "3A.10 Disposal of Persons Arrested for Crime Against Women (State/UT-wise) - 2024",
   "url": "https://www.ncrb.gov.in/uploads/files/TABLE3A102.xlsx",
   "local": "2024\\TABLE3A102.xlsx",
-  "bytes": 16945
+  "bytes": 16945,
+  "table": "3A.10"
  },
  {
   "year": 2024,
@@ -754,5 +762,1671 @@
   "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Table-5.4_2013.pdf",
   "local": "2013\\Table-5.4_2013.pdf",
   "bytes": 118657
+ },
+ {
+  "year": 2016,
+  "table": "3A.5",
+  "title": "Police Disposal of Crime Against Women Cases (Crime Head-wise) - 2016",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679982966Table3A5.pdf",
+  "local": "2016\\1679982966Table3A5.pdf",
+  "bytes": 106158
+ },
+ {
+  "year": 2016,
+  "table": "3A.6",
+  "title": "Police Disposal of Crime Against Women Cases (States/UT-wise) - 2016",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679983444Table3A6.pdf",
+  "local": "2016\\1679983444Table3A6.pdf",
+  "bytes": 105098
+ },
+ {
+  "year": 2016,
+  "table": "3A.7",
+  "title": "Court Disposal of Crime Against Women Cases (Crime Head-wise) - 2016",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679983481Table3A7.pdf",
+  "local": "2016\\1679983481Table3A7.pdf",
+  "bytes": 101804
+ },
+ {
+  "year": 2016,
+  "table": "3A.8",
+  "title": "Court Disposal of Crime Against Women Cases (States/UT-wise) - 2016",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679983519Table3A8.pdf",
+  "local": "2016\\1679983519Table3A8.pdf",
+  "bytes": 99527
+ },
+ {
+  "year": 2016,
+  "table": "3A.9",
+  "title": "Disposal of Persons Arrested for Crime Against Women (Crime Head-wise) - 2016",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679983576Table3A9.pdf",
+  "local": "2016\\1679983576Table3A9.pdf",
+  "bytes": 101071
+ },
+ {
+  "year": 2016,
+  "table": "3A.10",
+  "title": "Disposal of Persons Arrested for Crime Against Women (States/UT-wise) - 2016",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679983631Table3A10.pdf",
+  "local": "2016\\1679983631Table3A10.pdf",
+  "bytes": 100613
+ },
+ {
+  "year": 2016,
+  "table": "5A.4",
+  "title": "Juveniles Apprehended (Crime Head, Age Group & Gender-wise) - 2016",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.4-2016.pdf",
+  "local": "2016\\table-5A.4-2016.pdf",
+  "bytes": 101301
+ },
+ {
+  "year": 2016,
+  "table": "5A.5",
+  "title": "Disposal of Juveniles Arrested (States/UT-wise) -- 2016",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.5-2016.pdf",
+  "local": "2016\\table-5A.5-2016.pdf",
+  "bytes": 92773
+ },
+ {
+  "year": 2016,
+  "table": "5A.4",
+  "title": "Juveniles Apprehended (Crime Head, Age Group & Gender-wise) – 2016",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.10-2016.pdf",
+  "local": "2016\\table-5A.10-2016.pdf",
+  "bytes": 99958
+ },
+ {
+  "year": 2017,
+  "table": "3A.5",
+  "title": "Police Disposal of Crime Against Women Cases (Crime Head-wise) _ 2017",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Table-3A.5_1.pdf",
+  "local": "2017\\Table-3A.5_1.pdf",
+  "bytes": 172317
+ },
+ {
+  "year": 2017,
+  "table": "3A.5",
+  "title": "Police Disposal of Crime Against Women Cases (Crime Head-wise) _ 2017",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Table-3A.5_1.xlsx",
+  "local": "2017\\Table-3A.5_1.xlsx",
+  "bytes": 24589
+ },
+ {
+  "year": 2017,
+  "table": "3A.6",
+  "title": "Police Disposal of Crime Against Women Cases (States/UT-wise) _2017",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Table-3A.6_1.pdf",
+  "local": "2017\\Table-3A.6_1.pdf",
+  "bytes": 139577
+ },
+ {
+  "year": 2017,
+  "table": "3A.6",
+  "title": "Police Disposal of Crime Against Women Cases (States/UT-wise) _2017",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Table-3A.6_1.xlsx",
+  "local": "2017\\Table-3A.6_1.xlsx",
+  "bytes": 19587
+ },
+ {
+  "year": 2017,
+  "table": "3A.7",
+  "title": "Court Disposal of Crime Against Women Cases (Crime Head-wise) _ 2017",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Table-3A.7_1.pdf",
+  "local": "2017\\Table-3A.7_1.pdf",
+  "bytes": 166043
+ },
+ {
+  "year": 2017,
+  "table": "3A.7",
+  "title": "Court Disposal of Crime Against Women Cases (Crime Head-wise) _ 2017",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Table-3A.7_1.xlsx",
+  "local": "2017\\Table-3A.7_1.xlsx",
+  "bytes": 22144
+ },
+ {
+  "year": 2017,
+  "table": "3A.8",
+  "title": "Court Disposal of Crime Against Women Cases (States/UT-wise) _2017",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Table-3A.8_1.pdf",
+  "local": "2017\\Table-3A.8_1.pdf",
+  "bytes": 135009
+ },
+ {
+  "year": 2017,
+  "table": "3A.8",
+  "title": "Court Disposal of Crime Against Women Cases (States/UT-wise) _2017",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Table-3A.8_1.xlsx",
+  "local": "2017\\Table-3A.8_1.xlsx",
+  "bytes": 18571
+ },
+ {
+  "year": 2017,
+  "table": "3A.9",
+  "title": "Disposal of Persons Arrested for Crime Against Women (Crime Head-wise) _2017",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Table-3A.9_1.pdf",
+  "local": "2017\\Table-3A.9_1.pdf",
+  "bytes": 134155
+ },
+ {
+  "year": 2017,
+  "table": "3A.9",
+  "title": "Disposal of Persons Arrested for Crime Against Women (Crime Head-wise) _2017",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Table-3A.9_1.xlsx",
+  "local": "2017\\Table-3A.9_1.xlsx",
+  "bytes": 19094
+ },
+ {
+  "year": 2017,
+  "table": "3A.10",
+  "title": "Disposal of Persons Arrested for Crime Against Women (States/UT-wise) _2017",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Table-3A.10_1.pdf",
+  "local": "2017\\Table-3A.10_1.pdf",
+  "bytes": 111949
+ },
+ {
+  "year": 2017,
+  "table": "3A.10",
+  "title": "Disposal of Persons Arrested for Crime Against Women (States/UT-wise) _2017",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Table-3A.10_1.xlsx",
+  "local": "2017\\Table-3A.10_1.xlsx",
+  "bytes": 15945
+ },
+ {
+  "year": 2017,
+  "table": "5A.1",
+  "title": "Crime Committed by Juveniles (State/UT-wise) _ 2015-2017",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.1_1-2017.pdf",
+  "local": "2017\\table-5A.1_1-2017.pdf",
+  "bytes": 83136
+ },
+ {
+  "year": 2017,
+  "table": "5A.1",
+  "title": "Crime Committed by Juveniles (State/UT-wise) _ 2015-2017",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.1_1-2018.xlsx",
+  "local": "2017\\table-5A.1_1-2018.xlsx",
+  "bytes": 14814
+ },
+ {
+  "year": 2017,
+  "table": "5A.2",
+  "title": "IPC Crimes Committed by Juveniles (States/UT-wise) _2017",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.1_2-2017.pdf",
+  "local": "2017\\table-5A.1_2-2017.pdf",
+  "bytes": 191392
+ },
+ {
+  "year": 2017,
+  "table": "5A.2",
+  "title": "IPC Crimes Committed by Juveniles (States/UT-wise) _2017",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.1_2-2018.xlsx",
+  "local": "2017\\table-5A.1_2-2018.xlsx",
+  "bytes": 29437
+ },
+ {
+  "year": 2017,
+  "table": "5A.3",
+  "title": "SLL Crimes Committed by Juveniles (States/UT-wise) _2017",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.1_3-2017.pdf",
+  "local": "2017\\table-5A.1_3-2017.pdf",
+  "bytes": 173936
+ },
+ {
+  "year": 2017,
+  "table": "5A.3",
+  "title": "SLL Crimes Committed by Juveniles (States/UT-wise) _2017",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.1_3-2018.xlsx",
+  "local": "2017\\table-5A.1_3-2018.xlsx",
+  "bytes": 22052
+ },
+ {
+  "year": 2017,
+  "table": "5A.4",
+  "title": "Juveniles Apprehended (Crime Head, Age Groups & Gender-wise) _ 2017",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.1_10-2017.pdf",
+  "local": "2017\\table-5A.1_10-2017.pdf",
+  "bytes": 205342
+ },
+ {
+  "year": 2017,
+  "table": "5A.4",
+  "title": "Juveniles Apprehended (Crime Head, Age Groups & Gender-wise) _ 2017",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.1_10-2018.xlsx",
+  "local": "2017\\table-5A.1_10-2018.xlsx",
+  "bytes": 28222
+ },
+ {
+  "year": 2017,
+  "table": "5A.5",
+  "title": "Disposal of Juveniles Arrested (States/UT-wise) _2017",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.1_5-2017.pdf",
+  "local": "2017\\table-5A.1_5-2017.pdf",
+  "bytes": 108125
+ },
+ {
+  "year": 2017,
+  "table": "5A.5",
+  "title": "Disposal of Juveniles Arrested (States/UT-wise) _2017",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.1_5-2018.xlsx",
+  "local": "2017\\table-5A.1_5-2018.xlsx",
+  "bytes": 30990
+ },
+ {
+  "year": 2017,
+  "table": "5A.4",
+  "title": "Juveniles Apprehended (Crime Head, Age Groups & Gender-wise) --- 2017",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.1_4-2017.pdf",
+  "local": "2017\\table-5A.1_4-2017.pdf",
+  "bytes": 207552
+ },
+ {
+  "year": 2017,
+  "table": "5A.4",
+  "title": "Juveniles Apprehended (Crime Head, Age Groups & Gender-wise) --- 2017",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.1_4-2018.xlsx",
+  "local": "2017\\table-5A.1_4-2018.xlsx",
+  "bytes": 30990
+ },
+ {
+  "year": 2018,
+  "table": "3A.5",
+  "title": "Police Disposal of Crime Against Women Cases (Crime Head-wise) -- 2018",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Table-3A.5_0.pdf",
+  "local": "2018\\Table-3A.5_0.pdf",
+  "bytes": 175731
+ },
+ {
+  "year": 2018,
+  "table": "3A.5",
+  "title": "Police Disposal of Crime Against Women Cases (Crime Head-wise) -- 2018",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Table-3A.5_0.xlsx",
+  "local": "2018\\Table-3A.5_0.xlsx",
+  "bytes": 25799
+ },
+ {
+  "year": 2018,
+  "table": "3A.6",
+  "title": "Police Disposal of Crime Against Women Cases (States/UT-wise) -- 2018",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Table-3A.6_0.pdf",
+  "local": "2018\\Table-3A.6_0.pdf",
+  "bytes": 140979
+ },
+ {
+  "year": 2018,
+  "table": "3A.6",
+  "title": "Police Disposal of Crime Against Women Cases (States/UT-wise) -- 2018",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Table-3A.6_0.xlsx",
+  "local": "2018\\Table-3A.6_0.xlsx",
+  "bytes": 20925
+ },
+ {
+  "year": 2018,
+  "table": "3A.7",
+  "title": "Court Disposal of Crime Against Women Cases (Crime Head-wise) -- 2018",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Table-3A.7_0.pdf",
+  "local": "2018\\Table-3A.7_0.pdf",
+  "bytes": 169466
+ },
+ {
+  "year": 2018,
+  "table": "3A.7",
+  "title": "Court Disposal of Crime Against Women Cases (Crime Head-wise) -- 2018",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Table-3A.7_0.xlsx",
+  "local": "2018\\Table-3A.7_0.xlsx",
+  "bytes": 23846
+ },
+ {
+  "year": 2018,
+  "table": "3A.8",
+  "title": "Court Disposal of Crime Against Women Cases (States/UT-wise) -- 2018",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Table-3A.8_0.pdf",
+  "local": "2018\\Table-3A.8_0.pdf",
+  "bytes": 136276
+ },
+ {
+  "year": 2018,
+  "table": "3A.8",
+  "title": "Court Disposal of Crime Against Women Cases (States/UT-wise) -- 2018",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Table3A.8_0.xlsx",
+  "local": "2018\\Table3A.8_0.xlsx",
+  "bytes": 19711
+ },
+ {
+  "year": 2018,
+  "table": "3A.9",
+  "title": "Disposal of Persons Arrested for Crime Against Women (Crime Head-wise) - 2018",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679037850Table3A90.pdf",
+  "local": "2018\\1679037850Table3A90.pdf",
+  "bytes": 135304
+ },
+ {
+  "year": 2018,
+  "table": "3A.9",
+  "title": "Disposal of Persons Arrested for Crime Against Women (Crime Head-wise) - 2018",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679037858Table3A90.xlsx",
+  "local": "2018\\1679037858Table3A90.xlsx",
+  "bytes": 20340
+ },
+ {
+  "year": 2018,
+  "table": "3A.10",
+  "title": "Disposal of Persons Arrested for Crime Against Women (States/UT-wise) -- 2018",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Table-3A.10_0.pdf",
+  "local": "2018\\Table-3A.10_0.pdf",
+  "bytes": 112598
+ },
+ {
+  "year": 2018,
+  "table": "3A.10",
+  "title": "Disposal of Persons Arrested for Crime Against Women (States/UT-wise) -- 2018",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Table-3A.10_0.xlsx",
+  "local": "2018\\Table-3A.10_0.xlsx",
+  "bytes": 16709
+ },
+ {
+  "year": 2018,
+  "table": "5A.1",
+  "title": "Crime Committed by Juveniles (State/UT-wise) -- 2016-2018",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.1_0-2018.pdf",
+  "local": "2018\\table-5A.1_0-2018.pdf",
+  "bytes": 83391
+ },
+ {
+  "year": 2018,
+  "table": "5A.1",
+  "title": "Crime Committed by Juveniles (State/UT-wise) -- 2016-2018",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.1_0-2018.xlsx",
+  "local": "2018\\table-5A.1_0-2018.xlsx",
+  "bytes": 15735
+ },
+ {
+  "year": 2018,
+  "table": "5A.2",
+  "title": "IPC Crimes Committed by Juveniles (States/UT-wise) -- 2018",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.2_0-2018.pdf",
+  "local": "2018\\table-5A.2_0-2018.pdf",
+  "bytes": 199239
+ },
+ {
+  "year": 2018,
+  "table": "5A.2",
+  "title": "IPC Crimes Committed by Juveniles (States/UT-wise) -- 2018",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.2_0-2018.xlsx",
+  "local": "2018\\table-5A.2_0-2018.xlsx",
+  "bytes": 29757
+ },
+ {
+  "year": 2018,
+  "table": "5A.3",
+  "title": "SLL Crimes Committed by Juveniles (States/UT-wise) -- 2018",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.3_0-2018.pdf",
+  "local": "2018\\table-5A.3_0-2018.pdf",
+  "bytes": 168964
+ },
+ {
+  "year": 2018,
+  "table": "5A.3",
+  "title": "SLL Crimes Committed by Juveniles (States/UT-wise) -- 2018",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.3_0-2018.xlsx",
+  "local": "2018\\table-5A.3_0-2018.xlsx",
+  "bytes": 23372
+ },
+ {
+  "year": 2018,
+  "table": "5A.4",
+  "title": "Juveniles Apprehended (Crime Head, Age Groups & Gender-wise) -- 2018",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.4_0-2018.pdf",
+  "local": "2018\\table-5A.4_0-2018.pdf",
+  "bytes": 210785
+ },
+ {
+  "year": 2018,
+  "table": "5A.4",
+  "title": "Juveniles Apprehended (Crime Head, Age Groups & Gender-wise) -- 2018",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.4_0-2018.xlsx",
+  "local": "2018\\table-5A.4_0-2018.xlsx",
+  "bytes": 30094
+ },
+ {
+  "year": 2018,
+  "table": "5A.5",
+  "title": "Disposal of Juveniles Arrested (States/UT-wise) -- 2018",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.5_0-2018.pdf",
+  "local": "2018\\table-5A.5_0-2018.pdf",
+  "bytes": 108699
+ },
+ {
+  "year": 2018,
+  "table": "5A.5",
+  "title": "Disposal of Juveniles Arrested (States/UT-wise) -- 2018",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.5_0-2018.xlsx",
+  "local": "2018\\table-5A.5_0-2018.xlsx",
+  "bytes": 30094
+ },
+ {
+  "year": 2018,
+  "table": "5A.4",
+  "title": "Juveniles Apprehended (Crime Head, Age Groups & Gender-wise) -- 2018",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/custom/1679033607Table5B41.pdf",
+  "local": "2018\\1679033607Table5B41.pdf",
+  "bytes": 207910
+ },
+ {
+  "year": 2018,
+  "table": "5A.4",
+  "title": "Juveniles Apprehended (Crime Head, Age Groups & Gender-wise) -- 2018",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/custom/1679033614Table5B41.xlsx",
+  "local": "2018\\1679033614Table5B41.xlsx",
+  "bytes": 29652
+ },
+ {
+  "year": 2019,
+  "table": "3A.5",
+  "title": "Police Disposal of Crime Against Women Cases (Crime Head-wise) - 2019",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Table-3A.5_2.pdf",
+  "local": "2019\\Table-3A.5_2.pdf",
+  "bytes": 416824
+ },
+ {
+  "year": 2019,
+  "table": "3A.6",
+  "title": "Police Disposal of Crime Against Women Cases (States/UT-wise) - 2019",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Table-3A.6_2.pdf",
+  "local": "2019\\Table-3A.6_2.pdf",
+  "bytes": 357833
+ },
+ {
+  "year": 2019,
+  "table": "3A.7",
+  "title": "Court Disposal of Crime Against Women Cases (Crime Head-wise) - 2019",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Table-3A.7_2.pdf",
+  "local": "2019\\Table-3A.7_2.pdf",
+  "bytes": 404392
+ },
+ {
+  "year": 2019,
+  "table": "3A.8",
+  "title": "Court Disposal of Crime Against Women Cases (States/UT-wise) - 2019",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Table-3A.8_2.pdf",
+  "local": "2019\\Table-3A.8_2.pdf",
+  "bytes": 348355
+ },
+ {
+  "year": 2019,
+  "table": "3A.9",
+  "title": "Disposal of Persons Arrested for Crime Against Women (Crime Head-wise) - 2019",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/custom/1681278816Table3A92.pdf",
+  "local": "2019\\1681278816Table3A92.pdf",
+  "bytes": 344556
+ },
+ {
+  "year": 2019,
+  "table": "3A.9",
+  "title": "Disposal of Persons Arrested for Crime Against Women (Crime Head-wise) - 2019",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/custom/1681278820Table3A9.xlsx",
+  "local": "2019\\1681278820Table3A9.xlsx",
+  "bytes": 19598
+ },
+ {
+  "year": 2019,
+  "table": "3A.10",
+  "title": "Disposal of Persons Arrested for Crime Against Women (States/UT-wise) - 2019",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Table-3A.10_2.pdf",
+  "local": "2019\\Table-3A.10_2.pdf",
+  "bytes": 310460
+ },
+ {
+  "year": 2019,
+  "table": "5A.1",
+  "title": "Crime Committed by Juveniles (State/UT-wise) -- 2017-2019",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.1_2.pdf",
+  "local": "2019\\table-5A.1_2.pdf",
+  "bytes": 276495
+ },
+ {
+  "year": 2019,
+  "table": "5A.1",
+  "title": "Crime Committed by Juveniles (State/UT-wise) -- 2017-2019",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.1.xlsx",
+  "local": "2019\\table-5A.1.xlsx",
+  "bytes": 14978
+ },
+ {
+  "year": 2019,
+  "table": "5A.2",
+  "title": "IPC Crimes Committed by Juveniles (States/UT-wise) -- 2019",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.2_2.pdf",
+  "local": "2019\\table-5A.2_2.pdf",
+  "bytes": 501390
+ },
+ {
+  "year": 2019,
+  "table": "5A.3",
+  "title": "SLL Crimes Committed by Juveniles (States/UT-wise) -- 2019",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.3_2.pdf",
+  "local": "2019\\table-5A.3_2.pdf",
+  "bytes": 414302
+ },
+ {
+  "year": 2019,
+  "table": "5A.4",
+  "title": "Juveniles Apprehended (Crime Head, Age Groups & Gender-wise) -- 2019",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/custom/1681716330Table5A42.pdf",
+  "local": "2019\\1681716330Table5A42.pdf",
+  "bytes": 490489
+ },
+ {
+  "year": 2019,
+  "table": "5A.4",
+  "title": "Juveniles Apprehended (Crime Head, Age Groups & Gender-wise) -- 2019",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/custom/1681716334Table5A4.xlsx",
+  "local": "2019\\1681716334Table5A4.xlsx",
+  "bytes": 30145
+ },
+ {
+  "year": 2019,
+  "table": "5A.5",
+  "title": "Disposal of Juveniles Arrested (States/UT-wise) -- 2019",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.5_2.pdf",
+  "local": "2019\\table-5A.5_2.pdf",
+  "bytes": 294481
+ },
+ {
+  "year": 2019,
+  "table": "5A.4",
+  "title": "Juveniles Apprehended (Crime Head, Age Groups & Gender-wise) -- 2019",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/custom/1681716625Table5B43.pdf",
+  "local": "2019\\1681716625Table5B43.pdf",
+  "bytes": 430649
+ },
+ {
+  "year": 2019,
+  "table": "5A.4",
+  "title": "Juveniles Apprehended (Crime Head, Age Groups & Gender-wise) -- 2019",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/custom/1681716629Table5B40.xlsx",
+  "local": "2019\\1681716629Table5B40.xlsx",
+  "bytes": 28395
+ },
+ {
+  "year": 2020,
+  "table": "3A.5",
+  "title": "Police Disposal of Crime Against Women Cases (Crime Head-wise) - 2020",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1680767203TABLE3A5.pdf",
+  "local": "2020\\1680767203TABLE3A5.pdf",
+  "bytes": 87960
+ },
+ {
+  "year": 2020,
+  "table": "3A.5",
+  "title": "Police Disposal of Crime Against Women Cases (Crime Head-wise) - 2020",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1680767206TABLE3A5.xlsx",
+  "local": "2020\\1680767206TABLE3A5.xlsx",
+  "bytes": 24093
+ },
+ {
+  "year": 2020,
+  "table": "3A.6",
+  "title": "Police Disposal of Crime Against Women Cases (States/UT-wise) - 2020",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/TABLE-3A.6.pdf",
+  "local": "2020\\TABLE-3A.6.pdf",
+  "bytes": 76180
+ },
+ {
+  "year": 2020,
+  "table": "3A.7",
+  "title": "Court Disposal of Crime Against Women Cases (Crime Head-wise) - 2020",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1680767269TABLE3A7.pdf",
+  "local": "2020\\1680767269TABLE3A7.pdf",
+  "bytes": 85130
+ },
+ {
+  "year": 2020,
+  "table": "3A.7",
+  "title": "Court Disposal of Crime Against Women Cases (Crime Head-wise) - 2020",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1680767275TABLE3A7.xlsx",
+  "local": "2020\\1680767275TABLE3A7.xlsx",
+  "bytes": 22037
+ },
+ {
+  "year": 2020,
+  "table": "3A.8",
+  "title": "Court Disposal of Crime Against Women Cases (States/UT-wise) - 2020",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/TABLE-3A.8.pdf",
+  "local": "2020\\TABLE-3A.8.pdf",
+  "bytes": 74651
+ },
+ {
+  "year": 2020,
+  "table": "3A.9",
+  "title": "Disposal of Persons Arrested for Crime Against Women (Crime Head-wise) - 2020",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1680767414TABLE3A9.pdf",
+  "local": "2020\\1680767414TABLE3A9.pdf",
+  "bytes": 73230
+ },
+ {
+  "year": 2020,
+  "table": "3A.9",
+  "title": "Disposal of Persons Arrested for Crime Against Women (Crime Head-wise) - 2020",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1680767421TABLE3A9.xlsx",
+  "local": "2020\\1680767421TABLE3A9.xlsx",
+  "bytes": 18508
+ },
+ {
+  "year": 2020,
+  "table": "3A.10",
+  "title": "Disposal of Persons Arrested for Crime Against Women (States/UT-wise) - 2020",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/TABLE-3A.10.pdf",
+  "local": "2020\\TABLE-3A.10.pdf",
+  "bytes": 68307
+ },
+ {
+  "year": 2020,
+  "table": "5A.1",
+  "title": "Crime Committed by Juveniles (State/UT-wise) - 2018-2020",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.1-2020.pdf",
+  "local": "2020\\table-5A.1-2020.pdf",
+  "bytes": 74382
+ },
+ {
+  "year": 2020,
+  "table": "5A.1",
+  "title": "Crime Committed by Juveniles (State/UT-wise) - 2018-2020",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.1-2020.xlsx",
+  "local": "2020\\table-5A.1-2020.xlsx",
+  "bytes": 12839
+ },
+ {
+  "year": 2020,
+  "table": "5A.2",
+  "title": "IPC Crimes Committed by Juveniles (States/UT-wise) - 2020",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.2-2020.pdf",
+  "local": "2020\\table-5A.2-2020.pdf",
+  "bytes": 90856
+ },
+ {
+  "year": 2020,
+  "table": "5A.2",
+  "title": "IPC Crimes Committed by Juveniles (States/UT-wise) - 2020",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.2-2020.xlsx",
+  "local": "2020\\table-5A.2-2020.xlsx",
+  "bytes": 29655
+ },
+ {
+  "year": 2020,
+  "table": "5A.3",
+  "title": "SLL Crimes Committed by Juveniles (States/UT-wise) - 2020",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.3-2020.pdf",
+  "local": "2020\\table-5A.3-2020.pdf",
+  "bytes": 79790
+ },
+ {
+  "year": 2020,
+  "table": "5A.3",
+  "title": "SLL Crimes Committed by Juveniles (States/UT-wise) - 2020",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.3-2020.xlsx",
+  "local": "2020\\table-5A.3-2020.xlsx",
+  "bytes": 21322
+ },
+ {
+  "year": 2020,
+  "table": "5A.4",
+  "title": "Juveniles Apprehended (Crime Head, Age Groups & Gender-wise) - 2020",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1680772564TABLE5A4A.pdf",
+  "local": "2020\\1680772564TABLE5A4A.pdf",
+  "bytes": 74108
+ },
+ {
+  "year": 2020,
+  "table": "5A.4",
+  "title": "Juveniles Apprehended (Crime Head, Age Groups & Gender-wise) - 2020",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1680772567TABLE5A4A.xlsx",
+  "local": "2020\\1680772567TABLE5A4A.xlsx",
+  "bytes": 17980
+ },
+ {
+  "year": 2020,
+  "table": "5A.4",
+  "title": "Juveniles Apprehended-5A.4B (Crime Head, Age Groups & Gender-wise) - 2020",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.5-2020.pdf",
+  "local": "2020\\table-5A.5-2020.pdf",
+  "bytes": 77249
+ },
+ {
+  "year": 2020,
+  "table": "5A.4",
+  "title": "Juveniles Apprehended-5A.4B (Crime Head, Age Groups & Gender-wise) - 2020",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.5-2020.xlsx",
+  "local": "2020\\table-5A.5-2020.xlsx",
+  "bytes": 19233
+ },
+ {
+  "year": 2020,
+  "table": "5A.5",
+  "title": "Disposal of Juveniles Arrested (States/UT-wise) - 2020",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.6-2020.pdf",
+  "local": "2020\\table-5A.6-2020.pdf",
+  "bytes": 68289
+ },
+ {
+  "year": 2020,
+  "table": "5A.5",
+  "title": "Disposal of Juveniles Arrested (States/UT-wise) - 2020",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.6-2020.xlsx",
+  "local": "2020\\table-5A.6-2020.xlsx",
+  "bytes": 14278
+ },
+ {
+  "year": 2020,
+  "table": "5A.4",
+  "title": "Juveniles Apprehended (Crime Head, Age Groups & Gender-wise) - 2020",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/custom/1680772621TABLE5B4A.pdf",
+  "local": "2020\\1680772621TABLE5B4A.pdf",
+  "bytes": 73687
+ },
+ {
+  "year": 2020,
+  "table": "5A.4",
+  "title": "Juveniles Apprehended (Crime Head, Age Groups & Gender-wise) - 2020",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/custom/1680772625TABLE5B4A.xlsx",
+  "local": "2020\\1680772625TABLE5B4A.xlsx",
+  "bytes": 17506
+ },
+ {
+  "year": 2020,
+  "table": "5A.4",
+  "title": "Juveniles Apprehended-5B.4B (Crime Head, Age Groups & Gender-wise) - 2020",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.12-2020.pdf",
+  "local": "2020\\table-5A.12-2020.pdf",
+  "bytes": 75487
+ },
+ {
+  "year": 2020,
+  "table": "5A.4",
+  "title": "Juveniles Apprehended-5B.4B (Crime Head, Age Groups & Gender-wise) - 2020",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-5A.12-2020.xlsx",
+  "local": "2020\\table-5A.12-2020.xlsx",
+  "bytes": 75487
+ },
+ {
+  "year": 2021,
+  "table": "3A.5",
+  "title": "Police Disposal of Crime Against Women Cases (Crime Head-wise) - 2021",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679652948TABLE3A5.pdf",
+  "local": "2021\\1679652948TABLE3A5.pdf",
+  "bytes": 177667
+ },
+ {
+  "year": 2021,
+  "table": "3A.5",
+  "title": "Police Disposal of Crime Against Women Cases (Crime Head-wise) - 2021",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679652955TABLE3A5.xlsx",
+  "local": "2021\\1679652955TABLE3A5.xlsx",
+  "bytes": 22469
+ },
+ {
+  "year": 2021,
+  "table": "3A.6",
+  "title": "Police Disposal of Crime Against Women Cases (State/UT-wise) - 2021",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679652997TABLE3A6.pdf",
+  "local": "2021\\1679652997TABLE3A6.pdf",
+  "bytes": 152256
+ },
+ {
+  "year": 2021,
+  "table": "3A.6",
+  "title": "Police Disposal of Crime Against Women Cases (State/UT-wise) - 2021",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679653003TABLE3A6.xlsx",
+  "local": "2021\\1679653003TABLE3A6.xlsx",
+  "bytes": 18780
+ },
+ {
+  "year": 2021,
+  "table": "3A.7",
+  "title": "Court Disposal of Crime Against Women Cases (Crime Head-wise) - 2021",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679653044TABLE3A7.pdf",
+  "local": "2021\\1679653044TABLE3A7.pdf",
+  "bytes": 172782
+ },
+ {
+  "year": 2021,
+  "table": "3A.7",
+  "title": "Court Disposal of Crime Against Women Cases (Crime Head-wise) - 2021",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679653050TABLE3A7.xlsx",
+  "local": "2021\\1679653050TABLE3A7.xlsx",
+  "bytes": 20716
+ },
+ {
+  "year": 2021,
+  "table": "3A.8",
+  "title": "Court Disposal of Crime Against Women Cases (State/UT-wise) - 2021",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679653090TABLE3A8.pdf",
+  "local": "2021\\1679653090TABLE3A8.pdf",
+  "bytes": 147291
+ },
+ {
+  "year": 2021,
+  "table": "3A.8",
+  "title": "Court Disposal of Crime Against Women Cases (State/UT-wise) - 2021",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679653099TABLE3A8.xlsx",
+  "local": "2021\\1679653099TABLE3A8.xlsx",
+  "bytes": 17928
+ },
+ {
+  "year": 2021,
+  "table": "3A.9",
+  "title": "Disposal of Persons Arrested for Crime Against Women (Crime Head-wise) - 2021",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679653137TABLE3A9.pdf",
+  "local": "2021\\1679653137TABLE3A9.pdf",
+  "bytes": 159273
+ },
+ {
+  "year": 2021,
+  "table": "3A.9",
+  "title": "Disposal of Persons Arrested for Crime Against Women (Crime Head-wise) - 2021",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679653144TABLE3A9.xlsx",
+  "local": "2021\\1679653144TABLE3A9.xlsx",
+  "bytes": 19762
+ },
+ {
+  "year": 2021,
+  "table": "5A.1",
+  "title": "Crime Committed by Juveniles (State/UT-wise) - 2019-2021",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679656099TABLE5A1.pdf",
+  "local": "2021\\1679656099TABLE5A1.pdf",
+  "bytes": 112353
+ },
+ {
+  "year": 2021,
+  "table": "5A.1",
+  "title": "Crime Committed by Juveniles (State/UT-wise) - 2019-2021",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679656111TABLE5A1.xlsx",
+  "local": "2021\\1679656111TABLE5A1.xlsx",
+  "bytes": 13029
+ },
+ {
+  "year": 2021,
+  "table": "5A.2",
+  "title": "IPC Crimes Committed by Juveniles (State/UT-wise) - 2021",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679656165TABLE5A2.pdf",
+  "local": "2021\\1679656165TABLE5A2.pdf",
+  "bytes": 239173
+ },
+ {
+  "year": 2021,
+  "table": "5A.2",
+  "title": "IPC Crimes Committed by Juveniles (State/UT-wise) - 2021",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679656177TABLE5A2.xlsx",
+  "local": "2021\\1679656177TABLE5A2.xlsx",
+  "bytes": 29943
+ },
+ {
+  "year": 2021,
+  "table": "5A.3",
+  "title": "SLL Crimes Committed by Juveniles (State/UT-wise) - 2021",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679656226TABLE5A3.pdf",
+  "local": "2021\\1679656226TABLE5A3.pdf",
+  "bytes": 181414
+ },
+ {
+  "year": 2021,
+  "table": "5A.3",
+  "title": "SLL Crimes Committed by Juveniles (State/UT-wise) - 2021",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679656242TABLE5A3.xlsx",
+  "local": "2021\\1679656242TABLE5A3.xlsx",
+  "bytes": 21863
+ },
+ {
+  "year": 2021,
+  "table": "5A.4",
+  "title": "IPC-Juveniles Apprehended (Crime Head, Age Groups & Gender-wise) - 2021",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679656324TABLE5A4A.pdf",
+  "local": "2021\\1679656324TABLE5A4A.pdf",
+  "bytes": 155681
+ },
+ {
+  "year": 2021,
+  "table": "5A.4",
+  "title": "IPC-Juveniles Apprehended (Crime Head, Age Groups & Gender-wise) - 2021",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679656342TABLE5A4A.xlsx",
+  "local": "2021\\1679656342TABLE5A4A.xlsx",
+  "bytes": 18937
+ },
+ {
+  "year": 2021,
+  "table": "5A.4",
+  "title": "5A.4B SLL-Juveniles Apprehended (Crime Head, Age Groups & Gender-wise) - 2021",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679656405TABLE5A4B.pdf",
+  "local": "2021\\1679656405TABLE5A4B.pdf",
+  "bytes": 172194
+ },
+ {
+  "year": 2021,
+  "table": "5A.4",
+  "title": "5A.4B SLL-Juveniles Apprehended (Crime Head, Age Groups & Gender-wise) - 2021",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679656408TABLE5A4B.xlsx",
+  "local": "2021\\1679656408TABLE5A4B.xlsx",
+  "bytes": 20375
+ },
+ {
+  "year": 2021,
+  "table": "5A.5",
+  "title": "Disposal of Juveniles Apprehended (State/UT-wise) - 2021",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679656446TABLE5A5.pdf",
+  "local": "2021\\1679656446TABLE5A5.pdf",
+  "bytes": 117220
+ },
+ {
+  "year": 2021,
+  "table": "5A.5",
+  "title": "Disposal of Juveniles Apprehended (State/UT-wise) - 2021",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679656458TABLE5A5.xlsx",
+  "local": "2021\\1679656458TABLE5A5.xlsx",
+  "bytes": 14324
+ },
+ {
+  "year": 2021,
+  "table": "5A.4",
+  "title": "IPC-Juveniles Apprehended (Crime Head, Age Groups & Gender-wise) - 2021",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679657030TABLE5B4A.pdf",
+  "local": "2021\\1679657030TABLE5B4A.pdf",
+  "bytes": 158738
+ },
+ {
+  "year": 2021,
+  "table": "5A.4",
+  "title": "IPC-Juveniles Apprehended (Crime Head, Age Groups & Gender-wise) - 2021",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679657036TABLE5B4A.xlsx",
+  "local": "2021\\1679657036TABLE5B4A.xlsx",
+  "bytes": 18824
+ },
+ {
+  "year": 2021,
+  "table": "5A.4",
+  "title": "5A.4B SLL-Juveniles Apprehended (Crime Head, Age Groups & Gender-wise) - 2021",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679657079TABLE5B4B.pdf",
+  "local": "2021\\1679657079TABLE5B4B.pdf",
+  "bytes": 175029
+ },
+ {
+  "year": 2021,
+  "table": "5A.4",
+  "title": "5A.4B SLL-Juveniles Apprehended (Crime Head, Age Groups & Gender-wise) - 2021",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679657082TABLE5B4B.xlsx",
+  "local": "2021\\1679657082TABLE5B4B.xlsx",
+  "bytes": 21109
+ },
+ {
+  "year": 2022,
+  "table": "3A.5",
+  "title": "Police Disposal of Crime Against Women Cases (Crime Head-wise) - 2022",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/custom/1701935342TABLE3A5.pdf",
+  "local": "2022\\1701935342TABLE3A5.pdf",
+  "bytes": 198211
+ },
+ {
+  "year": 2022,
+  "table": "3A.5",
+  "title": "Police Disposal of Crime Against Women Cases (Crime Head-wise) - 2022",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/custom/1701935331TABLE3A5.xlsx",
+  "local": "2022\\1701935331TABLE3A5.xlsx",
+  "bytes": 23685
+ },
+ {
+  "year": 2022,
+  "table": "3A.6",
+  "title": "Police Disposal of Crime Against Women Cases (State/UT-wise) - 2022",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/custom/1701935376TABLE3A6.pdf",
+  "local": "2022\\1701935376TABLE3A6.pdf",
+  "bytes": 170900
+ },
+ {
+  "year": 2022,
+  "table": "3A.6",
+  "title": "Police Disposal of Crime Against Women Cases (State/UT-wise) - 2022",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/custom/1701935389TABLE3A6.xlsx",
+  "local": "2022\\1701935389TABLE3A6.xlsx",
+  "bytes": 20602
+ },
+ {
+  "year": 2022,
+  "table": "3A.7",
+  "title": "Court Disposal of Crime Against Women Cases (Crime Head-wise) - 2022",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/custom/1701935434TABLE3A7.pdf",
+  "local": "2022\\1701935434TABLE3A7.pdf",
+  "bytes": 191452
+ },
+ {
+  "year": 2022,
+  "table": "3A.7",
+  "title": "Court Disposal of Crime Against Women Cases (Crime Head-wise) - 2022",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/custom/1701935422TABLE3A7.xlsx",
+  "local": "2022\\1701935422TABLE3A7.xlsx",
+  "bytes": 22749
+ },
+ {
+  "year": 2022,
+  "table": "3A.8",
+  "title": "Court Disposal of Crime Against Women Cases (State/UT-wise) - 2022",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/custom/1701935477TABLE3A8.pdf",
+  "local": "2022\\1701935477TABLE3A8.pdf",
+  "bytes": 166294
+ },
+ {
+  "year": 2022,
+  "table": "3A.8",
+  "title": "Court Disposal of Crime Against Women Cases (State/UT-wise) - 2022",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/custom/1701935488TABLE3A8.xlsx",
+  "local": "2022\\1701935488TABLE3A8.xlsx",
+  "bytes": 19646
+ },
+ {
+  "year": 2022,
+  "table": "3A.9",
+  "title": "Disposal of Persons Arrested for Crime Against Women (Crime Head-wise) - 2022",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/custom/1701935540TABLE3A9.pdf",
+  "local": "2022\\1701935540TABLE3A9.pdf",
+  "bytes": 177466
+ },
+ {
+  "year": 2022,
+  "table": "3A.9",
+  "title": "Disposal of Persons Arrested for Crime Against Women (Crime Head-wise) - 2022",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/custom/1701935526TABLE3A9.xlsx",
+  "local": "2022\\1701935526TABLE3A9.xlsx",
+  "bytes": 21288
+ },
+ {
+  "year": 2022,
+  "table": "5A.1",
+  "title": "Crime Committed by Juveniles (State/UT-wise) - 2020-2022",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/custom/1701944732TABLE5A1.pdf",
+  "local": "2022\\1701944732TABLE5A1.pdf",
+  "bytes": 126249
+ },
+ {
+  "year": 2022,
+  "table": "5A.1",
+  "title": "Crime Committed by Juveniles (State/UT-wise) - 2020-2022",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/custom/1701944744TABLE5A1.xlsx",
+  "local": "2022\\1701944744TABLE5A1.xlsx",
+  "bytes": 12588
+ },
+ {
+  "year": 2022,
+  "table": "5A.2",
+  "title": "IPC Crimes Committed by Juveniles (State/UT-wise) - 2022",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/custom/1701944811TABLE5A2.pdf",
+  "local": "2022\\1701944811TABLE5A2.pdf",
+  "bytes": 257874
+ },
+ {
+  "year": 2022,
+  "table": "5A.2",
+  "title": "IPC Crimes Committed by Juveniles (State/UT-wise) - 2022",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/custom/1701944786TABLE5A2.xlsx",
+  "local": "2022\\1701944786TABLE5A2.xlsx",
+  "bytes": 30198
+ },
+ {
+  "year": 2022,
+  "table": "5A.3",
+  "title": "SLL Crimes Committed by Juveniles (State/UT-wise) - 2022",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/custom/1701944908TABLE5A3.pdf",
+  "local": "2022\\1701944908TABLE5A3.pdf",
+  "bytes": 205327
+ },
+ {
+  "year": 2022,
+  "table": "5A.3",
+  "title": "SLL Crimes Committed by Juveniles (State/UT-wise) - 2022",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/custom/1701944918TABLE5A3.xlsx",
+  "local": "2022\\1701944918TABLE5A3.xlsx",
+  "bytes": 22316
+ },
+ {
+  "year": 2022,
+  "table": "5A.4",
+  "title": "Juveniles Apprehended (Crime Head, Age Groups & Gender-wise) - 2022",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/custom/1701944956TABLE5A4A.pdf",
+  "local": "2022\\1701944956TABLE5A4A.pdf",
+  "bytes": 172199
+ },
+ {
+  "year": 2022,
+  "table": "5A.4",
+  "title": "Juveniles Apprehended (Crime Head, Age Groups & Gender-wise) - 2022",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/custom/1701944943TABLE5A4A.xlsx",
+  "local": "2022\\1701944943TABLE5A4A.xlsx",
+  "bytes": 18871
+ },
+ {
+  "year": 2022,
+  "table": "5A.5",
+  "title": "Disposal of Juveniles Apprehended (State/UT-wise) - 2022",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/custom/1701944988TABLE5A5.pdf",
+  "local": "2022\\1701944988TABLE5A5.pdf",
+  "bytes": 134874
+ },
+ {
+  "year": 2022,
+  "table": "5A.5",
+  "title": "Disposal of Juveniles Apprehended (State/UT-wise) - 2022",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/custom/1701945003TABLE5A5.xlsx",
+  "local": "2022\\1701945003TABLE5A5.xlsx",
+  "bytes": 14386
+ },
+ {
+  "year": 2022,
+  "table": "5A.4",
+  "title": "Juveniles Apprehended (Crime Head, Age Groups & Gender-wise) - 2022",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/custom/1701945225TABLE5B4A.pdf",
+  "local": "2022\\1701945225TABLE5B4A.pdf",
+  "bytes": 173103
+ },
+ {
+  "year": 2022,
+  "table": "5A.4",
+  "title": "Juveniles Apprehended (Crime Head, Age Groups & Gender-wise) - 2022",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/custom/1701945251TABLE5B4B.xlsx",
+  "local": "2022\\1701945251TABLE5B4B.xlsx",
+  "bytes": 20556
+ },
+ {
+  "year": 2023,
+  "table": "3A.5",
+  "title": "3A.5 Police Disposal of Crime Against Women Cases (Crime Head-wise) - 2023",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE3A5.pdf",
+  "local": "2023\\TABLE3A5.pdf",
+  "bytes": 197329
+ },
+ {
+  "year": 2023,
+  "table": "3A.5",
+  "title": "3A.5 Police Disposal of Crime Against Women Cases (Crime Head-wise) - 2023",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE3A5.xlsx",
+  "local": "2023\\TABLE3A5.xlsx",
+  "bytes": 24068
+ },
+ {
+  "year": 2023,
+  "table": "3A.6",
+  "title": "3A.6 Police Disposal of Crime Against Women Cases (State/UT-wise) - 2023",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE3A6.pdf",
+  "local": "2023\\TABLE3A6.pdf",
+  "bytes": 169593
+ },
+ {
+  "year": 2023,
+  "table": "3A.6",
+  "title": "3A.6 Police Disposal of Crime Against Women Cases (State/UT-wise) - 2023",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE3A6.xlsx",
+  "local": "2023\\TABLE3A6.xlsx",
+  "bytes": 19823
+ },
+ {
+  "year": 2023,
+  "table": "3A.7",
+  "title": "3A.7 Court Disposal of Crime Against Women Cases (Crime Head-wise) - 2023",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE3A7.pdf",
+  "local": "2023\\TABLE3A7.pdf",
+  "bytes": 188849
+ },
+ {
+  "year": 2023,
+  "table": "3A.7",
+  "title": "3A.7 Court Disposal of Crime Against Women Cases (Crime Head-wise) - 2023",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE3A7.xlsx",
+  "local": "2023\\TABLE3A7.xlsx",
+  "bytes": 22189
+ },
+ {
+  "year": 2023,
+  "table": "3A.8",
+  "title": "3A.8 Court Disposal of Crime Against Women Cases (State/UT-wise) - 2023",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE3A8.pdf",
+  "local": "2023\\TABLE3A8.pdf",
+  "bytes": 164788
+ },
+ {
+  "year": 2023,
+  "table": "3A.8",
+  "title": "3A.8 Court Disposal of Crime Against Women Cases (State/UT-wise) - 2023",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE3A8.xlsx",
+  "local": "2023\\TABLE3A8.xlsx",
+  "bytes": 18745
+ },
+ {
+  "year": 2023,
+  "table": "3A.9",
+  "title": "3A.9 Disposal of Persons Arrested for Crime Against Women (Crime Head-wise) - 2023",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE3A9.pdf",
+  "local": "2023\\TABLE3A9.pdf",
+  "bytes": 174147
+ },
+ {
+  "year": 2023,
+  "table": "3A.9",
+  "title": "3A.9 Disposal of Persons Arrested for Crime Against Women (Crime Head-wise) - 2023",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE3A9.xlsx",
+  "local": "2023\\TABLE3A9.xlsx",
+  "bytes": 20921
+ },
+ {
+  "year": 2023,
+  "table": "5A.1",
+  "title": "5A.1 Crime Committed by Juveniles (State/UT-wise) - 2021-2023",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE5A1.pdf",
+  "local": "2023\\TABLE5A1.pdf",
+  "bytes": 125541
+ },
+ {
+  "year": 2023,
+  "table": "5A.1",
+  "title": "5A.1 Crime Committed by Juveniles (State/UT-wise) - 2021-2023",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE5A1.xlsx",
+  "local": "2023\\TABLE5A1.xlsx",
+  "bytes": 13006
+ },
+ {
+  "year": 2023,
+  "table": "5A.2",
+  "title": "5A.2 IPC Crimes Committed by Juveniles (State/UT-wise) - 2023",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE5A2.pdf",
+  "local": "2023\\TABLE5A2.pdf",
+  "bytes": 255445
+ },
+ {
+  "year": 2023,
+  "table": "5A.2",
+  "title": "5A.2 IPC Crimes Committed by Juveniles (State/UT-wise) - 2023",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE5A2.xlsx",
+  "local": "2023\\TABLE5A2.xlsx",
+  "bytes": 30398
+ },
+ {
+  "year": 2023,
+  "table": "5A.3",
+  "title": "5A.3 SLL Crimes Committed by Juveniles (State/UT-wise) - 2023",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE5B32.pdf",
+  "local": "2023\\TABLE5B32.pdf",
+  "bytes": 151890
+ },
+ {
+  "year": 2023,
+  "table": "5A.3",
+  "title": "5A.3 SLL Crimes Committed by Juveniles (State/UT-wise) - 2023",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE5A3.xlsx",
+  "local": "2023\\TABLE5A3.xlsx",
+  "bytes": 25502
+ },
+ {
+  "year": 2023,
+  "table": "5A.4",
+  "title": "5A.4 Juveniles Apprehended (Crime Head, Age Groups & Gender-wise) - 2023",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE5A4B.pdf",
+  "local": "2023\\TABLE5A4B.pdf",
+  "bytes": 189832
+ },
+ {
+  "year": 2023,
+  "table": "5A.4",
+  "title": "5A.4 Juveniles Apprehended (Crime Head, Age Groups & Gender-wise) - 2023",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE5A4B.xlsx",
+  "local": "2023\\TABLE5A4B.xlsx",
+  "bytes": 20710
+ },
+ {
+  "year": 2023,
+  "table": "5A.5",
+  "title": "5A.5 Disposal of Juveniles Apprehended (State/UT-wise) - 2023",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE5A5.pdf",
+  "local": "2023\\TABLE5A5.pdf",
+  "bytes": 134192
+ },
+ {
+  "year": 2023,
+  "table": "5A.5",
+  "title": "5A.5 Disposal of Juveniles Apprehended (State/UT-wise) - 2023",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE5A51.xlsx",
+  "local": "2023\\TABLE5A51.xlsx",
+  "bytes": 14378
+ },
+ {
+  "year": 2023,
+  "table": "5A.4",
+  "title": "5B.4 Juveniles Apprehended (Crime Head, Age Groups & Gender-wise) - 2023",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE5B4B2.pdf",
+  "local": "2023\\TABLE5B4B2.pdf",
+  "bytes": 190303
+ },
+ {
+  "year": 2023,
+  "table": "5A.4",
+  "title": "5B.4 Juveniles Apprehended (Crime Head, Age Groups & Gender-wise) - 2023",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE5B4B1.xlsx",
+  "local": "2023\\TABLE5B4B1.xlsx",
+  "bytes": 20433
+ },
+ {
+  "year": 2024,
+  "table": "3A.5",
+  "title": "3A.5 Police Disposal of Crime Against Women Cases (Crime Head-wise) - 2024",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE3A51.pdf",
+  "local": "2024\\TABLE3A51.pdf",
+  "bytes": 219310
+ },
+ {
+  "year": 2024,
+  "table": "3A.5",
+  "title": "3A.5 Police Disposal of Crime Against Women Cases (Crime Head-wise) - 2024",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE3A51.xlsx",
+  "local": "2024\\TABLE3A51.xlsx",
+  "bytes": 26791
+ },
+ {
+  "year": 2024,
+  "table": "3A.6",
+  "title": "3A.6Police Disposal of Crime Against Women Cases (State/UT-wise) - 2024",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE3A61.pdf",
+  "local": "2024\\TABLE3A61.pdf",
+  "bytes": 169629
+ },
+ {
+  "year": 2024,
+  "table": "3A.6",
+  "title": "3A.6Police Disposal of Crime Against Women Cases (State/UT-wise) - 2024",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE3A61.xlsx",
+  "local": "2024\\TABLE3A61.xlsx",
+  "bytes": 19865
+ },
+ {
+  "year": 2024,
+  "table": "3A.7",
+  "title": "3A.7 Court Disposal of Crime Against Women Cases (Crime Head-wise) - 2024",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE3A71.pdf",
+  "local": "2024\\TABLE3A71.pdf",
+  "bytes": 211382
+ },
+ {
+  "year": 2024,
+  "table": "3A.7",
+  "title": "3A.7 Court Disposal of Crime Against Women Cases (Crime Head-wise) - 2024",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE3A71.xlsx",
+  "local": "2024\\TABLE3A71.xlsx",
+  "bytes": 24784
+ },
+ {
+  "year": 2024,
+  "table": "3A.8",
+  "title": "3A.8 Court Disposal of Crime Against Women Cases (State/UT-wise) - 2024",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE3A81.pdf",
+  "local": "2024\\TABLE3A81.pdf",
+  "bytes": 164888
+ },
+ {
+  "year": 2024,
+  "table": "3A.8",
+  "title": "3A.8 Court Disposal of Crime Against Women Cases (State/UT-wise) - 2024",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE3A81.xlsx",
+  "local": "2024\\TABLE3A81.xlsx",
+  "bytes": 18894
+ },
+ {
+  "year": 2024,
+  "table": "3A.9",
+  "title": "3A.9 Disposal of Persons Arrested for Crime Against Women (Crime Head-wise) - 2024",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE3A91.pdf",
+  "local": "2024\\TABLE3A91.pdf",
+  "bytes": 192609
+ },
+ {
+  "year": 2024,
+  "table": "3A.9",
+  "title": "3A.9 Disposal of Persons Arrested for Crime Against Women (Crime Head-wise) - 2024",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE3A91.xlsx",
+  "local": "2024\\TABLE3A91.xlsx",
+  "bytes": 23146
+ },
+ {
+  "year": 2024,
+  "table": "5A.1",
+  "title": "5A.1 Crime Committed by Juveniles (State/UT-wise) - 2022-2024",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE5A11.pdf",
+  "local": "2024\\TABLE5A11.pdf",
+  "bytes": 125571
+ },
+ {
+  "year": 2024,
+  "table": "5A.1",
+  "title": "5A.1 Crime Committed by Juveniles (State/UT-wise) - 2022-2024",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE5A11.xlsx",
+  "local": "2024\\TABLE5A11.xlsx",
+  "bytes": 12569
+ },
+ {
+  "year": 2024,
+  "table": "5A.2",
+  "title": "5A.2 IPC/BNS Crimes Committed by Juveniles (State/UT-wise) – 2024",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE5A21.pdf",
+  "local": "2024\\TABLE5A21.pdf",
+  "bytes": 290120
+ },
+ {
+  "year": 2024,
+  "table": "5A.2",
+  "title": "5A.2 IPC/BNS Crimes Committed by Juveniles (State/UT-wise) – 2024",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE5A21.xlsx",
+  "local": "2024\\TABLE5A21.xlsx",
+  "bytes": 34613
+ },
+ {
+  "year": 2024,
+  "table": "5A.3",
+  "title": "5A.3 SLL Crimes Committed by Juveniles (State/UT-wise) – 2024",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE5A3.pdf",
+  "local": "2024\\TABLE5A3.pdf",
+  "bytes": 217077
+ },
+ {
+  "year": 2024,
+  "table": "5A.3",
+  "title": "5A.3 SLL Crimes Committed by Juveniles (State/UT-wise) – 2024",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE5A31.xlsx",
+  "local": "2024\\TABLE5A31.xlsx",
+  "bytes": 21433
+ },
+ {
+  "year": 2024,
+  "table": "5A.4",
+  "title": "5A.4 Juveniles Apprehended (Crime Head, Age Groups & Gender-wise) – 2024",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE5A4A1.pdf",
+  "local": "2024\\TABLE5A4A1.pdf",
+  "bytes": 185276
+ },
+ {
+  "year": 2024,
+  "table": "5A.4",
+  "title": "5A.4 Juveniles Apprehended (Crime Head, Age Groups & Gender-wise) – 2024",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE5A4A2.xlsx",
+  "local": "2024\\TABLE5A4A2.xlsx",
+  "bytes": 20578
+ },
+ {
+  "year": 2024,
+  "table": "5A.5",
+  "title": "5A.5 Disposal of Juveniles Apprehended (State/UT-wise) – 2024",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE5A51.pdf",
+  "local": "2024\\TABLE5A51.pdf",
+  "bytes": 134121
+ },
+ {
+  "year": 2024,
+  "table": "5A.5",
+  "title": "5A.5 Disposal of Juveniles Apprehended (State/UT-wise) – 2024",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE5A52.xlsx",
+  "local": "2024\\TABLE5A52.xlsx",
+  "bytes": 14258
+ },
+ {
+  "year": 2024,
+  "table": "5A.4",
+  "title": "5B.4Juveniles Apprehended (Crime Head, Age Groups & Gender-wise) – 2024",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE5B4A3.pdf",
+  "local": "2024\\TABLE5B4A3.pdf",
+  "bytes": 183800
+ },
+ {
+  "year": 2024,
+  "table": "5A.4",
+  "title": "5B.4Juveniles Apprehended (Crime Head, Age Groups & Gender-wise) – 2024",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE5B4B2.xlsx",
+  "local": "2024\\TABLE5B4B2.xlsx",
+  "bytes": 18718
+ },
+ {
+  "year": 2023,
+  "table": "5A.4",
+  "title": "Juveniles Apprehended - IPC Crimes (Crime Head, Age Group & Gender-wise) - 2023 [unlisted; found by URL pattern]",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE5A4A.xlsx",
+  "local": "2023\\TABLE5A4A.xlsx",
+  "bytes": 18916
+ },
+ {
+  "year": 2023,
+  "table": "5A.4",
+  "title": "Juveniles Apprehended - IPC Crimes (Crime Head, Age Group & Gender-wise) - 2023 [unlisted; found by URL pattern]",
+  "url": "https://www.ncrb.gov.in/uploads/files/TABLE5A4A.pdf",
+  "local": "2023\\TABLE5A4A.pdf",
+  "bytes": 170457
+ },
+ {
+  "year": 2022,
+  "table": "5A.4",
+  "title": "Juveniles Apprehended - SLL Crimes (Crime Head, Age Group & Gender-wise) - 2022 [pages 503-506 of CII 2022 Book 1]",
+  "url": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/custom/1701607577CrimeinIndia2022Book1.pdf",
+  "pages": "503-506",
+  "local": "2022\\CII2022_Book1_p503-506_Table5A4_SLL.pdf",
+  "bytes": 759197
+ },
+ {
+  "year": 2024,
+  "table": "5A.4",
+  "title": "Juveniles Apprehended - SLL Crimes (Crime Head, Age Group & Gender-wise) - 2024 [pages 39-42 of CII 2024 Volume II]",
+  "url": "https://www.ncrb.gov.in/uploads/files/2CrimeinIndia2024-VolumeII.pdf",
+  "pages": "39-42",
+  "local": "2024\\CII2024_VolII_p39-42_Table5A4B_SLL.pdf",
+  "bytes": 727112
+ },
+ {
+  "year": 2014,
+  "table": "5.5",
+  "title": "Disposal of Crime Committed Against Women Cases by Police During 2014 (All India)",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Table-5.5_2014.pdf",
+  "local": "2014\\Table-5.5_2014.pdf",
+  "bytes": 1038765
+ },
+ {
+  "year": 2014,
+  "table": "5.6",
+  "title": "Disposal of Crimes Committed Against Women Cases by Courts During 2014 (All India)",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Table-5.6_2017.pdf",
+  "local": "2014\\Table-5.6_2017.pdf",
+  "bytes": 137931
+ },
+ {
+  "year": 2014,
+  "table": "5.7",
+  "title": "Disposal of Persons Arrested for Crimes Committed Against Women by Police During 2 014 (All India)",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Table-5.7-2014.pdf",
+  "local": "2014\\Table-5.7-2014.pdf",
+  "bytes": 171130
+ },
+ {
+  "year": 2014,
+  "table": "5.8",
+  "title": "Disposal of Persons Arrested for Committing Crimes Against Women by Courts During 2014 (All India)",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Table-5.8_2014.pdf",
+  "local": "2014\\Table-5.8_2014.pdf",
+  "bytes": 206356
+ },
+ {
+  "year": 2014,
+  "table": "10.2",
+  "title": "Cases of Juveniles in Conflict with Law under Different Crime Heads of Indian P enal Code(IPC) During 2014 (State/UT-Wise)",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-10.2_2014.pdf",
+  "local": "2014\\table-10.2_2014.pdf",
+  "bytes": 648674
+ },
+ {
+  "year": 2014,
+  "table": "10.3",
+  "title": "Cases of Juveniles in Conflict with Law under Different Crime Heads of Special & Local Laws (SLL) During 2014 (State/UT-Wise)",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-10.3_2014.pdf",
+  "local": "2014\\table-10.3_2014.pdf",
+  "bytes": 515471
+ },
+ {
+  "year": 2014,
+  "table": "10.4",
+  "title": "Juveniles Apprehended under IPC & SLL Crimes by Age Groups & Sex During 2014 (All India)",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-10.4_2014.pdf",
+  "local": "2014\\table-10.4_2014.pdf",
+  "bytes": 338940
+ },
+ {
+  "year": 2015,
+  "table": "5.5",
+  "title": "Disposal of Crime Committed Against Women Cases By Police During 2015 (All India)",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Table-5.5_2015.pdf",
+  "local": "2015\\Table-5.5_2015.pdf",
+  "bytes": 170544
+ },
+ {
+  "year": 2015,
+  "table": "5.6",
+  "title": "Disposal of Crimes Committed Against Women Cases By Courts During 2015 (All India)",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Table-5.6_2015.pdf",
+  "local": "2015\\Table-5.6_2015.pdf",
+  "bytes": 147493
+ },
+ {
+  "year": 2015,
+  "table": "5.7",
+  "title": "Disposal of Persons Arrested for Crimes Committed Against Women by Police During 2015 (All India)",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Table-5.7_2015.pdf",
+  "local": "2015\\Table-5.7_2015.pdf",
+  "bytes": 173115
+ },
+ {
+  "year": 2015,
+  "table": "5.8",
+  "title": "Disposal of Persons Arrested for Committing Crimes Against Women by Courts During 2015 (All India)",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Table-5.8_2015.pdf",
+  "local": "2015\\Table-5.8_2015.pdf",
+  "bytes": 209886
+ },
+ {
+  "year": 2015,
+  "table": "10.2",
+  "title": "Cases of Juveniles in Conflict with Law under Different Crime Heads of Indian Penal Code(IPC) During 2015 (State/UT-Wise)",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-10.2_2015.pdf",
+  "local": "2015\\table-10.2_2015.pdf",
+  "bytes": 652300
+ },
+ {
+  "year": 2015,
+  "table": "10.3",
+  "title": "Cases of Juveniles in Conflict with Law under Different Crime Heads of Special & Local Laws (SLL) During 2015 (State/UT-Wise)",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-10.3_2015.pdf",
+  "local": "2015\\table-10.3_2015.pdf",
+  "bytes": 510041
+ },
+ {
+  "year": 2015,
+  "table": "10.4",
+  "title": "Juveniles Apprehended under IPC & SLL Crimes by Age Groups & Sex During 2015 (All India)",
+  "url": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/table-10.4_2015.pdf",
+  "local": "2015\\table-10.4_2015.pdf",
+  "bytes": 361725
  }
 ]

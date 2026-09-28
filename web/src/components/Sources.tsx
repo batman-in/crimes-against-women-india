@@ -27,6 +27,7 @@ const GROUPS: { title: string; items: Item[] }[] = [
       { label: 'Crime in India 2024, Volume I (PDF)', href: 'https://www.ncrb.gov.in/uploads/files/11CrimeinIndia2024-VolumeI.pdf', note: 'Chapter 3A: crime against women' },
       { label: 'Crime in India 2023, Volume I (PDF)', href: 'https://www.ncrb.gov.in/uploads/files/1CrimeinIndia2023PartI1.pdf' },
       { label: 'NCRB tables on Open Government Data (data.gov.in)', href: 'https://www.data.gov.in/catalog/crime-against-women', note: 'District-wise tables 2001–2014, offender relation tables' },
+      { label: 'NCRB Crime in India tables (Contents page), 2024', href: 'https://www.ncrb.gov.in/crime-in-india-table-content.html?year=2024', note: 'Tables 3A.5–3A.10: arrests, charge-sheets, trials and convictions; 5A: juveniles. Change the year in the link for other years.' },
     ],
   },
   {
