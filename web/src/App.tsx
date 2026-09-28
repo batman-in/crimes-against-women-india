@@ -9,6 +9,7 @@ import { MapView, type AreaStyle, type MapMode } from '@/components/MapView'
 import { SidePanel } from '@/components/SidePanel'
 import { BackToIndia, CrimeChips, FiltersSheet, FitIndiaButton, MapControls, MobileFilterBar, SummaryCard, YearDock } from '@/components/mobile/MobileUI'
 import { Sources } from '@/components/Sources'
+import { VisitCount } from '@/components/VisitCount'
 import { Button } from '@/components/ui/button'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { adrByState, adrMapYears, adrReports, adrYearFor } from '@/lib/adr'
@@ -317,9 +318,12 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
     </div>
   )
   const themeButton = (
-    <Button variant="ghost" size="icon" className="shrink-0" onClick={toggle} aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}>
-      {theme === 'dark' ? <Sun /> : <Moon />}
-    </Button>
+    <div className="flex shrink-0 items-center gap-0.5">
+      <VisitCount />
+      <Button variant="ghost" size="icon" className="shrink-0" onClick={toggle} aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}>
+        {theme === 'dark' ? <Sun /> : <Moon />}
+      </Button>
+    </div>
   )
 
   if (isMobile) {
