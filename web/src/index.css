@@ -55,8 +55,8 @@
     --card-foreground: oklch(0.145 0 0);
     --popover: oklch(1 0 0);
     --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.205 0 0);
-    --primary-foreground: oklch(0.985 0 0);
+    --primary: #0b0f14;
+    --primary-foreground: #ffffff;
     --secondary: oklch(0.97 0 0);
     --secondary-foreground: oklch(0.205 0 0);
     --muted: oklch(0.97 0 0);
@@ -66,7 +66,7 @@
     --destructive: oklch(0.577 0.245 27.325);
     --border: oklch(0.922 0 0);
     --input: oklch(0.922 0 0);
-    --ring: oklch(0.708 0 0);
+    --ring: #e53935;
     --chart-1: oklch(0.87 0 0);
     --chart-2: oklch(0.556 0 0);
     --chart-3: oklch(0.439 0 0);
@@ -84,14 +84,14 @@
 }
 
 .dark {
-    --background: oklch(0.145 0 0);
+    --background: #0b0f14;
     --foreground: oklch(0.985 0 0);
-    --card: oklch(0.205 0 0);
+    --card: #141a22;
     --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.205 0 0);
+    --popover: #141a22;
     --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.922 0 0);
-    --primary-foreground: oklch(0.205 0 0);
+    --primary: #f7f1e3;
+    --primary-foreground: #0b0f14;
     --secondary: oklch(0.269 0 0);
     --secondary-foreground: oklch(0.985 0 0);
     --muted: oklch(0.269 0 0);
@@ -101,7 +101,7 @@
     --destructive: oklch(0.704 0.191 22.216);
     --border: oklch(1 0 0 / 10%);
     --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.556 0 0);
+    --ring: #ff6b3d;
     --chart-1: oklch(0.87 0 0);
     --chart-2: oklch(0.556 0 0);
     --chart-3: oklch(0.439 0 0);
@@ -131,6 +131,41 @@
     @apply font-sans;
     }
 }
+/* ---- Brand: Project Durga ------------------------------------------------
+   Palette from the brand sheet. Red and black lead; the crimson data ramp already sits in the
+   same family, so the map reads as part of the identity. */
+:root {
+    --pd-red: #e53935;
+    --pd-crimson: #b71c1c;
+    --pd-orange: #ff6b3d;
+    --pd-gold: #d4af37;
+    --pd-black: #0b0f14;
+    --pd-navy: #0e2a47;
+    --pd-green: #0f3d2e;
+    --pd-cream: #f7f1e3;
+}
+.brand-on-dark { display: none; }
+.dark .brand-on-light { display: none; }
+.dark .brand-on-dark { display: block; }
+.brand-word {
+    font-family: 'Montserrat', var(--font-sans);
+    line-height: 0.92;
+    text-transform: uppercase;
+}
+.brand-word-project {
+    font-weight: 600;
+    font-size: 0.4em;
+    letter-spacing: 0.52em;
+    margin-bottom: 0.12em;
+    color: var(--pd-black);
+}
+.dark .brand-word-project { color: var(--pd-cream); }
+.brand-word-durga {
+    font-weight: 900;
+    letter-spacing: -0.01em;
+    color: var(--pd-red); /* large bold type: 4:1 on white, 4.6:1 on brand black */
+}
+
 /* ---- Dashboard ---------------------------------------------------------- */
 :root {
     /* sequential red ramp (light) used by charts and bars */
@@ -170,11 +205,13 @@ body {
     * { transition: none !important; animation: none !important; }
 }
 
-/* Slogan banner: deep red with white text in both themes (contrast > 7:1) */
+/* Slogan banner: brand black with cream type and a red rule, as on the logo (contrast > 15:1) */
 .slogan-banner {
-    background: #9e2226;
-    color: #ffffff;
+    background: var(--pd-black);
+    color: var(--pd-cream);
+    border-bottom: 3px solid var(--pd-red);
 }
+.slogan-banner .opacity-60 { color: var(--pd-red); opacity: 1; }
 .slogan-text {
     /* one line at every width: scales with the viewport, capped at desktop size */
     font-size: clamp(0.85rem, 4.3vw, 2.25rem);
@@ -182,18 +219,18 @@ body {
 }
 
 /* ---- Mobile UI tokens (scoped to .m-ui so the desktop layout is unchanged) ----------------
-   Purple = the women's-rights movement, dignity and justice: used for everything you can act on.
-   The crimson ramp stays reserved for the data. Warm neutrals keep the chrome calm. */
+   Brand navy (light) / brand gold (dark) for everything you can act on, so controls never read
+   as data: the crimson ramp stays reserved for the map. Warm neutrals keep the chrome calm. */
 .m-ui {
     --m-bg: #fbf9f7;
     --m-surface: #ffffff;
     --m-border: #e6e1dc;
     --m-ink: #1f1b24;
     --m-ink-soft: #625b69;
-    --brand: #5d4278;        /* muted plum, 8.9:1 on white */
+    --brand: #0e2a47;        /* brand navy, 14:1 on white */
     --brand-fg: #ffffff;
-    --brand-ink: #4f3868;    /* plum text on light surfaces */
-    --brand-soft: #efeaf3;
+    --brand-ink: #0e2a47;
+    --brand-soft: #e7edf4;
     --bad: #b3261e;          /* a rise in crime */
     --bad-soft: #fdecea;
     --good: #0f6e63;         /* a fall in crime */
@@ -202,15 +239,15 @@ body {
     color: var(--m-ink);
 }
 .dark .m-ui, .m-ui.dark {
-    --m-bg: #141216;
-    --m-surface: #1d1a21;
-    --m-border: #353039;
-    --m-ink: #f3f0f5;
-    --m-ink-soft: #b3abb9;
-    --brand: #a996c4;        /* soft lavender on dark ground, 7:1 */
-    --brand-fg: #1a1424;
-    --brand-ink: #c9bcdc;
-    --brand-soft: #2a2432;
+    --m-bg: #0b0f14;         /* brand black */
+    --m-surface: #141a22;
+    --m-border: #2a323d;
+    --m-ink: #f7f1e3;        /* brand cream */
+    --m-ink-soft: #b5ae9f;
+    --brand: #d4af37;        /* brand gold, 9:1 on brand black */
+    --brand-fg: #0b0f14;
+    --brand-ink: #e2c35a;
+    --brand-soft: #2a2514;
     --bad: #ff8a80;
     --bad-soft: #3a1c1c;
     --good: #5fd4c4;

@@ -3,11 +3,13 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { feature } from 'topojson-client'
 import type { Feature, FeatureCollection, Geometry, Point } from 'geojson'
 import type { GeometryCollection, Topology } from 'topojson-specification'
+import { BrandLockup, BrandMark, BrandTitle } from '@/components/Brand'
 import { Filters } from '@/components/Filters'
 import { Legend } from '@/components/Legend'
 import { MapView, type AreaStyle, type MapMode } from '@/components/MapView'
 import { SidePanel } from '@/components/SidePanel'
 import { BackToIndia, CrimeChips, FiltersSheet, FitIndiaButton, MapControls, MobileFilterBar, SummaryCard, YearDock } from '@/components/mobile/MobileUI'
+import { ShareMenu } from '@/components/ShareMenu'
 import { Sources } from '@/components/Sources'
 import { VisitCount } from '@/components/VisitCount'
 import { Button } from '@/components/ui/button'
@@ -70,7 +72,15 @@ export default function App() {
   }, [])
 
   if (error) return <div className="grid h-full place-items-center p-6 text-sm">Could not load the dashboard data. {error}</div>
-  if (!data || !geo) return <div className="grid h-full place-items-center text-sm text-muted-foreground">Loading NCRB data…</div>
+  if (!data || !geo)
+    return (
+      <div className="grid h-full place-items-center text-sm text-muted-foreground">
+        <div className="flex flex-col items-center gap-3">
+          <BrandMark className="h-24 animate-pulse" />
+          Loading NCRB data…
+        </div>
+      </div>
+    )
   return <Dashboard data={data} geo={geo} />
 }
 
@@ -296,6 +306,7 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
         hideHeadline={isMobile}
       />
       <footer className="mt-8 border-t pt-4 text-[11px] leading-relaxed text-muted-foreground">
+        <BrandLockup className="mb-3 h-28" />
         <p className="mb-2 text-xs text-foreground">
           Compiled by {AUTHOR_ROLE}.
         </p>
@@ -320,6 +331,7 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
   const themeButton = (
     <div className="flex shrink-0 items-center gap-0.5">
       <VisitCount />
+      <ShareMenu />
       <Button variant="ghost" size="icon" className="shrink-0" onClick={toggle} aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}>
         {theme === 'dark' ? <Sun /> : <Moon />}
       </Button>
@@ -353,8 +365,8 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
           {slogan}
           <header className="flex items-center justify-between gap-3 border-b border-[var(--m-border)] px-4 py-2">
             <div className="min-w-0">
-              <h1 className="text-base font-bold tracking-tight">Project Durga</h1>
-              <p className="truncate text-xs text-[var(--m-ink-soft)]">NCRB police records · 2001–2024</p>
+              <BrandTitle size="sm" />
+              <p className="sr-only">NCRB police records · 2001–2024</p>
             </div>
             {themeButton}
           </header>
@@ -454,11 +466,11 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
     <TooltipProvider>
       <div className="flex h-full flex-col bg-background text-foreground">
         {slogan}
-        <header className="flex items-center justify-between gap-3 border-b px-4 py-2.5 sm:py-3">
-          <div className="min-w-0">
-            <h1 className="text-base font-semibold tracking-tight text-balance sm:truncate sm:text-lg">Project Durga</h1>
-            <p className="text-xs text-muted-foreground sm:truncate">
-              Cases registered by police (NCRB), by state and district, 2001–2024 · By {AUTHOR_ROLE}
+        <header className="flex items-center justify-between gap-3 border-b px-4 py-2">
+          <div className="flex min-w-0 items-center gap-4">
+            <BrandTitle />
+            <p className="min-w-0 border-l pl-4 text-xs text-muted-foreground">
+              Crimes against women in India: cases registered by police (NCRB), by state and district, 2001–2024 · By {AUTHOR_ROLE}
             </p>
           </div>
           {themeButton}
