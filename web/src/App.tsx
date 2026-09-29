@@ -9,7 +9,7 @@ import { Legend } from '@/components/Legend'
 import { MapView, type AreaStyle, type MapMode } from '@/components/MapView'
 import { SidePanel } from '@/components/SidePanel'
 import { BackToIndia, CrimeChips, FiltersSheet, FitIndiaButton, MapControls, MobileFilterBar, SummaryCard, YearDock } from '@/components/mobile/MobileUI'
-import { ShareMenu } from '@/components/ShareMenu'
+import { ShareFab } from '@/components/ShareMenu'
 import { Sources } from '@/components/Sources'
 import { VisitCount } from '@/components/VisitCount'
 import { Button } from '@/components/ui/button'
@@ -20,6 +20,7 @@ import {
   type DashboardData, type Filters as F,
 } from '@/lib/data'
 import { NO_DATA, RAMP_DARK, RAMP_LIGHT, colorFor, quantileBreaks } from '@/lib/scale'
+import type { ShareCardInfo } from '@/lib/shareCard'
 
 const AUTHOR_ROLE = 'a concerned citizen'
 
@@ -220,6 +221,7 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
   useNetlifyBadgeInFooter(isMobile)
 
   const detailsRef = useRef<HTMLElement>(null)
+  const snapshotRef = useRef<(() => Promise<HTMLCanvasElement | null>) | null>(null)
   const showDetails = () => detailsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   const [sheetOpen, setSheetOpen] = useState(false)
 
@@ -261,6 +263,7 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
       heatLevel={heatLevel}
       onSelectState={selectState}
       onSelectDistrict={setDistrict}
+      snapshotRef={snapshotRef}
     />
   )
 
@@ -331,24 +334,69 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
   const themeButton = (
     <div className="flex shrink-0 items-center gap-0.5">
       <VisitCount />
-      <ShareMenu />
       <Button variant="ghost" size="icon" className="shrink-0" onClick={toggle} aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}>
         {theme === 'dark' ? <Sun /> : <Moon />}
       </Button>
     </div>
   )
 
+  // Headline for the summary card and the share image: the selected place, this year vs the
+  // previous year with data
+  const valueAt = (fy: F) =>
+    district ? districtValue(data, district, fy) : state ? stateValue(data, state, fy) : nationalValue(data, fy)
+  const prevYear = [...stateYears].reverse().find((y) => y < filters.year)
+  const now = valueAt(effective)
+  const before = prevYear !== undefined ? valueAt({ ...effective, year: prevYear }) : undefined
+  const change = now.value !== undefined && before?.value ? (now.value - before.value) / before.value : undefined
+  const adrNow = legislators && adrYear ? adrByState(data, adrYear) : {}
+  const adrTotal = legislators ? (adrReports(data).find((r) => r.year === adrYear)?.houses ?? []).reduce((t, h) => t + h.count, 0) : 0
+  const what = effective.offender === 'all' ? data.cats[effective.cat]?.label : `Rape by ${OFFENDER_LABELS[effective.offender]?.toLowerCase() ?? effective.offender}`
+
+  const place = district ? districtName(district) : state ?? 'India'
+  const secondaryText = legislators
+    ? 'Pending cases, not convictions'
+    : filters.metric === 'rate'
+      ? now.count !== undefined ? `${now.count.toLocaleString('en-IN')} cases` : undefined
+      : now.rate !== undefined ? `${formatValue(now.rate, 'rate')} per lakh women` : undefined
+  const shareInfo: ShareCardInfo = legislators
+    ? {
+        place,
+        subtitle: `Sitting MPs/MLAs with declared cases · ADR ${adrYear ?? ''}`,
+        value: String(state ? adrNow[state]?.total ?? 0 : adrTotal),
+        unit: 'legislators',
+        secondary: secondaryText,
+        legendTitle,
+        ramp,
+        heat: mode === 'heat',
+      }
+    : {
+        place,
+        subtitle: `${what} · ${filters.year}`,
+        value: formatValue(now.value, filters.metric),
+        unit: now.value !== undefined ? metricUnit(filters.metric) : undefined,
+        secondary: secondaryText,
+        change,
+        prevYear,
+        legendTitle,
+        ramp,
+        heat: mode === 'heat',
+      }
+  const shareText = legislators
+    ? `${place}: ${shareInfo.value} sitting MPs/MLAs have declared cases of crimes against women (ADR ${adrYear ?? ''}). See the map on Project Durga:`
+    : now.value !== undefined
+      ? `${place}, ${filters.year}: ${shareInfo.value} ${shareInfo.unit} (${what?.toLowerCase()}). See the map on Project Durga:`
+      : `Crimes against women in ${place}, by state and district. See the map on Project Durga:`
+  const shareFab = (
+    <ShareFab
+      info={shareInfo}
+      shareText={shareText}
+      theme={theme}
+      snapshot={() => snapshotRef.current?.() ?? Promise.resolve(null)}
+      mobile={isMobile}
+    />
+  )
+
   if (isMobile) {
-    // Headline for the summary card: the selected place, this year vs the previous year with data
-    const valueAt = (fy: F) =>
-      district ? districtValue(data, district, fy) : state ? stateValue(data, state, fy) : nationalValue(data, fy)
-    const prevYear = [...stateYears].reverse().find((y) => y < filters.year)
-    const now = valueAt(effective)
-    const before = prevYear !== undefined ? valueAt({ ...effective, year: prevYear }) : undefined
-    const change = now.value !== undefined && before?.value ? (now.value - before.value) / before.value : undefined
-    const adrNow = legislators && adrYear ? adrByState(data, adrYear) : {}
-    const adrTotal = legislators ? (adrReports(data).find((r) => r.year === adrYear)?.houses ?? []).reduce((t, h) => t + h.count, 0) : 0
-    const what = effective.offender === 'all' ? data.cats[effective.cat]?.label : `Rape by ${OFFENDER_LABELS[effective.offender]?.toLowerCase() ?? effective.offender}`
     const crumbs = [
       { label: 'India', onClick: state ? showIndia : undefined },
       ...(state ? [{ label: state, onClick: district ? () => setDistrict(null) : undefined }] : []),
@@ -405,11 +453,7 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
                 subtitle={`${what} · ${filters.year}`}
                 value={formatValue(now.value, filters.metric)}
                 unit={now.value !== undefined ? metricUnit(filters.metric) : undefined}
-                secondary={
-                  filters.metric === 'rate'
-                    ? now.count !== undefined ? `${now.count.toLocaleString('en-IN')} cases` : undefined
-                    : now.rate !== undefined ? `${formatValue(now.rate, 'rate')} per lakh women` : undefined
-                }
+                secondary={secondaryText}
                 change={change}
                 prevYear={prevYear}
                 onDetails={showDetails}
@@ -457,6 +501,7 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
           <FiltersSheet open={sheetOpen} setOpen={setSheetOpen}>
             {filtersPanel('mobile')}
           </FiltersSheet>
+          {shareFab}
         </div>
       </TooltipProvider>
     )
@@ -495,6 +540,7 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
             {details}
           </aside>
         </div>
+        {shareFab}
       </div>
     </TooltipProvider>
   )
