@@ -1,4 +1,4 @@
-# Crimes Against Women in India: interactive dashboard
+# Project Durga: crimes against women in India, an interactive dashboard
 
 An interactive map of crimes against women registered by police in India, drawn from NCRB's
 *Crime in India* data. You can zoom from the whole country into a state and its districts, filter by
@@ -94,4 +94,4 @@ The code (`scripts/`, `web/`) is under the MIT licence; see `LICENSE`. The data 
 sources listed above and stays under their own terms. Please cite the original sources (NCRB,
 Census of India, MoHFW, ADR) when reusing figures.
 
-Live dashboard: https://crimesagainstwomeninindia.netlify.app
+Live dashboard: https://project-durga.netlify.app

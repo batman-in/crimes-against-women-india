@@ -353,7 +353,7 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
           {slogan}
           <header className="flex items-center justify-between gap-3 border-b border-[var(--m-border)] px-4 py-2">
             <div className="min-w-0">
-              <h1 className="text-base font-bold tracking-tight">Crimes Against Women in India</h1>
+              <h1 className="text-base font-bold tracking-tight">Project Durga</h1>
               <p className="truncate text-xs text-[var(--m-ink-soft)]">NCRB police records · 2001–2024</p>
             </div>
             {themeButton}
@@ -456,7 +456,7 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
         {slogan}
         <header className="flex items-center justify-between gap-3 border-b px-4 py-2.5 sm:py-3">
           <div className="min-w-0">
-            <h1 className="text-base font-semibold tracking-tight text-balance sm:truncate sm:text-lg">Crimes Against Women in India</h1>
+            <h1 className="text-base font-semibold tracking-tight text-balance sm:truncate sm:text-lg">Project Durga</h1>
             <p className="text-xs text-muted-foreground sm:truncate">
               Cases registered by police (NCRB), by state and district, 2001–2024 · By {AUTHOR_ROLE}
             </p>
