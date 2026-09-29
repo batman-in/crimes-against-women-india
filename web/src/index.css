@@ -55,7 +55,7 @@
     --card-foreground: oklch(0.145 0 0);
     --popover: oklch(1 0 0);
     --popover-foreground: oklch(0.145 0 0);
-    --primary: #0b0f14;
+    --primary: #1f1f1f;
     --primary-foreground: #ffffff;
     --secondary: oklch(0.97 0 0);
     --secondary-foreground: oklch(0.205 0 0);
@@ -66,7 +66,7 @@
     --destructive: oklch(0.577 0.245 27.325);
     --border: oklch(0.922 0 0);
     --input: oklch(0.922 0 0);
-    --ring: #e53935;
+    --ring: #c62828;
     --chart-1: oklch(0.87 0 0);
     --chart-2: oklch(0.556 0 0);
     --chart-3: oklch(0.439 0 0);
@@ -84,14 +84,14 @@
 }
 
 .dark {
-    --background: #0b0f14;
-    --foreground: oklch(0.985 0 0);
-    --card: #141a22;
-    --card-foreground: oklch(0.985 0 0);
-    --popover: #141a22;
+    --background: #1a1a1a;
+    --foreground: #fff7ee;
+    --card: #242424;
+    --card-foreground: #fff7ee;
+    --popover: #242424;
     --popover-foreground: oklch(0.985 0 0);
-    --primary: #f7f1e3;
-    --primary-foreground: #0b0f14;
+    --primary: #fff7ee;
+    --primary-foreground: #1f1f1f;
     --secondary: oklch(0.269 0 0);
     --secondary-foreground: oklch(0.985 0 0);
     --muted: oklch(0.269 0 0);
@@ -101,7 +101,7 @@
     --destructive: oklch(0.704 0.191 22.216);
     --border: oklch(1 0 0 / 10%);
     --input: oklch(1 0 0 / 15%);
-    --ring: #ff6b3d;
+    --ring: #ff7a3d;
     --chart-1: oklch(0.87 0 0);
     --chart-2: oklch(0.556 0 0);
     --chart-3: oklch(0.439 0 0);
@@ -132,39 +132,19 @@
     }
 }
 /* ---- Brand: Project Durga ------------------------------------------------
-   Palette from the brand sheet. Red and black lead; the crimson data ramp already sits in the
-   same family, so the map reads as part of the identity. */
+   Palette from the brand sheet: Durga red, Shakti orange, Surya yellow, deep charcoal, earth
+   cream. The crimson data ramp sits in the same warm family, so the map reads as part of it. */
 :root {
-    --pd-red: #e53935;
-    --pd-crimson: #b71c1c;
-    --pd-orange: #ff6b3d;
-    --pd-gold: #d4af37;
-    --pd-black: #0b0f14;
-    --pd-navy: #0e2a47;
-    --pd-green: #0f3d2e;
-    --pd-cream: #f7f1e3;
+    --pd-red: #c62828;
+    --pd-orange: #ff7a3d;
+    --pd-yellow: #ffc857;
+    --pd-charcoal: #1f1f1f;
+    --pd-cream: #fff7ee;
+    --pd-sunrise: linear-gradient(90deg, var(--pd-yellow), var(--pd-orange) 45%, var(--pd-red));
 }
 .brand-on-dark { display: none; }
 .dark .brand-on-light { display: none; }
 .dark .brand-on-dark { display: block; }
-.brand-word {
-    font-family: 'Montserrat', var(--font-sans);
-    line-height: 0.92;
-    text-transform: uppercase;
-}
-.brand-word-project {
-    font-weight: 600;
-    font-size: 0.4em;
-    letter-spacing: 0.52em;
-    margin-bottom: 0.12em;
-    color: var(--pd-black);
-}
-.dark .brand-word-project { color: var(--pd-cream); }
-.brand-word-durga {
-    font-weight: 900;
-    letter-spacing: -0.01em;
-    color: var(--pd-red); /* large bold type: 4:1 on white, 4.6:1 on brand black */
-}
 
 /* ---- Dashboard ---------------------------------------------------------- */
 :root {
@@ -205,13 +185,15 @@ body {
     * { transition: none !important; animation: none !important; }
 }
 
-/* Slogan banner: brand black with cream type and a red rule, as on the logo (contrast > 15:1) */
+/* Slogan banner: Durga red with cream type in both themes (contrast 5.4:1), over the sunrise
+   gradient rule from the brand sheet */
 .slogan-banner {
-    background: var(--pd-black);
+    background: var(--pd-red);
     color: var(--pd-cream);
-    border-bottom: 3px solid var(--pd-red);
+    border-bottom: 3px solid transparent;
+    border-image: var(--pd-sunrise) 1;
 }
-.slogan-banner .opacity-60 { color: var(--pd-red); opacity: 1; }
+.slogan-banner .opacity-60 { color: var(--pd-yellow); opacity: 1; }
 .slogan-text {
     /* one line at every width: scales with the viewport, capped at desktop size */
     font-size: clamp(0.85rem, 4.3vw, 2.25rem);
@@ -219,18 +201,18 @@ body {
 }
 
 /* ---- Mobile UI tokens (scoped to .m-ui so the desktop layout is unchanged) ----------------
-   Brand navy (light) / brand gold (dark) for everything you can act on, so controls never read
-   as data: the crimson ramp stays reserved for the map. Warm neutrals keep the chrome calm. */
+   Deep charcoal (light) / Surya yellow (dark) for everything you can act on, so controls never
+   read as data: the crimson ramp stays reserved for the map. Earth cream keeps the chrome warm. */
 .m-ui {
-    --m-bg: #fbf9f7;
+    --m-bg: #fff7ee;         /* earth cream */
     --m-surface: #ffffff;
-    --m-border: #e6e1dc;
+    --m-border: #ebe0d2;
     --m-ink: #1f1b24;
     --m-ink-soft: #625b69;
-    --brand: #0e2a47;        /* brand navy, 14:1 on white */
-    --brand-fg: #ffffff;
-    --brand-ink: #0e2a47;
-    --brand-soft: #e7edf4;
+    --brand: #1f1f1f;        /* deep charcoal, 16:1 on white */
+    --brand-fg: #fff7ee;
+    --brand-ink: #1f1f1f;
+    --brand-soft: #f3e9dc;
     --bad: #b3261e;          /* a rise in crime */
     --bad-soft: #fdecea;
     --good: #0f6e63;         /* a fall in crime */
@@ -239,15 +221,15 @@ body {
     color: var(--m-ink);
 }
 .dark .m-ui, .m-ui.dark {
-    --m-bg: #0b0f14;         /* brand black */
-    --m-surface: #141a22;
-    --m-border: #2a323d;
-    --m-ink: #f7f1e3;        /* brand cream */
-    --m-ink-soft: #b5ae9f;
-    --brand: #d4af37;        /* brand gold, 9:1 on brand black */
-    --brand-fg: #0b0f14;
-    --brand-ink: #e2c35a;
-    --brand-soft: #2a2514;
+    --m-bg: #1a1a1a;
+    --m-surface: #242424;
+    --m-border: #383431;
+    --m-ink: #fff7ee;        /* earth cream */
+    --m-ink-soft: #b8afa5;
+    --brand: #ffc857;        /* Surya yellow, 11:1 on the dark ground */
+    --brand-fg: #1f1f1f;
+    --brand-ink: #ffd37a;
+    --brand-soft: #3a3020;
     --bad: #ff8a80;
     --bad-soft: #3a1c1c;
     --good: #5fd4c4;
