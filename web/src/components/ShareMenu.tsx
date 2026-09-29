@@ -1,11 +1,10 @@
 import { Check, Download, Link, Loader2, Share2 } from 'lucide-react'
 import { DropdownMenu } from 'radix-ui'
 import { useEffect, useRef, useState } from 'react'
-import { renderShareCard, type ShareCardInfo } from '@/lib/shareCard'
+import { domToBlob } from 'modern-screenshot'
 import { cn } from '@/lib/utils'
 
 const siteUrl = () => `${window.location.origin}${import.meta.env.BASE_URL}`
-const siteLabel = () => `${window.location.host}${import.meta.env.BASE_URL}`.replace(/\/$/, '')
 
 // Brand marks (lucide no longer ships them)
 function FacebookIcon() {
@@ -35,16 +34,22 @@ function WhatsAppIcon() {
 }
 
 export interface ShareFabProps {
-  info: ShareCardInfo
   shareText: string
-  theme: 'light' | 'dark'
-  snapshot: () => Promise<HTMLCanvasElement | null>
+  fileName: string // without extension; slugged here
   mobile: boolean
 }
 
-function fileName(info: ShareCardInfo) {
-  const slug = `${info.place} ${info.subtitle}`.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
-  return `project-durga-${slug}.png`
+const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+
+/** Screenshot of the page as the viewer sees it, scroll positions and map included. */
+async function screenshotPage(): Promise<Blob> {
+  const root = document.getElementById('root')!
+  return domToBlob(root, {
+    scale: Math.min(3, Math.max(2, window.devicePixelRatio || 1)),
+    backgroundColor: getComputedStyle(document.body).backgroundColor,
+    // Leave out the share button and its notice, and iframes (the Netlify badge), which can't be drawn
+    filter: (node) => !(node instanceof HTMLIFrameElement) && !(node instanceof Element && node.hasAttribute('data-share-exclude')),
+  })
 }
 
 function download(blob: Blob, name: string) {
@@ -64,7 +69,7 @@ async function copyLink() {
   }
 }
 
-/** Hand the card to the phone's share sheet (WhatsApp, Instagram, …). False where files can't be shared. */
+/** Hand the screenshot to the phone's share sheet (WhatsApp, Instagram, …). False where files can't be shared. */
 async function shareFile(file: File, text: string) {
   if (!navigator.canShare?.({ files: [file] })) return false
   try {
@@ -79,31 +84,28 @@ const itemClass =
   'flex cursor-pointer items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium outline-none select-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground'
 
 /**
- * Floating share button, bottom right. Opening it draws a portrait card of the current view
- * (place, crime type, year, figure and map) that the menu shares or downloads.
+ * Floating share button, bottom right. Opening it takes a screenshot of the page as it is on
+ * screen (the viewer's own selection) that the menu shares or downloads.
  */
-export function ShareFab({ info, shareText, theme, snapshot, mobile }: ShareFabProps) {
+export function ShareFab({ shareText, fileName, mobile }: ShareFabProps) {
   const [open, setOpen] = useState(false)
   const [card, setCard] = useState<{ blob: Blob; url: string; file: File } | null>(null)
   const [notice, setNotice] = useState<string | null>(null)
-  const latest = useRef({ info, theme, snapshot })
-  latest.current = { info, theme, snapshot }
+  const nameRef = useRef(fileName)
+  nameRef.current = fileName
 
-  // Draw a fresh card each time the menu opens, so it matches what's on screen.
+  // Take a fresh screenshot each time the menu opens (the menu itself is outside #root).
   useEffect(() => {
     if (!open) return
     let alive = true
     let url: string | null = null
-    const { info, theme, snapshot } = latest.current
-    snapshot()
-      .catch(() => null)
-      .then((map) => renderShareCard(info, map, theme, siteLabel()))
+    screenshotPage()
       .then((blob) => {
         if (!alive) return
         url = URL.createObjectURL(blob)
-        setCard({ blob, url, file: new File([blob], fileName(info), { type: 'image/png' }) })
+        setCard({ blob, url, file: new File([blob], `${slug(nameRef.current)}.png`, { type: 'image/png' }) })
       })
-      .catch(() => alive && setNotice('Could not draw the share image. Please try again.'))
+      .catch(() => alive && setNotice('Could not take the screenshot. Please try again.'))
     return () => {
       alive = false
       if (url) URL.revokeObjectURL(url)
@@ -123,7 +125,7 @@ export function ShareFab({ info, shareText, theme, snapshot, mobile }: ShareFabP
     window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank', 'noopener')
     if (card && !mobile) {
       download(card.blob, card.file.name)
-      setNotice('Image downloaded. Attach it to your WhatsApp message.')
+      setNotice('Screenshot downloaded. Attach it to your WhatsApp message.')
     }
   }
   const instagram = async () => {
@@ -133,8 +135,8 @@ export function ShareFab({ info, shareText, theme, snapshot, mobile }: ShareFabP
     const copied = await copyLink()
     setNotice(
       copied
-        ? 'Image downloaded and link copied. Post the image on Instagram and paste the link in your caption or story.'
-        : 'Image downloaded. Post it on Instagram with a link to this page.',
+        ? 'Screenshot downloaded and link copied. Post it on Instagram and paste the link in your caption or story.'
+        : 'Screenshot downloaded. Post it on Instagram with a link to this page.',
     )
   }
   const facebook = () => {
@@ -143,7 +145,7 @@ export function ShareFab({ info, shareText, theme, snapshot, mobile }: ShareFabP
   const save = () => {
     if (!card) return
     download(card.blob, card.file.name)
-    setNotice('Image downloaded.')
+    setNotice('Screenshot downloaded.')
   }
   const link = () => {
     copyLink().then((ok) => setNotice(ok ? 'Link copied.' : `Copy this link: ${siteUrl()}`))
@@ -163,6 +165,7 @@ export function ShareFab({ info, shareText, theme, snapshot, mobile }: ShareFabP
         <DropdownMenu.Trigger asChild>
           <button
             type="button"
+            data-share-exclude
             className={cn(
               'share-fab fixed right-4 z-40 flex h-14 items-center gap-2 rounded-full pr-6 pl-5 text-base font-semibold shadow-lg transition-transform active:scale-95 sm:right-6',
               bottom,
@@ -185,12 +188,15 @@ export function ShareFab({ info, shareText, theme, snapshot, mobile }: ShareFabP
               {card ? (
                 <img
                   src={card.url}
-                  alt={`Share image: ${info.place}, ${info.subtitle}`}
+                  alt="Screenshot of this view"
                   className="max-h-[38svh] w-auto max-w-full rounded-lg border"
                 />
               ) : (
-                <div className="grid aspect-[4/5] h-[38svh] max-w-full place-items-center rounded-lg border bg-muted">
-                  <Loader2 className="size-6 animate-spin text-muted-foreground" aria-label="Drawing the share image" />
+                <div
+                  className="grid max-h-[38svh] w-full place-items-center rounded-lg border bg-muted"
+                  style={{ aspectRatio: `${window.innerWidth} / ${window.innerHeight}` }}
+                >
+                  <Loader2 className="size-6 animate-spin text-muted-foreground" aria-label="Taking a screenshot" />
                 </div>
               )}
             </div>
@@ -205,7 +211,7 @@ export function ShareFab({ info, shareText, theme, snapshot, mobile }: ShareFabP
             </DropdownMenu.Item>
             <DropdownMenu.Separator className="my-1 h-px bg-border" />
             <DropdownMenu.Item className={itemClass} onSelect={save} disabled={!card}>
-              <Download className="size-4" aria-hidden /> Download image
+              <Download className="size-4" aria-hidden /> Download screenshot
             </DropdownMenu.Item>
             <DropdownMenu.Item className={itemClass} onSelect={link}>
               <Link className="size-4" aria-hidden /> Copy link
@@ -216,6 +222,7 @@ export function ShareFab({ info, shareText, theme, snapshot, mobile }: ShareFabP
       {notice && (
         <div
           role="status"
+          data-share-exclude
           className={cn(
             'fixed inset-x-4 z-50 mx-auto flex max-w-sm items-start gap-2 rounded-md border bg-popover p-3 text-sm text-popover-foreground shadow-lg',
             mobile ? 'bottom-[calc(144px+env(safe-area-inset-bottom))]' : 'bottom-24',

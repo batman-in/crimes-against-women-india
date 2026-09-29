@@ -188,10 +188,10 @@ body {
 /* Slogan banner: Durga red with cream type in both themes (contrast 5.4:1), over the sunrise
    gradient rule from the brand sheet */
 .slogan-banner {
-    background: var(--pd-red);
-    color: var(--pd-cream);
+    /* the rule is a background layer, not border-image, so page screenshots draw it correctly */
+    background: var(--pd-sunrise) bottom / 100% 3px no-repeat, var(--pd-red);
     border-bottom: 3px solid transparent;
-    border-image: var(--pd-sunrise) 1;
+    color: var(--pd-cream);
 }
 .slogan-banner .opacity-60 { color: var(--pd-yellow); opacity: 1; }
 .slogan-text {

@@ -20,7 +20,6 @@ import {
   type DashboardData, type Filters as F,
 } from '@/lib/data'
 import { NO_DATA, RAMP_DARK, RAMP_LIGHT, colorFor, quantileBreaks } from '@/lib/scale'
-import type { ShareCardInfo } from '@/lib/shareCard'
 
 const AUTHOR_ROLE = 'a concerned citizen'
 
@@ -221,7 +220,6 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
   useNetlifyBadgeInFooter(isMobile)
 
   const detailsRef = useRef<HTMLElement>(null)
-  const snapshotRef = useRef<(() => Promise<HTMLCanvasElement | null>) | null>(null)
   const showDetails = () => detailsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   const [sheetOpen, setSheetOpen] = useState(false)
 
@@ -263,7 +261,6 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
       heatLevel={heatLevel}
       onSelectState={selectState}
       onSelectDistrict={setDistrict}
-      snapshotRef={snapshotRef}
     />
   )
 
@@ -358,40 +355,16 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
     : filters.metric === 'rate'
       ? now.count !== undefined ? `${now.count.toLocaleString('en-IN')} cases` : undefined
       : now.rate !== undefined ? `${formatValue(now.rate, 'rate')} per lakh women` : undefined
-  const shareInfo: ShareCardInfo = legislators
-    ? {
-        place,
-        subtitle: `Sitting MPs/MLAs with declared cases · ADR ${adrYear ?? ''}`,
-        value: String(state ? adrNow[state]?.total ?? 0 : adrTotal),
-        unit: 'legislators',
-        secondary: secondaryText,
-        legendTitle,
-        ramp,
-        heat: mode === 'heat',
-      }
-    : {
-        place,
-        subtitle: `${what} · ${filters.year}`,
-        value: formatValue(now.value, filters.metric),
-        unit: now.value !== undefined ? metricUnit(filters.metric) : undefined,
-        secondary: secondaryText,
-        change,
-        prevYear,
-        legendTitle,
-        ramp,
-        heat: mode === 'heat',
-      }
+  const shareValue = legislators ? String(state ? adrNow[state]?.total ?? 0 : adrTotal) : formatValue(now.value, filters.metric)
   const shareText = legislators
-    ? `${place}: ${shareInfo.value} sitting MPs/MLAs have declared cases of crimes against women (ADR ${adrYear ?? ''}). See the map on Project Durga:`
+    ? `${place}: ${shareValue} sitting MPs/MLAs have declared cases of crimes against women (ADR ${adrYear ?? ''}). See the map on Project Durga:`
     : now.value !== undefined
-      ? `${place}, ${filters.year}: ${shareInfo.value} ${shareInfo.unit} (${what?.toLowerCase()}). See the map on Project Durga:`
+      ? `${place}, ${filters.year}: ${shareValue} ${metricUnit(filters.metric)} (${what?.toLowerCase()}). See the map on Project Durga:`
       : `Crimes against women in ${place}, by state and district. See the map on Project Durga:`
   const shareFab = (
     <ShareFab
-      info={shareInfo}
       shareText={shareText}
-      theme={theme}
-      snapshot={() => snapshotRef.current?.() ?? Promise.resolve(null)}
+      fileName={`project-durga-${place}-${legislators ? `adr-${adrYear ?? ''}` : `${what ?? ''}-${filters.year}`}`}
       mobile={isMobile}
     />
   )

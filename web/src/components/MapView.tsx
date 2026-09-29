@@ -3,7 +3,7 @@ import type { GeoJSONSource, MapGeoJSONFeature } from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
 // Bundle the worker (and the shared chunk it imports) so production builds can find it
 import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url'
-import { useEffect, useRef, type RefObject } from 'react'
+import { useEffect, useRef } from 'react'
 import type { FeatureCollection, Geometry } from 'geojson'
 
 export type MapMode = 'fill' | 'heat'
@@ -32,7 +32,6 @@ interface Props {
   heatLevel?: 'state' | 'district' // wider spots for ~36 states, tighter for ~600 districts
   onSelectState: (name: string | null) => void
   onSelectDistrict: (gid: string | null) => void
-  snapshotRef?: RefObject<(() => Promise<HTMLCanvasElement | null>) | null> // filled with a map-to-image function for the share card
 }
 
 maplibregl.setWorkerUrl(workerUrl)
@@ -89,26 +88,12 @@ export function MapView(props: Props) {
       touchZoomRotate: true,
       doubleClickZoom: true,
       pitchWithRotate: false,
+      // Keep the last frame readable so the share button can screenshot the page, map included
+      canvasContextAttributes: { preserveDrawingBuffer: true },
     })
     map.touchZoomRotate.disableRotation()
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right')
     mapRef.current = map
-    // WebGL clears its buffer after each frame, so copy the canvas inside the next render event.
-    const snapshotRef = latest.current.snapshotRef
-    if (snapshotRef) {
-      snapshotRef.current = () =>
-        new Promise((resolve) => {
-          map.once('render', () => {
-            const src = map.getCanvas()
-            const out = document.createElement('canvas')
-            out.width = src.width
-            out.height = src.height
-            out.getContext('2d')?.drawImage(src, 0, 0)
-            resolve(out)
-          })
-          map.triggerRepaint()
-        })
-    }
     map.on('error', (e) => console.error('map error:', e.error?.message ?? e))
 
     const popup = new maplibregl.Popup({ closeButton: false, closeOnClick: false, offset: 12, className: 'area-popup' })
@@ -162,7 +147,6 @@ export function MapView(props: Props) {
 
     return () => {
       ready.current = false
-      if (snapshotRef) snapshotRef.current = null
       map.remove()
       mapRef.current = null
     }
