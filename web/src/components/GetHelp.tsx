@@ -1,6 +1,5 @@
 import { ExternalLink, Globe, LifeBuoy, Loader2, Mail, MapPin, MessageCircle, Phone, X } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
-import { Sheet, SheetClose, SheetContent, SheetDescription, SheetHeader, SheetTitle } from '@/components/ui/sheet'
 import { cn } from '@/lib/utils'
 
 // ---- data (built by scripts/build_support.py from data/support/*.csv) ----------------------
@@ -19,7 +18,7 @@ interface Entry {
   d?: string // district as the source spells it
   g?: number // map district id
 }
-interface Support {
+export interface Support {
   updated: string
   categories: Record<string, string>
   national: Entry[]
@@ -27,7 +26,7 @@ interface Support {
 }
 
 let cache: Promise<Support> | null = null
-const loadSupport = () => (cache ??= fetch(`${import.meta.env.BASE_URL}data/support.json`).then((r) => r.json() as Promise<Support>))
+export const loadSupport = () => (cache ??= fetch(`${import.meta.env.BASE_URL}data/support.json`).then((r) => r.json() as Promise<Support>))
 
 // Numbers everyone should see first. Each is also in national.csv with its source.
 const EMERGENCY = [
@@ -116,199 +115,194 @@ function Section({ title, entries, categories }: { title: string; entries: Entry
   )
 }
 
-export interface GetHelpProps {
+/** Load the directory once; null until it arrives. */
+export function useSupport(enabled: boolean) {
+  const [data, setData] = useState<Support | null>(null)
+  const [failed, setFailed] = useState(false)
+  useEffect(() => {
+    if (!enabled || data) return
+    loadSupport().then(setData, () => setFailed(true))
+  }, [enabled, data])
+  return { data, failed }
+}
+
+export type Coverage = 'phone' | 'address' | 'legal' | 'none'
+
+/** What the directory lists in each map district: a One Stop Centre with a phone, one with an address only, or legal aid only. */
+export function coverageByDistrict(data: Support): Record<string, Coverage> {
+  const out: Record<string, Coverage> = {}
+  const rank: Record<Coverage, number> = { none: 0, legal: 1, address: 2, phone: 3 }
+  for (const st of Object.values(data.states))
+    for (const e of st.district) {
+      if (e.g === undefined) continue
+      const c: Coverage = e.c === 'one_stop_centre' ? (e.p?.length ? 'phone' : 'address') : e.c === 'legal_aid' ? 'legal' : 'none'
+      const g = String(e.g)
+      if (!out[g] || rank[c] > rank[out[g]]) out[g] = c
+    }
+  return out
+}
+
+export const COVERAGE_LABEL: Record<Coverage, string> = {
+  phone: 'One Stop Centre with phone',
+  address: 'One Stop Centre, address only',
+  legal: 'Legal aid only',
+  none: 'Nothing listed yet',
+}
+
+/** Header button: opens the Get help page. */
+export function GetHelpButton({ onClick }: { onClick: () => void }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className="get-help inline-flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-sm font-semibold shadow-sm"
+    >
+      <LifeBuoy className="size-4" aria-hidden />
+      Get help
+    </button>
+  )
+}
+
+export interface HelpDirectoryProps {
+  data: Support | null
+  failed: boolean
   stateNames: string[]
-  state: string | null // selected on the map
+  state: string | null
   district: string | null // map district id
+  onState: (state: string | null) => void
+  onDistrict: (gid: string | null) => void
   districtsOf: (state: string) => string[]
   districtName: (gid: string) => string
-  mobile: boolean
 }
 
 /**
- * "Get help" button and panel: emergency numbers first, then the One Stop Centre, legal aid,
- * helplines and NGOs for the chosen district and state, then national services.
+ * The Get help page's panel: emergency numbers first, then the One Stop Centre, legal aid,
+ * helplines and NGOs for the district and state chosen here or on the map, then national services.
  */
-export function GetHelp({ stateNames, state, district, districtsOf, districtName, mobile }: GetHelpProps) {
-  const [open, setOpen] = useState(false)
-  const [data, setData] = useState<Support | null>(null)
-  const [failed, setFailed] = useState(false)
-  const [st, setSt] = useState<string>('')
-  const [dist, setDist] = useState<string>('')
-
-  const onOpenChange = (o: boolean) => {
-    if (o) {
-      // start from what's selected on the map
-      setSt(state ?? '')
-      setDist(district ?? '')
-    }
-    setOpen(o)
-  }
-
-  useEffect(() => {
-    if (!open || data) return
-    loadSupport().then(setData, () => setFailed(true))
-  }, [open, data])
-
+export function HelpDirectory({ data, failed, stateNames, state, district, onState, onDistrict, districtsOf, districtName }: HelpDirectoryProps) {
+  const st = state ?? ''
+  const dist = district ?? ''
   const districts = useMemo(
     () => (st ? districtsOf(st).map((g) => ({ g, n: districtName(g).split(',')[0] })).sort((a, b) => a.n.localeCompare(b.n)) : []),
     [st, districtsOf, districtName],
   )
   const stData = st ? data?.states[st] : undefined
   const here = dist && stData ? stData.district.filter((e) => String(e.g) === dist) : []
-  const others = stData ? stData.district.filter((e) => !dist || String(e.g) !== dist) : []
   const othersByDistrict = useMemo(() => {
     const m = new Map<string, Entry[]>()
-    for (const e of others) m.set(e.d ?? '', [...(m.get(e.d ?? '') ?? []), e])
+    for (const e of stData?.district ?? []) if (!dist || String(e.g) !== dist) m.set(e.d ?? '', [...(m.get(e.d ?? '') ?? []), e])
     return [...m.entries()]
-  }, [others])
+  }, [stData, dist])
   const distLabel = dist ? districtName(dist).split(',')[0] : ''
 
   const quickExit = () => window.location.replace('https://www.google.com/')
 
   return (
-    <>
-      <button
-        type="button"
-        onClick={() => onOpenChange(true)}
-        className="get-help inline-flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-sm font-semibold shadow-sm"
-      >
-        <LifeBuoy className="size-4" aria-hidden />
-        Get help
-      </button>
-      <Sheet open={open} onOpenChange={onOpenChange}>
-        <SheetContent
-          side={mobile ? 'bottom' : 'right'}
-          showCloseButton={false}
-          // keep the panel at the top (emergency numbers) instead of jumping to the first control
-          onOpenAutoFocus={(e) => {
-            e.preventDefault()
-            ;(e.currentTarget as HTMLElement).focus({ preventScroll: true })
-          }}
-          className={cn(
-            'gap-0 overflow-y-auto p-0',
-            mobile ? 'max-h-[92svh] rounded-t-2xl' : 'w-full sm:max-w-md',
-          )}
+    <div className="flex flex-col gap-6">
+      <div className="flex items-start justify-between gap-2">
+        <div>
+          <h2 className="text-lg font-semibold">Get help</h2>
+          <p className="text-sm text-muted-foreground">Free services for women and girls facing violence or harassment.</p>
+        </div>
+        <button
+          type="button"
+          onClick={quickExit}
+          className="inline-flex shrink-0 items-center gap-1 rounded-full border px-2.5 py-1 text-xs font-semibold"
+          title="Leaves this site straight away and opens Google"
         >
-          <SheetHeader className="sticky top-0 z-10 border-b bg-popover px-4 pt-4 pb-3">
-            <div className="flex items-start justify-between gap-2">
-              <div>
-                <SheetTitle className="text-lg">Get help</SheetTitle>
-                <SheetDescription>Free services for women and girls facing violence or harassment.</SheetDescription>
-              </div>
-              <button
-                type="button"
-                onClick={quickExit}
-                className="inline-flex shrink-0 items-center gap-1 rounded-full border px-2.5 py-1 text-xs font-semibold"
-                title="Leaves this site straight away and opens Google"
-              >
-                <X className="size-3.5" aria-hidden /> Quick exit
-              </button>
-              <SheetClose className="-mr-1 shrink-0 rounded-full px-2 py-1 text-sm font-medium text-muted-foreground hover:text-foreground">
-                Close
-              </SheetClose>
-            </div>
-          </SheetHeader>
+          <X className="size-3.5" aria-hidden /> Quick exit
+        </button>
+      </div>
 
-          <div className="flex flex-col gap-6 px-4 pt-4 pb-[max(2rem,env(safe-area-inset-bottom))]">
-            <section aria-label="Emergency numbers">
-              <p className="mb-2 text-sm font-semibold">In danger right now? Call 112.</p>
-              <div className="grid grid-cols-2 gap-2">
-                {EMERGENCY.map((x, i) => (
-                  <a
-                    key={x.num}
-                    href={tel(x.num)}
-                    className={cn('flex flex-col rounded-lg p-3', i === 0 ? 'help-sos' : 'border bg-card')}
-                  >
-                    <span className="flex items-center gap-1.5 text-2xl font-extrabold tabular-nums">
-                      <Phone className="size-4" aria-hidden /> {x.num}
-                    </span>
-                    <span className="text-sm font-semibold">{x.label}</span>
-                    <span className={cn('text-xs', i === 0 ? 'opacity-90' : 'text-muted-foreground')}>{x.sub}</span>
-                  </a>
-                ))}
-              </div>
-            </section>
+      <section aria-label="Emergency numbers">
+        <p className="mb-2 text-sm font-semibold">In danger right now? Call 112.</p>
+        <div className="grid grid-cols-2 gap-2">
+          {EMERGENCY.map((x, i) => (
+            <a key={x.num} href={tel(x.num)} className={cn('flex flex-col rounded-lg p-3', i === 0 ? 'help-sos' : 'border bg-card')}>
+              <span className="flex items-center gap-1.5 text-2xl font-extrabold tabular-nums">
+                <Phone className="size-4" aria-hidden /> {x.num}
+              </span>
+              <span className="text-sm font-semibold">{x.label}</span>
+              <span className={cn('text-xs', i === 0 ? 'opacity-90' : 'text-muted-foreground')}>{x.sub}</span>
+            </a>
+          ))}
+        </div>
+      </section>
 
-            <section className="flex flex-col gap-2" aria-label="Your area">
-              <p className="text-sm font-semibold">Find help near you</p>
-              <div className="grid grid-cols-2 gap-2">
-                <label className="flex flex-col gap-1 text-xs text-muted-foreground">
-                  State / UT
-                  <select
-                    value={st}
-                    onChange={(e) => {
-                      setSt(e.target.value)
-                      setDist('')
-                    }}
-                    className="h-10 rounded-md border bg-background px-2 text-sm text-foreground"
-                  >
-                    <option value="">Choose…</option>
-                    {stateNames.map((s) => <option key={s} value={s}>{s}</option>)}
-                  </select>
-                </label>
-                <label className="flex flex-col gap-1 text-xs text-muted-foreground">
-                  District
-                  <select
-                    value={dist}
-                    onChange={(e) => setDist(e.target.value)}
-                    disabled={!st}
-                    className="h-10 rounded-md border bg-background px-2 text-sm text-foreground disabled:opacity-50"
-                  >
-                    <option value="">All districts</option>
-                    {districts.map((d) => <option key={d.g} value={d.g}>{d.n}</option>)}
-                  </select>
-                </label>
-              </div>
-            </section>
+      <section className="flex flex-col gap-2" aria-label="Your area">
+        <p className="text-sm font-semibold">
+          Find help near you <span className="font-normal text-muted-foreground">(or tap the map)</span>
+        </p>
+        <div className="grid grid-cols-2 gap-2">
+          <label className="flex flex-col gap-1 text-xs text-muted-foreground">
+            State / UT
+            <select
+              value={st}
+              onChange={(e) => onState(e.target.value || null)}
+              className="h-10 rounded-md border bg-background px-2 text-sm text-foreground"
+            >
+              <option value="">Choose…</option>
+              {stateNames.map((s) => <option key={s} value={s}>{s}</option>)}
+            </select>
+          </label>
+          <label className="flex flex-col gap-1 text-xs text-muted-foreground">
+            District
+            <select
+              value={dist}
+              onChange={(e) => onDistrict(e.target.value || null)}
+              disabled={!st}
+              className="h-10 rounded-md border bg-background px-2 text-sm text-foreground disabled:opacity-50"
+            >
+              <option value="">All districts</option>
+              {districts.map((d) => <option key={d.g} value={d.g}>{d.n}</option>)}
+            </select>
+          </label>
+        </div>
+      </section>
 
-            {!data && !failed && (
-              <p className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Loader2 className="size-4 animate-spin" aria-hidden /> Loading the directory…
+      {!data && !failed && (
+        <p className="flex items-center gap-2 text-sm text-muted-foreground">
+          <Loader2 className="size-4 animate-spin" aria-hidden /> Loading the directory…
+        </p>
+      )}
+      {failed && <p className="text-sm">Could not load the directory. The numbers above always work.</p>}
+
+      {data && (
+        <>
+          {dist &&
+            (here.length ? (
+              <Section title={`In ${distLabel}`} entries={here} categories={data.categories} />
+            ) : (
+              <p className="rounded-lg border border-dashed p-3 text-sm text-muted-foreground">
+                We have no district-level listing for {distLabel} yet. Call 181 and ask for the nearest One Stop Centre, or
+                see the state services and other districts below.
               </p>
-            )}
-            {failed && <p className="text-sm">Could not load the directory. The numbers above always work.</p>}
-
-            {data && (
-              <>
-                {dist && (
-                  here.length ? (
-                    <Section title={`In ${distLabel}`} entries={here} categories={data.categories} />
-                  ) : (
-                    <p className="rounded-lg border border-dashed p-3 text-sm text-muted-foreground">
-                      We have no district-level listing for {distLabel} yet. Call 181 and ask for the nearest One Stop
-                      Centre, or see the state services and other districts below.
-                    </p>
-                  )
-                )}
-                {stData && <Section title={`Across ${st}`} entries={stData.state} categories={data.categories} />}
-                <Section title="Anywhere in India" entries={data.national} categories={data.categories} />
-                {st && othersByDistrict.length > 0 && (
-                  <section className="flex flex-col gap-2">
-                    <h3 className="text-base font-bold">{dist ? `Other districts in ${st}` : `Districts in ${st}`}</h3>
-                    {othersByDistrict.map(([d, es]) => (
-                      <details key={d} className="rounded-lg border">
-                        <summary className="cursor-pointer px-3 py-2 text-sm font-semibold">
-                          {d} <span className="font-normal text-muted-foreground">({es.length})</span>
-                        </summary>
-                        <ul className="flex flex-col gap-2 p-2">
-                          {es.map((e, i) => <EntryCard key={`${e.n}-${i}`} e={e} />)}
-                        </ul>
-                      </details>
-                    ))}
-                  </section>
-                )}
-                <p className="text-xs leading-relaxed text-muted-foreground">
-                  Contacts come from official government sources and the organisations' own websites, checked on the
-                  date shown with each one ({fmtDate(data.updated)} most recently). Numbers change, so if one doesn't
-                  work, call 181 or 112. This is information to help you find support; it is not legal advice. A
-                  lawyer from legal aid (15100) can advise you for free.
-                </p>
-              </>
-            )}
-          </div>
-        </SheetContent>
-      </Sheet>
-    </>
+            ))}
+          {stData && <Section title={`Across ${st}`} entries={stData.state} categories={data.categories} />}
+          <Section title="Anywhere in India" entries={data.national} categories={data.categories} />
+          {st && othersByDistrict.length > 0 && (
+            <section className="flex flex-col gap-2">
+              <h3 className="text-base font-bold">{dist ? `Other districts in ${st}` : `Districts in ${st}`}</h3>
+              {othersByDistrict.map(([d, es]) => (
+                <details key={d} className="rounded-lg border">
+                  <summary className="cursor-pointer px-3 py-2 text-sm font-semibold">
+                    {d} <span className="font-normal text-muted-foreground">({es.length})</span>
+                  </summary>
+                  <ul className="flex flex-col gap-2 p-2">
+                    {es.map((e, i) => <EntryCard key={`${e.n}-${i}`} e={e} />)}
+                  </ul>
+                </details>
+              ))}
+            </section>
+          )}
+          <p className="text-xs leading-relaxed text-muted-foreground">
+            Contacts come from official government sources and the organisations' own websites, checked on the date shown
+            with each one ({fmtDate(data.updated)} most recently). Numbers change, so if one doesn't work, call 181 or 112.
+            This is information to help you find support; it is not legal advice. A lawyer from legal aid (15100) can
+            advise you for free.
+          </p>
+        </>
+      )}
+    </div>
   )
 }

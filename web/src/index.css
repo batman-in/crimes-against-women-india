@@ -298,3 +298,8 @@ body {
 .help-sos { background: var(--pd-red); color: var(--pd-cream); }
 .help-call { background: color-mix(in srgb, var(--pd-red) 10%, transparent); color: var(--pd-red); }
 .dark .help-call { background: color-mix(in srgb, var(--pd-orange) 16%, transparent); color: #ffb08a; }
+
+/* Page tabs: the active page is underlined in Durga red */
+.page-tab-on { border-bottom-color: var(--pd-red); color: var(--foreground); font-weight: 600; }
+.m-ui .page-tab-on { color: var(--m-ink); }
+.dark .page-tab-on { border-bottom-color: var(--pd-orange); }

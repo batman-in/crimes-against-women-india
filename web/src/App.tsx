@@ -5,9 +5,12 @@ import type { Feature, FeatureCollection, Geometry, Point } from 'geojson'
 import type { GeometryCollection, Topology } from 'topojson-specification'
 import { BrandLockup, BrandMark, BrandTitle } from '@/components/Brand'
 import { Filters } from '@/components/Filters'
-import { GetHelp } from '@/components/GetHelp'
+import { COVERAGE_LABEL, GetHelpButton, HelpDirectory, coverageByDistrict, useSupport, type Coverage } from '@/components/GetHelp'
+import { Justice } from '@/components/Justice'
+import { JusticeControls, MEASURES, StateRanking, justiceOf, justiceYears, nationalMeasure, stateMeasure, type JusticeMeasure } from '@/components/JusticePage'
 import { Legend } from '@/components/Legend'
 import { MapView, type AreaStyle, type MapMode } from '@/components/MapView'
+import { PageTabs, useHashPage } from '@/components/PageTabs'
 import { SidePanel } from '@/components/SidePanel'
 import { BackToIndia, CrimeChips, FiltersSheet, FitIndiaButton, MapControls, MobileFilterBar, SummaryCard, YearDock } from '@/components/mobile/MobileUI'
 import { ShareFab } from '@/components/ShareMenu'
@@ -87,6 +90,7 @@ export default function App() {
 
 function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
   const { theme, toggle } = useTheme()
+  const [page, setPage] = useHashPage()
   const [filters, setFiltersState] = useState<F>(() => ({ year: data.years[data.years.length - 1], cat: 'total', offender: 'all', metric: 'rate' }))
   const [mode, setMode] = useState<MapMode>('fill')
   const [showDistricts, setShowDistricts] = useState(false)
@@ -218,7 +222,54 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
     ? `MPs/MLAs with declared cases (ADR ${adrYear})`
     : `${effective.offender === 'all' ? data.cats[effective.cat]?.label : 'Rape, by offender'}, by ${districtLevel ? 'district' : 'state'}`
 
-  useNetlifyBadgeInFooter(isMobile)
+  // ---- Arrest to verdict: one justice measure by state, for a year most states report
+  const j = justiceOf(data)
+  const [jMeasure, setJMeasure] = useState<JusticeMeasure>('conviction_rate')
+  const jYears = useMemo(() => (j ? justiceYears(j, jMeasure) : []), [j, jMeasure])
+  const [jYearPicked, setJYear] = useState<number | null>(null)
+  const jYear = jYearPicked !== null && jYears.includes(jYearPicked) ? jYearPicked : jYears[jYears.length - 1]
+  const jVals = useMemo(() => {
+    const out: Record<string, number | undefined> = {}
+    if (j && jYear !== undefined) for (const s of stateNames) out[s] = stateMeasure(j, s, jYear, jMeasure)
+    return out
+  }, [j, jYear, jMeasure, stateNames])
+  const jBreaks = useMemo(() => quantileBreaks(defined(jVals)), [jVals])
+  const jStyles = useMemo(() => {
+    const out: Record<string, AreaStyle> = {}
+    for (const s of stateNames) {
+      const v = jVals[s]
+      out[s] = { color: colorFor(v, jBreaks, ramp, noData), label: v === undefined ? 'No data' : `${v.toFixed(1)}% ${MEASURES[jMeasure].short}` }
+    }
+    return out
+  }, [stateNames, jVals, jBreaks, ramp, noData, jMeasure])
+  // Justice figures are state-level: a selected state's districts take the state's colour
+  const jDistrictStyles = useMemo(() => {
+    const out: Record<string, AreaStyle> = {}
+    for (const [g, m] of Object.entries(districtMeta)) if (jStyles[m.ost]) out[g] = { ...jStyles[m.ost], label: `${m.ost}: ${jStyles[m.ost].label}` }
+    return out
+  }, [districtMeta, jStyles])
+
+  // ---- Get help: shade districts by what the directory lists there
+  const support = useSupport(page === 'help')
+  const coverage = useMemo(() => (support.data ? coverageByDistrict(support.data) : null), [support.data])
+  const coverColors: Record<Coverage, string> = theme === 'dark'
+    ? { phone: '#ff7a3d', address: '#9c5a1f', legal: '#4a4038', none: noData }
+    : { phone: '#e0611f', address: '#ffc857', legal: '#ede2d3', none: noData }
+  const helpStyles = useMemo(() => {
+    const out: Record<string, AreaStyle> = {}
+    for (const g of Object.keys(districtMeta)) {
+      const c = coverage?.[g] ?? 'none'
+      out[g] = { color: coverColors[c], label: COVERAGE_LABEL[c] }
+    }
+    return out
+  }, [districtMeta, coverage, theme]) // eslint-disable-line react-hooks/exhaustive-deps
+  const neutralStates = useMemo(() => {
+    const out: Record<string, AreaStyle> = {}
+    for (const s of stateNames) out[s] = { color: noData, label: s }
+    return out
+  }, [stateNames, noData])
+
+  useNetlifyBadgeInFooter(`${isMobile}-${page}`)
 
   const detailsRef = useRef<HTMLElement>(null)
   const showDetails = () => detailsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
@@ -250,14 +301,14 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
       labelMask={geo.indiaMask}
       stateLabels={stateLabels}
       theme={theme}
-      mode={mode}
+      mode={page === 'stats' ? mode : 'fill'}
       touch={isMobile}
       fitToken={fitToken}
-      showDistricts={showDistricts && hasDistrictData}
+      showDistricts={page === 'help' || (page === 'stats' && showDistricts && hasDistrictData)}
       selectedState={state}
       selectedDistrict={district}
-      stateStyles={stateStyles}
-      districtStyles={hasDistrictData ? districtStyles : {}}
+      stateStyles={page === 'justice' ? jStyles : page === 'help' ? neutralStates : stateStyles}
+      districtStyles={page === 'help' ? helpStyles : page === 'justice' ? jDistrictStyles : hasDistrictData ? districtStyles : {}}
       heatPoints={heatPoints}
       heatLevel={heatLevel}
       onSelectState={selectState}
@@ -291,6 +342,99 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
     </div>
   )
 
+  const legendBox = isMobile
+    ? 'map-glass absolute bottom-2 left-2 w-[60%] max-w-[230px] rounded-md px-2 py-1.5'
+    : 'absolute right-2 bottom-7 left-2 rounded-lg border bg-background/90 p-2 shadow-sm backdrop-blur sm:right-auto sm:bottom-8 sm:left-3 sm:w-80 sm:p-3'
+  const pageLegend =
+    page === 'help' ? (
+      <div className={legendBox}>
+        <p className={isMobile ? 'mb-1 text-[11px] font-semibold' : 'mb-1.5 text-xs font-medium'}>Listed in this directory, by district</p>
+        <ul className={isMobile ? 'grid grid-cols-1 gap-0.5 text-[10px]' : 'grid grid-cols-2 gap-x-3 gap-y-1 text-[11px]'}>
+          {(['phone', 'address', 'legal', 'none'] as Coverage[]).map((c) => (
+            <li key={c} className="flex items-center gap-1.5">
+              <span className="size-2.5 shrink-0 rounded-sm border border-black/10" style={{ background: coverColors[c] }} />
+              {COVERAGE_LABEL[c]}
+            </li>
+          ))}
+        </ul>
+        {!isMobile && <p className="mt-1.5 text-[11px] text-muted-foreground">Every district has 112 and 181. Tap a district for its services.</p>}
+      </div>
+    ) : page === 'justice' ? (
+      <div className={legendBox}>
+        <Legend
+          title={`${MEASURES[jMeasure].label}, ${jYear ?? ''}, by state`}
+          breaks={jBreaks}
+          ramp={ramp}
+          metric="rate"
+          unit="%"
+          noData={noData}
+          heat={false}
+          compact={isMobile}
+        />
+      </div>
+    ) : (
+      legend
+    )
+
+  const footer = (
+    <footer className="mt-8 border-t pt-4 text-[11px] leading-relaxed text-muted-foreground">
+      <BrandLockup className="mb-3 h-28" />
+      <p className="mb-2 text-xs text-foreground">
+        Compiled by {AUTHOR_ROLE}.
+      </p>
+      <p className="mb-4">
+        Figures are cases registered by police, so they reflect reporting and registration as well as crime.
+        State boundaries are based on Survey of India maps. District boundaries are GADM (c. 2010); newer
+        districts are counted in their parent district.
+      </p>
+      <Sources />
+      <div id="netlify-badge-slot" />
+    </footer>
+  )
+
+  const helpPanel = (
+    <>
+      <HelpDirectory
+        data={support.data}
+        failed={support.failed}
+        stateNames={stateNames}
+        state={state}
+        district={district}
+        onState={selectState}
+        onDistrict={setDistrict}
+        districtsOf={districtsOf}
+        districtName={districtName}
+      />
+      {footer}
+    </>
+  )
+
+  const jPlaceValue = j && jYear !== undefined ? (state ? jVals[state] : nationalMeasure(j, jYear, jMeasure)) : undefined
+  const justicePanel = (
+    <>
+      <div className="flex flex-col gap-1 pb-4">
+        <h2 className="text-xl font-semibold">{state ?? 'India'}</h2>
+        <p className="text-sm text-muted-foreground">
+          {MEASURES[jMeasure].label}, {jYear}:{' '}
+          <span className="font-semibold text-foreground tabular-nums">{jPlaceValue !== undefined ? `${jPlaceValue.toFixed(1)}%` : 'no data'}</span>
+        </p>
+      </div>
+      {jYear !== undefined && <Justice data={data} cat={effective.cat} year={jYear} state={state} district={district} />}
+      {j && jYear !== undefined && <StateRanking j={j} year={jYear} measure={jMeasure} selected={state} onSelect={selectState} />}
+      {footer}
+    </>
+  )
+  const justiceControls = (compact: boolean) => (
+    <JusticeControls
+      measure={jMeasure}
+      setMeasure={setJMeasure}
+      year={jYear ?? 0}
+      setYear={setJYear}
+      years={jYears}
+      compact={compact}
+    />
+  )
+
   const details = (
     <>
       <SidePanel
@@ -306,19 +450,7 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
         onSelectDistrict={setDistrict}
         hideHeadline={isMobile}
       />
-      <footer className="mt-8 border-t pt-4 text-[11px] leading-relaxed text-muted-foreground">
-        <BrandLockup className="mb-3 h-28" />
-        <p className="mb-2 text-xs text-foreground">
-          Compiled by {AUTHOR_ROLE}.
-        </p>
-        <p className="mb-4">
-          Figures are cases registered by police, so they reflect reporting and registration as well as crime.
-          State boundaries are based on Survey of India maps. District boundaries are GADM (c. 2010); newer
-          districts are counted in their parent district.
-        </p>
-        <Sources />
-        <div id="netlify-badge-slot" />
-      </footer>
+      {footer}
     </>
   )
 
@@ -334,14 +466,7 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
       <span className="hidden min-[440px]:contents">
         <VisitCount />
       </span>
-      <GetHelp
-        stateNames={stateNames}
-        state={state}
-        district={district}
-        districtsOf={districtsOf}
-        districtName={districtName}
-        mobile={isMobile}
-      />
+      {page !== 'help' && <GetHelpButton onClick={() => setPage('help')} />}
       <Button variant="ghost" size="icon" className="shrink-0" onClick={toggle} aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}>
         {theme === 'dark' ? <Sun /> : <Moon />}
       </Button>
@@ -372,10 +497,16 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
     : now.value !== undefined
       ? `${place}, ${filters.year}: ${shareValue} ${metricUnit(filters.metric)} (${what?.toLowerCase()}). See the map on Project Durga:`
       : `Crimes against women in ${place}, by state and district. See the map on Project Durga:`
+  const pageShareText =
+    page === 'help'
+      ? `Help for women and girls facing violence in ${place}: One Stop Centres, free legal aid and helplines (112, 181). Find yours on Project Durga:`
+      : page === 'justice'
+        ? `${state ?? 'India'}, ${jYear}: ${jPlaceValue !== undefined ? `${jPlaceValue.toFixed(1)}%` : 'no data'} ${MEASURES[jMeasure].label.toLowerCase()} for crimes against women. From arrest to verdict on Project Durga:`
+        : shareText
   const shareFab = (
     <ShareFab
-      shareText={shareText}
-      fileName={`project-durga-${place}-${legislators ? `adr-${adrYear ?? ''}` : `${what ?? ''}-${filters.year}`}`}
+      shareText={pageShareText}
+      fileName={page !== 'stats' ? `project-durga-${page}-${place}` : `project-durga-${place}-${legislators ? `adr-${adrYear ?? ''}` : `${what ?? ''}-${filters.year}`}`}
       mobile={isMobile}
     />
   )
@@ -402,7 +533,31 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
             </div>
             {themeButton}
           </header>
+          <PageTabs page={page} setPage={setPage} mobile />
 
+          {page !== 'stats' ? (
+            <div className="min-h-0 flex-1 overflow-y-auto pb-24">
+              {page === 'justice' && <div className="p-4 pb-3">{justiceControls(true)}</div>}
+              <main className="relative h-[46svh] min-h-[300px] border-y border-[var(--m-border)]">
+                {mapView}
+                <div className="absolute top-2 left-2 flex flex-col items-start gap-1.5">
+                  {state && <BackToIndia onClick={showIndia} />}
+                  {!state && (
+                    <p className="map-glass pointer-events-none rounded-full px-2.5 py-0.5 text-[11px]">
+                      {page === 'help' ? 'Tap your district' : 'Tap a state for details'}
+                    </p>
+                  )}
+                </div>
+                <div className="absolute top-[78px] right-[10px]">
+                  <FitIndiaButton onClick={showIndia} />
+                </div>
+                {pageLegend}
+              </main>
+              <aside className="p-4" aria-label="Details">
+                {page === 'help' ? helpPanel : justicePanel}
+              </aside>
+            </div>
+          ) : (
           <div className="min-h-0 flex-1 overflow-y-auto pb-24">
             <MobileFilterBar
               chips={
@@ -472,8 +627,9 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
               {details}
             </aside>
           </div>
+          )}
 
-          <YearDock
+          {page === 'stats' && <YearDock
             years={stateYears}
             allYears={data.years}
             year={filters.year}
@@ -481,7 +637,7 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
             playing={playing}
             setPlaying={setPlaying}
             reportYears={legislators ? adrMapYears(data) : undefined}
-          />
+          />}
           <FiltersSheet open={sheetOpen} setOpen={setSheetOpen}>
             {filtersPanel('mobile')}
           </FiltersSheet>
@@ -504,11 +660,18 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
           </div>
           {themeButton}
         </header>
+        <PageTabs page={page} setPage={setPage} />
 
-        <div className="min-h-0 flex-1 lg:grid lg:grid-cols-[300px_minmax(0,1fr)_380px] lg:overflow-hidden">
-          <aside className="overflow-y-auto border-r p-4" aria-label="Filters">
-            {filtersPanel('desktop')}
-          </aside>
+        <div
+          className={`min-h-0 flex-1 lg:grid lg:overflow-hidden ${
+            page === 'help' ? 'lg:grid-cols-[minmax(0,1fr)_440px]' : 'lg:grid-cols-[300px_minmax(0,1fr)_380px]'
+          }`}
+        >
+          {page !== 'help' && (
+            <aside className="overflow-y-auto border-r p-4" aria-label={page === 'justice' ? 'Measure' : 'Filters'}>
+              {page === 'justice' ? justiceControls(false) : filtersPanel('desktop')}
+            </aside>
+          )}
 
           <main className="relative h-auto">
             {mapView}
@@ -517,11 +680,11 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
                 Back to India
               </Button>
             )}
-            {legend}
+            {pageLegend}
           </main>
 
           <aside ref={detailsRef} className="p-4 lg:overflow-y-auto lg:border-l" aria-label="Details">
-            {details}
+            {page === 'help' ? helpPanel : page === 'justice' ? justicePanel : details}
           </aside>
         </div>
         {shareFab}
