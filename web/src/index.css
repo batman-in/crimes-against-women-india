@@ -290,3 +290,11 @@ body {
 }
 .share-fab:hover { background: #b02121; }
 .share-fab:focus-visible { outline: 3px solid var(--pd-yellow); outline-offset: 2px; }
+
+/* Get help: charcoal / Surya yellow so it stands apart from the red Share button */
+.get-help { background: var(--pd-charcoal); color: var(--pd-cream); }
+.dark .get-help { background: var(--pd-yellow); color: var(--pd-charcoal); }
+.get-help:focus-visible { outline: 3px solid var(--pd-orange); outline-offset: 2px; }
+.help-sos { background: var(--pd-red); color: var(--pd-cream); }
+.help-call { background: color-mix(in srgb, var(--pd-red) 10%, transparent); color: var(--pd-red); }
+.dark .help-call { background: color-mix(in srgb, var(--pd-orange) 16%, transparent); color: #ffb08a; }

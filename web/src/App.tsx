@@ -5,6 +5,7 @@ import type { Feature, FeatureCollection, Geometry, Point } from 'geojson'
 import type { GeometryCollection, Topology } from 'topojson-specification'
 import { BrandLockup, BrandMark, BrandTitle } from '@/components/Brand'
 import { Filters } from '@/components/Filters'
+import { GetHelp } from '@/components/GetHelp'
 import { Legend } from '@/components/Legend'
 import { MapView, type AreaStyle, type MapMode } from '@/components/MapView'
 import { SidePanel } from '@/components/SidePanel'
@@ -329,8 +330,18 @@ function Dashboard({ data, geo }: { data: DashboardData; geo: Geo }) {
     </div>
   )
   const themeButton = (
-    <div className="flex shrink-0 items-center gap-0.5">
-      <VisitCount />
+    <div className="flex shrink-0 items-center gap-1">
+      <span className="hidden min-[440px]:contents">
+        <VisitCount />
+      </span>
+      <GetHelp
+        stateNames={stateNames}
+        state={state}
+        district={district}
+        districtsOf={districtsOf}
+        districtName={districtName}
+        mobile={isMobile}
+      />
       <Button variant="ghost" size="icon" className="shrink-0" onClick={toggle} aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}>
         {theme === 'dark' ? <Sun /> : <Moon />}
       </Button>

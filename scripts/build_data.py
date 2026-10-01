@@ -606,6 +606,10 @@ def main():
           f"offender states {len(offenders)}, ADR tables {list(data['adr'])}")
     print(f"data.json {(OUT / 'data.json').stat().st_size / 1e6:.2f} MB")
 
+    # Support directory (helplines, One Stop Centres, legal aid, NGOs) for the "Get help" panel
+    import build_support
+    build_support.main()
+
 
 if __name__ == "__main__":
     main()
