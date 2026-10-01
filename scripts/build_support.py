@@ -64,6 +64,18 @@ SUPPORT_ALIAS = {
     # Nagaland (districts created 2021-22, folded into the district they were carved from)
     "CHUMOUKEDIMA": "DIMAPUR", "NIULAND": "DIMAPUR", "TSEMINYU": "KOHIMA", "MELURI": "PHEK",
     "NOKLAK": "TUENSANG", "SHAMATOR": "TUENSANG",
+    # Arunachal Pradesh (headquarters' parent district)
+    "KRA DAADI": "KURUNG KUMEY", "PAKKE KESSANG": "EAST KAMENG", "LOWER SIANG": "WEST SIANG",
+    "LEPA RADA": "WEST SIANG", "LEPARADA": "WEST SIANG", "SHI YOMI": "WEST SIANG", "SIANG": "EAST SIANG",
+    # Assam
+    "SOUTH SALMARA MANCACHAR": "DHUBURI", "SRIBHUMI": "KARIMGANJ",
+    # Manipur
+    "JIRIBAM": "EAST IMPHAL", "KAMJONG": "UKHRUL", "KANGPOKPI": "SENAPATI", "NONEY": "TAMENGLONG",
+    "PHERZAWL": "CHURACHANDPUR", "TENGNOUPAL": "CHANDEL",
+    # Mizoram
+    "HNAHTHIAL": "LUNGLEI", "KHAWZAWL": "CHAMPHAI", "SAITUAL": "AIZAWL", "SIAHA": "SAIHA",
+    # Tripura
+    "SEPAHIJALA": "WEST TRIPURA",
 }
 NUMBER = re.compile(r"\+?\d[\d \-()]{1,}\d(?:\s*/\s*\d+)*")
 
