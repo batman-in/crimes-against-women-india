@@ -58,6 +58,12 @@ SUPPORT_ALIAS = {
     "TIRUPATHUR": "VELLORE",
     # Sikkim (districts renamed / carved out in 2021)
     "GYALSHING": "WEST SIKKIM", "SORENG": "WEST SIKKIM", "MANGAN": "NORTH SIKKIM",
+    # Punjab
+    "ROOP NAGAR": "RUPNAGAR", "S A S NAGAR MOHALI": "RUPNAGAR", "SHRI MUKTSAR SAHIB": "MUKTSAR",
+    "SRI MUKTSAR SAHIB": "MUKTSAR",
+    # Nagaland (districts created 2021-22, folded into the district they were carved from)
+    "CHUMOUKEDIMA": "DIMAPUR", "NIULAND": "DIMAPUR", "TSEMINYU": "KOHIMA", "MELURI": "PHEK",
+    "NOKLAK": "TUENSANG", "SHAMATOR": "TUENSANG",
 }
 NUMBER = re.compile(r"\+?\d[\d \-()]{1,}\d(?:\s*/\s*\d+)*")
 
